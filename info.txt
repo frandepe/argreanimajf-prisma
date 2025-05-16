@@ -1,0 +1,31 @@
+✅ Lo que tu compañero debe hacer después de clonar el repo
+
+1 - Instalar dependencias
+
+Ejecutar: npm install
+
+2 - Crear el archivo .env con la variable DATABASE_URL
+DATABASE_URL="postgresql://postgres:password@localhost:5432/argreanimadb?schema=public"
+Si seguiste todo como lo hizo Fazt, la variable de entorno deberia ser tal cual.
+El user por defecto es postgres y la contraseña es password (o la que hayas puesto)
+Y el puerto por defecto es 5432
+
+3 - Generar el cliente de Prisma
+Ya que el generated/prisma no debería subirse al repo, hacer lo siguiente:
+
+Ejecutar esto en consola: npx prisma generate
+Esto creará la carpeta src/generated/prisma con el cliente Prisma que usás en los imports.
+
+4 - Crear la base de datos
+
+Ejecutar: npx prisma db push
+Esto creará (si no existe) la base de datos especificada en el archivo `.env` (en este caso `argreanimadb`), y sincronizará todas las tablas definidas en `schema.prisma` **directamente en la base de datos**, sin necesidad de crear migraciones.
+Ideal para entornos de desarrollo o para montar el proyecto rápidamente.
+
+--------------------------
+
+¿Como saber si tengo creada la base de datos argreanimadb?
+
+1 - Abris la power shell de postgresql que instalamos cuando instalamos postgres, se llama SQL Shell (psql)
+2 - Ejecutamos este comando: \l o \list
+Resultado: Deberia aparecer argreanimadb
