@@ -1,4 +1,4 @@
-import { Book, Link, Menu, Sunset, Trees, Zap } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
 import { default as NextLink } from "next/link";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -6,7 +6,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -62,15 +61,15 @@ const Navbar = ({
 }: Navbar1Props) => {
   return (
     <section className="py-4 w-full bg-white px-10">
-      <div className="container">
-        <nav className="hidden justify-between lg:flex">
+      <div className="w-full">
+        <nav className="hidden justify-between lg:flex w-full">
           <div className="flex items-center gap-6">
             <NextLink href={logo.url} className="flex items-center gap-2">
               <Image
                 width={200}
                 height={200}
                 src={logo.src}
-                className="img-logo transform transition-transform duration-300 hover:scale-105 w-18"
+                className="img-logo transform transition-transform duration-300 hover:scale-105 w-18 cursro-pointer"
                 alt={logo.alt}
               />
             </NextLink>
@@ -88,10 +87,12 @@ const Navbar = ({
                   </NextLink>
                 </NavigationMenuItem>
 
-                {/* Noticias */}
+                {/* Noticias  asdas t se */}
                 <NavigationMenu viewportCustomClass="w-90 sm:left-0 xl:left-90">
                   <NavigationMenuItem className="text-muted-foreground">
-                    <NavigationMenuTrigger>Noticias</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="cursor-pointer">
+                      Noticias
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
                         <li>
@@ -253,13 +254,92 @@ const Navbar = ({
                   </NavigationMenuItem>
                 </NavigationMenu>
 
+                {/* Biblioteca de contenido */}
+
+                <NavigationMenu viewportCustomClass="w-90 sm:left-0 xl:left-90">
+                  <NavigationMenuItem className="text-muted-foreground ">
+                    <NavigationMenuTrigger className="cursor-pointer">
+                      Biblioteca de contenido
+                    </NavigationMenuTrigger>
+
+                    <NavigationMenuContent>
+                      <ul className="w-80 p-3">
+                        <li>
+                          <NextLink
+                            href="#"
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                          >
+                            <Zap className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                Guías de primeros auxilios.
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                              Pasos clave para actuar en emergencias médicas.
+                              </p>
+                            </div>
+                          </NextLink>
+                        </li>
+                        <li>
+                          <NextLink
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                            href="#"
+                          >
+                            <Sunset className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                Manuales visuales o descargables.
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                              Material práctico para consulta rápida o descarga.
+                              </p>
+                            </div>
+                          </NextLink>
+                        </li>
+                        <li>
+                          <a
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                            href="#"
+                          >
+                            <Trees className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                Infografías y videos educativos.
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                              Contenido visual para aprender de forma clara y rápida.
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                            href="#"
+                          >
+                            <Book className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                Todo categorizado por tema.
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                Our terms and conditions for using our services
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenu>
+
                 {/* Pricing */}
                 <NavigationMenuItem className="text-muted-foreground">
                   <a
                     className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
                     href="#"
                   >
-                    Pricing
+                 Galería / Redes sociales
                   </a>
                 </NavigationMenuItem>
 
@@ -269,7 +349,7 @@ const Navbar = ({
                     className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
                     href="#"
                   >
-                    Blog
+                Contacto
                   </a>
                 </NavigationMenuItem>
               </NavigationMenuList>

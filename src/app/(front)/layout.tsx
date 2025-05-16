@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer/Footer";
 import { Navbar } from "@/components/Navbar/navbar";
 import type { Metadata } from "next";
 {
@@ -23,11 +24,12 @@ export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) { 
   return (
     <div>
       <Navbar />
       <div>{children}</div>
+      <Footer />
     </div>
   );
 }
