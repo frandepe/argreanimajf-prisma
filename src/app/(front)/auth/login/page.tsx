@@ -1,15 +1,13 @@
 "use client";
 
-"use client";
-
 import React, { useState } from "react";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Input } from "@/app/components/ui/Input";
-import { DotMap } from "@/app/components/Login/DotMap";
+import { DotMap } from "@/components/Login/DotMap";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { signIn, SignInResponse } from "next-auth/react";
+import { Input } from "@/components/ui/Input";
 
 // Helper function to merge class names
 const cn = (...classes: string[]) => {
