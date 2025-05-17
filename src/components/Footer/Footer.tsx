@@ -42,7 +42,7 @@ function Footer() {
               className="img-logo transform transition-transform duration-300 hover:scale-105 w-18 mb-4 cursor-pointer "
               alt={logo.alt}
             />
-            <p className="mb-6 text-muted-foreground">
+            <p className=" text-muted-foreground">
               Programa nacional que enseña RCP y primeros auxilios básicos.
             </p>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />

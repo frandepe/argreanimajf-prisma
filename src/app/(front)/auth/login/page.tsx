@@ -283,15 +283,6 @@ const SignInCard = () => {
                   </p>
                 )}
               </div>
-
-              {/* <div className="text-center mt-6">
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-700 text-sm transition-colors"
-                >
-                  Forgot password?
-                </a>
-              </div> */}
             </form>
           </motion.div>
         </div>
