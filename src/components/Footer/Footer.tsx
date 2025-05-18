@@ -11,22 +11,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  Phone,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const logo = {
   url: "https://www.argentinareanima.com",
   src: "/logo/logo.png",
-  alt: "logo",
-  title: "Shadcnblocks.com",
+  alt: "argentinareanima",
 };
 
 function Footer() {
@@ -69,7 +60,7 @@ function Footer() {
                 Noticias
               </Link>
               <Link
-                href="#"
+                href="/jornadas-y-actividades"
                 className="block transition-colors hover:text-gray-600"
               >
                 Jornadas y actividades
@@ -146,7 +137,7 @@ function Footer() {
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-         
+
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>

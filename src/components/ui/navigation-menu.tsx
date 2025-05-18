@@ -9,10 +9,9 @@ const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   {
     className?: string;
-    viewportCustomClass?: string;
     children: any;
   }
->(({ className, viewportCustomClass, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
@@ -22,8 +21,7 @@ const NavigationMenu = React.forwardRef<
     {...props}
   >
     {children}
-    <NavigationMenuViewport customClass={viewportCustomClass} />{" "}
-    {/* CUSTOMCLASS TAILWIND PROP */}
+    <NavigationMenuViewport /> {/* CUSTOMCLASS TAILWIND PROP */}
   </NavigationMenuPrimitive.Root>
 ));
 
@@ -54,13 +52,13 @@ const NavigationMenuViewport = React.forwardRef(
     return (
       <div
         className={cn(
-          "absolute left-0  top-full flex justify-center",
+          "absolute left-0 top-full flex justify-center",
           customClass
         )}
       >
         <NavigationMenuPrimitive.Viewport
           className={cn(
-            " origin-top-center relative xl:right-[450px] top-[10px] mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]   "
+            "origin-top-center relative mx-auto top-[10px] mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)]"
           )}
           ref={ref}
           {...props}

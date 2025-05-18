@@ -1,11 +1,13 @@
-import { InfiniteSlider } from '@/components/ui/infinite-slider';
-import { ProgressiveBlur } from '@/components/ui/progressive-blur';
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import Image from "next/image";
 
 const logos = [
   {
     id: "logo-2",
     description: "Figma",
-    image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747447163/logo_iczhux.png",
+    image:
+      "https://res.cloudinary.com/dtbryiptz/image/upload/v1747447163/logo_iczhux.png",
     className: "h-16 w-auto",
   },
   {
@@ -30,34 +32,32 @@ const logos = [
 
 export function LogoSlider() {
   return (
-    <div className='relative h-[100px] w-full overflow-hidden'>
-      <InfiniteSlider 
-        className='flex h-full w-full items-center' 
+    <div className="relative h-[100px] w-full overflow-hidden">
+      <InfiniteSlider
+        className="flex h-full w-full items-center"
         duration={30}
         gap={48}
-
       >
         {logos.map((logo) => (
-          <div 
-            key={logo.id} 
-            className='flex w-32 items-center justify-center'
-          >
-            <img
+          <div key={logo.id} className="flex w-32 items-center justify-center">
+            <Image
               src={logo.image}
               alt={logo.description}
               className={logo.className}
+              width={40}
+              height={40}
             />
           </div>
         ))}
       </InfiniteSlider>
       <ProgressiveBlur
-        className='pointer-events-none absolute top-0 left-0 h-full w-[200px]'
-        direction='left'
+        className="pointer-events-none absolute top-0 left-0 h-full w-[200px]"
+        direction="left"
         blurIntensity={1}
       />
       <ProgressiveBlur
-        className='pointer-events-none absolute top-0 right-0 h-full w-[200px]'
-        direction='right'
+        className="pointer-events-none absolute top-0 right-0 h-full w-[200px]"
+        direction="right"
         blurIntensity={1}
       />
     </div>

@@ -38,7 +38,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { JSX, useState } from "react";
+import { JSX } from "react";
 import Image from "next/image";
 
 interface DropdownWithoutIconProps {
@@ -50,7 +50,6 @@ interface DropdownWithoutIconProps {
 }
 
 interface MenuItem {
-  title: string;
   url: string;
   description?: string;
   icon?: JSX.Element;
@@ -62,7 +61,6 @@ interface Navbar1Props {
     url: string;
     src: string;
     alt: string;
-    title: string;
   };
   menu?: MenuItem[];
   mobileExtraLinks?: {
@@ -83,39 +81,18 @@ interface Navbar1Props {
 
 const Navbar = ({
   logo = {
-    url: "https://www.argentinareanima.com",
+    url: "/",
     src: "/logo/logo.png",
-    alt: "logo",
-    title: "Shadcnblocks.com",
+    alt: "argentinareanima",
   },
 }: Navbar1Props) => {
-  const [activeMenu, setActiveMenu] = useState("main");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
   function DropdownWithoutIcon({
     href,
-    goToMenu,
     rightIcon,
     children,
-    onClick,
   }: DropdownWithoutIconProps) {
     return (
-      <Link
-        href={href || ""}
-        className="menu-item bg-none w-full"
-        onClick={(e) => {
-          if (goToMenu) {
-            e.preventDefault();
-            setActiveMenu(goToMenu);
-          }
-          if (onClick) onClick();
-          closeMenu();
-        }}
-      >
+      <Link href={href || ""} className="menu-item bg-none w-full">
         {children}
         <span className="icon-right">{rightIcon}</span>
       </Link>
@@ -147,31 +124,30 @@ const Navbar = ({
                     // inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground
                     className="relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors"
                   >
-                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                       Inicio
                     </span>
                   </Link>
                 </NavigationMenuItem>
 
-                 {/* Inicio */}
+                {/* Inicio */}
                 <NavigationMenuItem>
                   <Link
                     href="/quienes-somos"
                     // inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground
                     className="relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors"
                   >
-                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
-                     ¿Quiénes somos?
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
+                      ¿Quiénes somos?
                     </span>
                   </Link>
                 </NavigationMenuItem>
 
-
                 {/* Noticias  asdas t se */}
-                <NavigationMenu viewportCustomClass="w-90  sm:left-0 xl:left-90">
+                <NavigationMenu>
                   <NavigationMenuItem className="text-muted-foreground">
                     <NavigationMenuTrigger className="cursor-pointer relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors">
-                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
+                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         {" "}
                         Noticias
                       </span>
@@ -180,7 +156,7 @@ const Navbar = ({
                       <ul className="w-80 p-3">
                         <li>
                           <Link
-                            href="#"
+                            href="/noticias"
                             className="flex  gap-4 rounded-md p-3 leading-none no-underline bg-background  outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
                           >
                             <Newspaper className="size-5 shrink-0" />
@@ -198,7 +174,7 @@ const Navbar = ({
                         <li>
                           <Link
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
+                            href="/noticias"
                           >
                             <Activity className="size-5 shrink-0" />
                             <div>
@@ -214,12 +190,12 @@ const Navbar = ({
                         <li>
                           <Link
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
+                            href="/noticias"
                           >
                             <Star className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                              Publicaciones destacadas.
+                                Publicaciones destacadas.
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
                                 Explora nuestras iniciativas y logros a lo largo
@@ -228,8 +204,6 @@ const Navbar = ({
                             </div>
                           </Link>
                         </li>
-                       
-                        
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -240,9 +214,9 @@ const Navbar = ({
                   <div className="group">
                     <Link
                       className=" inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-                      href="#"
+                      href="/jornadas-y-actividades"
                     >
-                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
+                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         Jornadas y actividades
                       </span>
                     </Link>
@@ -251,10 +225,10 @@ const Navbar = ({
 
                 {/* Cursos gratuitos */}
 
-                <NavigationMenu viewportCustomClass="w-90 sm:left-0 xl:left-90">
+                <NavigationMenu>
                   <NavigationMenuItem className="text-muted-foreground ">
                     <NavigationMenuTrigger className="cursor-pointer">
-                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
+                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         Capacitaciones
                       </span>
                     </NavigationMenuTrigger>
@@ -336,10 +310,10 @@ const Navbar = ({
 
                 {/* Biblioteca de contenido */}
 
-                <NavigationMenu viewportCustomClass="w-90 sm:left-0 xl:left-90">
+                <NavigationMenu>
                   <NavigationMenuItem className="text-muted-foreground ">
                     <NavigationMenuTrigger className="cursor-pointer">
-                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
+                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         Biblioteca de contenido
                       </span>
                     </NavigationMenuTrigger>
@@ -418,14 +392,13 @@ const Navbar = ({
                   </NavigationMenuItem>
                 </NavigationMenu>
 
-         
                 {/* Blog */}
                 <NavigationMenuItem className="text-muted-foreground">
                   <Link
                     className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
                     href="#"
                   >
-                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#2C9CC1] after:transition-all after:duration-300 hover:after:w-full relative">
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                       {" "}
                       Contacto
                     </span>
