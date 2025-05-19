@@ -42,3 +42,7 @@ capturar información actualizada.
 2 - Luego de que Franco realice el punto 1:
 Jero hace un pull del repo como siempre y, importante, ejecuta: npx prisma migrate dev
 Sin necesidad de poner --name, porque la migración ya está creada.
+
+---------------------------
+
+Interfaz grafica de prisma npx prisma studio
