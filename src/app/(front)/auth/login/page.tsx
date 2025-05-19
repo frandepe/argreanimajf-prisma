@@ -7,7 +7,7 @@ import { DotMap } from "@/components/Login/DotMap";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { signIn, SignInResponse } from "next-auth/react";
-import { Input } from "@/components/ui/Input";
+import { Input } from "@/components/ui/input";
 
 // Helper function to merge class names
 const cn = (...classes: string[]) => {

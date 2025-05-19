@@ -1,28 +1,32 @@
-import { Hero } from "@/components/HeroConfig/HeroConfig";
+import BannerHero from "@/components/BannerHero/BannerHero";
+import { NewsComponent } from "@/components/CardNews/CardNews";
+import { SearchBarComponent } from "@/components/SearchBarComponent/SearchBarComponent";
+
+
+
 import React from "react";
 
 const NoticiasPage = () => {
   return (
-    <div>
-      <Hero
-        title="AI that works for you."
-        subtitle="Transform your workflow with intelligent automation. Simple, powerful, reliable."
-        // actions={[
-        //   {
-        //     label: "Try Demo",
-        //     href: "#",
-        //     variant: "outline",
-        //   },
-        //   {
-        //     label: "Start Free",
-        //     href: "#",
-        //     variant: "default",
-        //   },
-        // ]}
-        titleClassName="text-5xl md:text-6xl font-extrabold"
-        subtitleClassName="text-lg md:text-xl max-w-[600px]"
-        actionsClassName="mt-8"
-      />
+    <div className="py-20 px-7 md:px-40">
+      <div className="flex flex-col gap-16">
+        <BannerHero
+          src={
+            "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg"
+          }
+          title="Novedades"
+          description="Enterate de las últimas acciones, eventos y novedades de Argentina Reanima."
+        />
+
+        <div className="pt-20">
+          <SearchBarComponent />
+        </div>
+
+
+        <NewsComponent />
+
+
+      </div>
     </div>
   );
 };
