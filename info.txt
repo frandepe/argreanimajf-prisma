@@ -62,6 +62,20 @@ Luego, otro desarrollador (por ejemplo Jero) hace un pull del repo y debe ejecut
 npx prisma migrate dev
 Sin necesidad de usar --name, ya que la migración ya fue creada.
 
+-------------------------------------------
+
+2 - Luego de que Franco realice el punto 1:
+
+* Antes de hacer un pull en la base de datos necesitamos resetear nuestra base de datos local con  npx prisma migrate reset
+* si ya tenemos datos reales de produccion no uysar el migrate reset por que se pierden los datos 
+
+* Si tenemos datos de produccion es mejor usar -  npx prisma migrate resolve --applied "nombre-de-la-migración"
+
+
+
+Jero hace un pull del repo como siempre y, importante, ejecuta: npx prisma migrate dev
+Sin necesidad de poner --name, porque la migración ya está creada.
+
 ---------------------------
 
 Interfaz grafica de prisma npx prisma studio

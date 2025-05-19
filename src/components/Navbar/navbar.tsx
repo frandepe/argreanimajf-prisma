@@ -40,6 +40,7 @@ import {
 } from "@/components/ui/sheet";
 import { JSX } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface DropdownWithoutIconProps {
   href?: string;
@@ -99,6 +100,8 @@ const Navbar = ({
     );
   }
 
+  const router = useRouter();
+
   return (
     <section className="py-4 w-full bg-white px-10">
       <div className="w-full">
@@ -145,7 +148,10 @@ const Navbar = ({
 
                 {/* Noticias  asdas t se */}
                 <NavigationMenu>
-                  <NavigationMenuItem className="text-muted-foreground">
+                  <NavigationMenuItem
+                    className="text-muted-foreground"
+                    onClick={() => router.push("/noticias")}
+                  >
                     <NavigationMenuTrigger className="cursor-pointer relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors">
                       <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         {" "}
@@ -214,10 +220,10 @@ const Navbar = ({
                   <div className="group">
                     <Link
                       className=" inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-                      href="/jornadas-y-actividades"
+                      href="/actividades"
                     >
                       <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
-                        Jornadas y actividades
+                        Actividades
                       </span>
                     </Link>
                   </div>
@@ -467,17 +473,17 @@ const Navbar = ({
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/editar-perfil">
+                    <DropdownWithoutIcon href="/noticias">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <NewspaperIcon className="mr-2" />
                         <span className="text-lg">Noticias</span>
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/editar-perfil">
+                    <DropdownWithoutIcon href="/actvidades">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <ActivityIcon className="mr-2" />
-                        <span className="text-lg">Jornadas y actividades</span>
+                        <span className="text-lg">Actividades</span>
                       </div>
                     </DropdownWithoutIcon>
 

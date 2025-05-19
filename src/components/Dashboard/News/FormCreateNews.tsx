@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CircleCheck } from "lucide-react";
 import { cn } from "@/libs/utils";
 import { useNews } from "@/context/NewsContext";
-import { Input } from "@/components/ui/Input";
+
 import { ICreateNews } from "@/interfaces/news";
 import { Controller, useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { FileUpload } from "@/components/FileUpload/FileUpload";
+import { Input } from "@/components/ui/Input";
 
 const FormCreateNews = () => {
   const [step, setStep] = useState(1);

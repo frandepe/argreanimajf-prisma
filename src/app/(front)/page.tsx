@@ -2,8 +2,9 @@ import BannerHero from "@/components/BannerHero/BannerHero";
 import { FeatureComponent } from "@/components/FeatureComponent/FeatureComponent";
 import { ContentCard } from "@/components/ContentCard/ContentCard";
 import { TextWithImage } from "@/components/TextImage/TextImage";
-import { LogoSlider } from "@/components/LogoSlider/LogoSlider";
 import { TitleH2 } from "@/components/Texts/TitleH2";
+import LogoSlider from "@/components/LogoSlider/LogoSlider";
+
 
 export default function Home() {
   return (

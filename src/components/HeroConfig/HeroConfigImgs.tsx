@@ -58,14 +58,14 @@ export function HeroSection() {
             <div className="relative">
               <Image
                 className="hidden dark:block"
-                src="/logo/logo.png"
+                src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
                 alt="app illustration"
                 width={2796}
                 height={2008}
               />
               <Image
                 className="dark:hidden"
-                src="/logo/logo.png"
+                src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
                 alt="app illustration"
                 width={2796}
                 height={2008}
