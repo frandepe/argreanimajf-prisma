@@ -29,3 +29,16 @@ Ideal para entornos de desarrollo o para montar el proyecto rápidamente.
 1 - Abris la power shell de postgresql que instalamos cuando instalamos postgres, se llama SQL Shell (psql)
 2 - Ejecutamos este comando: \l o \list
 Resultado: Deberia aparecer argreanimadb
+
+--------------------------
+
+Cada vez que alguien modifica o agrega un modelo nuevo a la base de datos:
+
+1 - Ejecutar: npx prisma migrate dev --name descripcion-de-tu-cambio
+
+Esto es como "un commit para la base de datos". Lo que hace es crear una carpeta nueva en /prisma/migrations donde tu local va a
+capturar información actualizada.
+
+2 - Luego de que Franco realice el punto 1:
+Jero hace un pull del repo como siempre y, importante, ejecuta: npx prisma migrate dev
+Sin necesidad de poner --name, porque la migración ya está creada.
