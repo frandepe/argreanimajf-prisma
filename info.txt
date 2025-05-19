@@ -32,16 +32,35 @@ Resultado: Deberia aparecer argreanimadb
 
 --------------------------
 
-Cada vez que alguien modifica o agrega un modelo nuevo a la base de datos:
+🧩 Actualización de la base de datos con Prisma
+💡 Opción 1 (Recomendada para desarrollo rápido o cambios pequeños):
+Si estás agregando/modificando campos y no necesitás un historial de migraciones:
 
-1 - Ejecutar: npx prisma migrate dev --name descripcion-de-tu-cambio
+Modificá el archivo schema.prisma según lo que necesites.
 
-Esto es como "un commit para la base de datos". Lo que hace es crear una carpeta nueva en /prisma/migrations donde tu local va a
-capturar información actualizada.
+Eliminá las filas existentes si estás agregando campos requeridos sin valor por defecto.
 
-2 - Luego de que Franco realice el punto 1:
-Jero hace un pull del repo como siempre y, importante, ejecuta: npx prisma migrate dev
-Sin necesidad de poner --name, porque la migración ya está creada.
+Ejecutá:
+
+npx prisma db push
+Esto sincroniza tu base de datos con el esquema, sin generar una migración. Es ideal para desarrollo.
+
+Tus compañeros deben también ejecutar:
+
+npx prisma db push
+después de hacer pull, para que su base de datos quede alineada con el schema.prisma.
+Si aún sigue sin poder usarse la db, ejecutar npx prisma generate
+
+🧱 Opción 2 (Para entornos más estrictos o con historial de cambios):
+Cuando alguien (por ejemplo Franco) modifica o agrega un modelo nuevo en schema.prisma, debe ejecutar:
+
+npx prisma migrate dev --name descripcion-de-tu-cambio
+Esto crea una carpeta nueva en /prisma/migrations y actualiza la base de datos local.
+
+Luego, otro desarrollador (por ejemplo Jero) hace un pull del repo y debe ejecutar:
+
+npx prisma migrate dev
+Sin necesidad de usar --name, ya que la migración ya fue creada.
 
 ---------------------------
 
