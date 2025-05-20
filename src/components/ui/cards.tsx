@@ -11,6 +11,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { ButtonMore } from "../ButtonMore/ButtonMore";
 
 export interface Gallery4Item {
   id: string;
@@ -172,6 +173,8 @@ const Cards = ({
                       </div>
                       <div className="flex items-center text-sm">
                         Read more{" "}
+
+                        <ButtonMore/>
                         <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
                       </div>
                     </div>

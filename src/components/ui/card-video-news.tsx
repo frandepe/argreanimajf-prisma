@@ -1,9 +1,9 @@
-"use client";
+"use client"
 import { ArrowRight } from "lucide-react";
 import { Badge } from "./badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "./card";
-import { ButtonMore } from "../ButtonMore/ButtonMore";
+import VideoPlayer from "./video-player";
 
 interface Post {
   id: string;
@@ -41,7 +41,7 @@ const News = ({
       author: "Sarah Chen",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747675850/cordoba_u4ngce.png",
+      image: "/images/block/placeholder-dark-1.svg",
     },
     {
       id: "post-2",
@@ -52,7 +52,7 @@ const News = ({
       author: "Marcus Rodriguez",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747676344/2022-1_mkrk81.png",
+      image: "/images/block/placeholder-dark-1.svg",
     },
     {
       id: "post-3",
@@ -63,7 +63,7 @@ const News = ({
       author: "Emma Thompson",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747676447/2022-2_evotqs.png",
+      image: "/images/block/placeholder-dark-1.svg",
     },
     {
       id: "post-3",
@@ -74,7 +74,7 @@ const News = ({
       author: "Emma Thompson",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747675957/cordoba2_zyhnci.png",
+      image: "/images/block/placeholder-dark-1.svg",
     },
     {
       id: "post-3",
@@ -85,7 +85,7 @@ const News = ({
       author: "Emma Thompson",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg",
+      image: "/images/block/placeholder-dark-1.svg",
     },
   ],
 }: NewsProps) => {
@@ -109,21 +109,22 @@ const News = ({
             </a>
           </Button>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid gap-6 xl:grid-cols-2 2xl:grid-cols-3 lg:gap-8">
           {posts.map((post) => (
-            <Card key={post.id} className="grid grid-rows-[auto_auto_1fr_auto]">
-              <div className="aspect-[16/9] w-full">
-                <a
-                  href={post.url}
-                  target="_blank"
-                  className="transition-opacity duration-200 fade-in hover:opacity-70"
-                >
-                  <img
+            <Card
+              key={post.id}
+              className="grid grid-rows-[auto_auto_1fr_auto] "
+            >
+              <div className="h-full w-full transition-opacity duration-200 fade-in hover:opacity-70">
+               
+                  {/* <img
                     src={post.image}
                     alt={post.title}
                     className="h-full w-full object-cover object-center"
-                  />
-                </a>
+                  /> */}
+
+                  <VideoPlayer src={post.url} />
+               
               </div>
               <CardContent className="p-4">
                 <CardHeader>
@@ -133,11 +134,18 @@ const News = ({
                     </a>
                   </h3>
                 </CardHeader>
-
-                <p className="text-muted-foreground">{post.summary}</p>
-
+                <CardContent>
+                  <p className="text-muted-foreground">{post.summary}</p>
+                </CardContent>
                 <CardFooter>
-                  <ButtonMore />
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    className="flex items-center text-foreground hover:underline"
+                  >
+                    Read more
+                    <ArrowRight className="ml-2 size-4" />
+                  </a>
                 </CardFooter>
               </CardContent>
             </Card>

@@ -55,7 +55,7 @@ const DialogContent = React.forwardRef<
           closeButtonClassName // Aplica la clase adicional
         )}
       >
-        <Cross2Icon className="h-6 w-6 md:h-10 md:w-10" />
+        <Cross2Icon className="h-6 w-6 md:h-10 md:w-10 cursor-pointer bg-black text-white" />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
