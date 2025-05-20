@@ -1,47 +1,57 @@
 "use client";
 
-import { ICreateNews } from "@/interfaces/news";
+import { ICreateNewsBase64, IUpdateNote } from "@/interfaces/news";
 import { createContext, useState, useContext } from "react";
 import { News } from "@/generated/prisma";
 
 export const NewsContext = createContext<{
   news: News[];
   loadNews: () => Promise<void>;
-  createNews: (singleNew: ICreateNews) => Promise<void>;
+  createNews: (singleNew: ICreateNewsBase64) => Promise<void>;
   deleteNews: (id: number) => Promise<void>;
+  selectedNews: News | null;
+  setSelectedNews: (singleNew: News | null) => void;
+  updateNews: (id: number, singleNews: IUpdateNote) => Promise<void>;
 }>({
   news: [],
   loadNews: async () => {},
-  createNews: async (singleNew: ICreateNews) => {},
+  createNews: async (singleNew: ICreateNewsBase64) => {},
   deleteNews: async (id: number) => {},
+  selectedNews: null,
+  setSelectedNews: (singleNew: News | null) => {},
+  updateNews: async (id: number, singleNews: IUpdateNote) => {},
 });
 
 export const useNews = () => {
   const context = useContext(NewsContext);
   if (!context) {
-    throw new Error("useNotes debe ser usado dentro de un NewsProvider");
+    throw new Error("useNews debe ser usado dentro de un NewsProvider");
   }
   return context;
 };
 
 export const NewsProvider = ({ children }: { children: React.ReactNode }) => {
   const [news, setNews] = useState<News[]>([]);
+  const [selectedNews, setSelectedNews] = useState<News | null>(null);
 
   async function loadNews() {
     const res = await fetch("/api/news");
     const data = await res.json();
     setNews(data.news);
   }
-  async function createNews(singleNews: ICreateNews) {
-    const res = await fetch("/api/notes", {
+
+  async function createNews(singleNews: ICreateNewsBase64) {
+    const res = await fetch("/api/news", {
       method: "POST",
       body: JSON.stringify(singleNews),
       headers: {
         "Content-Type": "application/json",
       },
     });
+
     const newNews = await res.json();
-    setNews([...news, newNews]);
+    console.log("newNews news context", newNews);
+    setNews([...news, newNews.news]);
   }
 
   async function deleteNews(id: number) {
@@ -53,8 +63,35 @@ export const NewsProvider = ({ children }: { children: React.ReactNode }) => {
     setNews(news.filter((n) => n.id !== id));
   }
 
+  async function updateNews(id: number, singleNews: IUpdateNote) {
+    const res = await fetch(`/api/news/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(singleNews),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const editedNews = await res.json();
+    setNews(
+      news.map((singleNews) =>
+        singleNews.id === id ? editedNews.updatedNews : singleNews
+      )
+    );
+    console.log("data update context", editedNews.updatedNews);
+  }
+
   return (
-    <NewsContext.Provider value={{ news, loadNews, createNews, deleteNews }}>
+    <NewsContext.Provider
+      value={{
+        news,
+        loadNews,
+        createNews,
+        deleteNews,
+        selectedNews,
+        setSelectedNews,
+        updateNews,
+      }}
+    >
       {children}
     </NewsContext.Provider>
   );

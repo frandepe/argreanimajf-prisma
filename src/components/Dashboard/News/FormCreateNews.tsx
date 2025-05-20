@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { CircleCheck } from "lucide-react";
+import { CircleCheck, LoaderIcon } from "lucide-react";
 import { cn } from "@/libs/utils";
-import { useNews } from "@/context/NewsContext";
+// Adjust the import path for NewsContext based on your project structure
+// Common locations are: @/contexts/NewsContext, @/lib/contexts/NewsContext, or @/app/contexts/NewsContext
 
-import { ICreateNews } from "@/interfaces/news";
+import type { ICreateNews } from "@/interfaces/news";
 import { Controller, useForm } from "react-hook-form";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -17,18 +18,37 @@ import {
 } from "@/components/ui/select";
 import { FileUpload } from "@/components/FileUpload/FileUpload";
 import { Input } from "@/components/ui/Input";
+import Image from "next/image";
+import { useNews } from "@/context/NewsContext";
+import { Button } from "@/components/ui/button";
 
 const FormCreateNews = () => {
+  const { createNews, selectedNews, setSelectedNews, updateNews } = useNews();
   const [step, setStep] = useState(1);
   const [isExpanded, setIsExpanded] = useState(true);
   const [errorMessage, setErrorMessage] = useState<any>();
   const [isLoading, setIsLoading] = useState(false);
-  const { createNews } = useNews();
-  const [files, setFiles] = useState<File[]>([]);
+  const [picture, setPicture] = useState<any>(null);
 
-  const handleFileUpload = (files: File[]) => {
-    setFiles(files);
-    console.log(files);
+  const handlePictureUpload = (files: any) => {
+    const selectedFile = files[0];
+
+    if (selectedFile) {
+      const maxSizeInBytes = 4 * 1024 * 1024; // 4 MB en bytes
+
+      if (selectedFile.size > maxSizeInBytes) {
+        alert(
+          "El archivo supera el límite de 4 MB. Por favor, selecciona otro archivo."
+        );
+        files = ""; // Limpia el input
+      } else {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          setPicture(event.target?.result);
+        };
+        reader.readAsDataURL(selectedFile);
+      }
+    }
   };
 
   const {
@@ -36,9 +56,11 @@ const FormCreateNews = () => {
     handleSubmit,
     formState: { errors },
     control,
+    reset,
   } = useForm<ICreateNews>();
 
-  const handleContinue = () => {
+  const handleContinue = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault(); // Add this line to prevent form submission
     if (step < 3) {
       setStep(step + 1);
       setIsExpanded(false);
@@ -54,15 +76,40 @@ const FormCreateNews = () => {
     }
   };
 
+  const handleCancelEdit = () => {
+    setSelectedNews(null);
+    reset({
+      title: "",
+      redirect: "",
+      category: "",
+      description: "",
+    });
+    setPicture(null);
+    setStep(1);
+    setIsExpanded(true);
+  };
+
   const onSubmit = async (data: ICreateNews) => {
+    if (step !== 3) return;
+    if (!picture) {
+      alert("La imagen es requerida");
+      return;
+    }
+
     setIsLoading(true);
     try {
-      const res: any = await createNews({ ...data });
-      console.log(res);
+      if (selectedNews) {
+        await updateNews(selectedNews.id, {
+          ...data,
+          imageBase64: picture !== selectedNews.imageUrl ? picture : undefined,
+        });
 
-      if (!res?.success) {
-        setErrorMessage(res);
-        return;
+        setSelectedNews(null);
+      } else {
+        await createNews({
+          ...data,
+          imageBase64: picture,
+        });
       }
       setIsLoading(false);
     } catch (error) {
@@ -72,10 +119,22 @@ const FormCreateNews = () => {
     }
   };
 
+  useEffect(() => {
+    if (selectedNews) {
+      reset({
+        title: selectedNews.title,
+        redirect: selectedNews.redirect,
+        category: selectedNews.category,
+        description: selectedNews.description,
+      });
+      setPicture(selectedNews.imageUrl); // para que también se vea la imagen previa, si querés mostrarla
+    }
+  }, [selectedNews, reset]);
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-center justify-center gap-8"
+      className="flex flex-col items-center justify-center gap-8 my-7"
     >
       {/* Progreso de pasos */}
       <div className="flex items-center gap-6 relative">
@@ -105,6 +164,25 @@ const FormCreateNews = () => {
           }}
         />
       </div>
+
+      {selectedNews && (
+        <div className="mb-4 flex-wrap gap-4 flex items-center justify-between rounded-lg border border-yellow-300 bg-yellow-50 px-4 py-3 text-sm shadow-sm">
+          <p className="text-muted-foreground">
+            Editando{" "}
+            <span className="font-medium text-foreground">
+              {selectedNews.title}
+            </span>
+          </p>
+          <Button
+            type="button"
+            size="sm"
+            variant="outline"
+            onClick={handleCancelEdit}
+          >
+            Cancelar edición
+          </Button>
+        </div>
+      )}
 
       {/* Contenido por paso */}
       <div className="w-full max-w-sm flex flex-col gap-4">
@@ -196,7 +274,16 @@ const FormCreateNews = () => {
         )}
         {step === 3 && (
           <div className="w-full max-w-4xl mx-auto min-h-96 border border-dashed bg-background border-neutral-200 dark:border-neutral-800 rounded-lg">
-            <FileUpload onChange={handleFileUpload} />
+            <FileUpload onChange={handlePictureUpload} />
+            {picture && (
+              <Image
+                src={picture || "/placeholder.svg"}
+                alt="Imagen seleccionada"
+                className="mx-auto mb-4 max-h-60 object-contain rounded-md"
+                width={200}
+                height={200}
+              />
+            )}
           </div>
         )}
       </div>
@@ -229,17 +316,30 @@ const FormCreateNews = () => {
               Atrás
             </motion.button>
           )}
-          <motion.button
-            type="button"
-            onClick={handleContinue}
-            animate={{ flex: isExpanded ? 1 : "inherit" }}
-            className={cn(
-              "px-4 py-3 rounded-full text-white bg-primary transition-colors flex-1",
-              !isExpanded && "w-44"
-            )}
-          >
-            <div className="flex items-center font-semibold justify-center gap-2 text-sm cursor-pointer">
-              {step === 3 && (
+          {step < 3 ? (
+            <motion.button
+              type="button"
+              onClick={handleContinue}
+              animate={{ flex: isExpanded ? 1 : "inherit" }}
+              className={cn(
+                "px-4 py-3 rounded-full text-white bg-primary transition-colors flex-1 cursor-pointer",
+                !isExpanded && "w-44"
+              )}
+            >
+              Continuar
+            </motion.button>
+          ) : (
+            <motion.button
+              type="submit"
+              disabled={!picture || isLoading}
+              animate={{ flex: isExpanded ? 1 : "inherit" }}
+              className={cn(
+                "px-4 py-3 rounded-full text-white transition-colors flex-1 cursor-pointer",
+                !isExpanded && "w-44",
+                picture ? "bg-primary" : "bg-gray-400 cursor-not-allowed"
+              )}
+            >
+              <div className="flex items-center font-semibold justify-center gap-2 text-sm">
                 <motion.div
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -251,12 +351,16 @@ const FormCreateNews = () => {
                     bounce: 0.4,
                   }}
                 >
-                  <CircleCheck size={16} />
+                  {isLoading ? (
+                    <LoaderIcon size={16} />
+                  ) : (
+                    <CircleCheck size={16} />
+                  )}
                 </motion.div>
-              )}
-              {step === 3 ? "Finalizar" : "Continuar"}
-            </div>
-          </motion.button>
+                {isLoading ? "Finalizando..." : "Finalizar"}
+              </div>
+            </motion.button>
+          )}
         </motion.div>
       </div>
     </form>

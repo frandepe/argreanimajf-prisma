@@ -83,7 +83,7 @@ export const FileUpload = ({
             Imágen de portada
           </p>
           <p className="relative z-20 font-sans font-normal text-neutral-400 dark:text-neutral-400 text-base mt-2">
-            Arrastra o suelta tu imagen aquí o haz clic para subirla
+            Arrastra y suelta tu imagen aquí o haz clic para subirla
           </p>
 
           <div className="relative w-full mt-10 max-w-xl mx-auto">
