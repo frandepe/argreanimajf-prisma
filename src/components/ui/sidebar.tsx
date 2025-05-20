@@ -217,14 +217,13 @@ const Sidebar = () => {
                 </div>
               </nav>
               {/* Footer / Action Button */}
-              
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Desktop Sidebar */}
-      <div className="hidden md:flex flex-col h-full w-64 bg-gray-50 text-black shadow " >
+      <div className="hidden md:flex flex-col h-full w-64 bg-gray-50 text-black shadow ">
         {/* Profile Section */}
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
@@ -239,7 +238,9 @@ const Sidebar = () => {
             </div>
             <div>
               <p className="font-semibold">Argentina Reanima</p>
-              <p className="text-sm text-gray-500">argentinareanima@gmail.com</p>
+              <p className="text-sm text-gray-500">
+                argentinareanima@gmail.com
+              </p>
             </div>
           </div>
         </div>
@@ -285,14 +286,14 @@ const Sidebar = () => {
                     Eventos
                   </button>
                 </li>
-                 <li>
+                <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
                     Noticias en los medios
                   </button>
                 </li>
-                 <li>
+                <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                   Noticias Alianza con Camuzzi Gas
+                    Noticias Alianza con Camuzzi Gas
                   </button>
                 </li>
               </ul>
@@ -304,8 +305,6 @@ const Sidebar = () => {
             </CollapsibleSection>
           </div>
         </nav>
-       
-        
       </div>
 
       {/* Main Content Area */}

@@ -14,7 +14,6 @@ export default function BannerHero({
 }: BannerHeroProps) {
   return (
     <div className=" overflow-hidden  h-[700px] flex items-center justify-center w-full">
-      {/* Imagen de fondo con next/image */}
       <div className="inset-0 w-full h-full -z-10">
         <Image
           src={src || ""}

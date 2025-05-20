@@ -3,7 +3,7 @@
 import { cn } from "@/libs/utils";
 import Image from "next/image";
 
-interface AuthorCardProps {
+interface BoxTresHomeProps {
   className?: string;
   backgroundImage?: string;
   author: {
@@ -16,15 +16,21 @@ interface AuthorCardProps {
   };
 }
 
-export const AuthorCard = ({
+export const BoxTresHome = ({
   className,
   backgroundImage,
   author,
   content,
-}: AuthorCardProps) => {
+}: BoxTresHomeProps) => {
   return (
     <div className="lg:w-fit  w-full group/card ">
-      <div className={cn( "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl flex flex-col justify-between p-4 bg-cover", className )} style={{ backgroundImage: `url(${backgroundImage})` }} >
+      <div
+        className={cn(
+          "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl flex flex-col justify-between p-4 bg-cover",
+          className
+        )}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div className="absolute w-full h-full top-0 left-0 bg-black/50 transition duration-300 group-hover/card:bg-black opacity-60" />
 
         <div className="flex flex-row items-center md:space-x-4 z-10 ">
@@ -50,7 +56,7 @@ export const AuthorCard = ({
             {content.description}
           </p>
         </div>
-      </div> 
+      </div>
     </div>
   );
 };

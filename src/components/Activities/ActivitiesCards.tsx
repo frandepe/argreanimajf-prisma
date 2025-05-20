@@ -3,11 +3,12 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
-import { Button } from "./button";
+
 import GalleryModalCanuelas from "../Modal/GalleryModalCanuelas";
 import GalleryModalRioGrande from "../Modal/GalleryModalRioGrande";
 import GalleryModalMardelPlata from "../Modal/GalleryModalMardePlata";
 import GalleryModalUshuaia from "../Modal/GalleryModalUshuaia";
+import { Button } from "../ui/button";
 
 interface Post {
   id: string;
@@ -23,80 +24,21 @@ interface Post {
 }
 
 interface ActivitiesProps {
-  heading?: string;
-  description?: string;
-  canuelasEvent?: Post[];
-  mardelPlataEvent?: Post[];
-  rioGrandeEvent?: Post[];
-  ushuaiaEvent?: Post[];
+  heading: string;
+  description: string;
+  canuelasEvent: Post[];
+  mardelPlataEvent: Post[];
+  rioGrandeEvent: Post[];
+  ushuaiaEvent: Post[];
 }
 
 const ActivitiesCards = ({
-  heading = "Blog Posts",
-  description = "Discover the latest insights and tutorials about modern web development, UI design, and component-driven architecture.",
-  canuelasEvent = [
-    {
-      id: "post-1",
-      title:
-        "Building Modern UIs: A Deep Dive into Shadcn and React Components",
-      description:
-        "Join us for an in-depth exploration of building modern user interfaces using shadcn/ui and React. Learn best practices and advanced techniques.",
-      label: "RCP",
-      author: "Argentina Reanima",
-      published: "15 Feb 2025",
-      url: "https://shadcnblocks.com",
-      image: "/images/block/placeholder-dark-1.svg",
-      tags: ["RCP", "DEA"],
-    },
-  ],
-
-  rioGrandeEvent = [
-    {
-      id: "post-2",
-      title:
-        "Building Modern UIs: A Deep Dive into Shadcn and React Components",
-      description:
-        "Join us for an in-depth exploration of building modern user interfaces using shadcn/ui and React. Learn best practices and advanced techniques.",
-      label: "RCP",
-      author: "Argentina Reanima",
-      published: "15 Marzo 2025",
-      url: "https://shadcnblocks.com",
-      image: "/images/block/placeholder-dark-1.svg",
-      tags: ["RCP", "DEA"],
-    },
-  ],
-
-  mardelPlataEvent = [
-    {
-      id: "post-2",
-      title:
-        "Building Modern UIs: A Deep Dive into Shadcn and React Components",
-      description:
-        "Join us for an in-depth exploration of building modern user interfaces using shadcn/ui and React. Learn best practices and advanced techniques.",
-      label: "RCP",
-      author: "Argentina Reanima",
-      published: "15 Marzo 2025",
-      url: "https://shadcnblocks.com",
-      image: "/images/block/placeholder-dark-1.svg",
-      tags: ["RCP", "DEA"],
-    },
-  ],
-
-  ushuaiaEvent = [
-    {
-      id: "post-2",
-      title:
-        "Building Modern UIs: A Deep Dive into Shadcn and React Components",
-      description:
-        "Join us for an in-depth exploration of building modern user interfaces using shadcn/ui and React. Learn best practices and advanced techniques.",
-      label: "RCP",
-      author: "Argentina Reanima",
-      published: "15 Marzo 2025",
-      url: "https://shadcnblocks.com",
-      image: "/images/block/placeholder-dark-1.svg",
-      tags: ["RCP", "DEA"],
-    },
-  ],
+  heading,
+  description,
+  canuelasEvent,
+  rioGrandeEvent,
+  mardelPlataEvent,
+  ushuaiaEvent,
 }: ActivitiesProps) => {
   const [isModalOpenCanuelas, setIsModalOpenCanuelas] = useState(false);
   const [isModalOpenRio, setIsModalOpenRio] = useState(false);
@@ -233,7 +175,7 @@ const ActivitiesCards = ({
                     </span>
                   </div>
                   <div className="mt-6 flex items-center space-x-2 md:mt-8">
-                  <Button
+                    <Button
                       variant={"ghost"}
                       onClick={handleOpenRio}
                       className="inline-flex items-center font-semibold hover:underline md:text-base cursor-pointer"
@@ -297,7 +239,7 @@ const ActivitiesCards = ({
                     </span>
                   </div>
                   <div className="mt-6 flex items-center space-x-2 md:mt-8">
-                     <Button
+                    <Button
                       variant={"ghost"}
                       onClick={handleOpenMdq}
                       className="inline-flex items-center font-semibold hover:underline md:text-base cursor-pointer"
@@ -361,7 +303,7 @@ const ActivitiesCards = ({
                     </span>
                   </div>
                   <div className="mt-6 flex items-center space-x-2 md:mt-8">
-                   <Button
+                    <Button
                       variant={"ghost"}
                       onClick={handleOpenUshuaia}
                       className="inline-flex items-center font-semibold hover:underline md:text-base cursor-pointer"

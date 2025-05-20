@@ -1,7 +1,4 @@
-import { News } from "@/components/ui/news";
-import { SidebarNews } from "../SidebarNews/SidebarNews";
-
-const demoData = {
+export const seedDataNews = {
   tagline: "Ultimas Novedades",
   heading: "Noticias",
   description:
@@ -12,13 +9,13 @@ const demoData = {
     {
       id: "post-1",
       title: "Build websites in minutes with shadcn/ui",
-      summary:
-        "Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.",
+      summary: "Vivamus sit amet tortor vel enim sollicitudin hendrerit.",
       label: "Ut varius dolor turpis",
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747675850/cordoba_u4ngce.png",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747675850/cordoba_u4ngce.png",
     },
     {
       id: "post-2",
@@ -29,18 +26,20 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747676344/2022-1_mkrk81.png",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747676344/2022-1_mkrk81.png",
     },
     {
       id: "post-3",
       title: "The future of web design",
       summary:
-        "Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.",
+        "Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit. Vivamus sit amet tortor vel enim sollicitudin hendrerit.",
       label: "Ut varius dolor turpis",
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747676447/2022-2_evotqs.png",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747676447/2022-2_evotqs.png",
     },
     {
       id: "post-4",
@@ -51,7 +50,8 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747675957/cordoba2_zyhnci.png",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747675957/cordoba2_zyhnci.png",
     },
     {
       id: "post-5",
@@ -62,7 +62,8 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg",
     },
     {
       id: "post-6",
@@ -73,7 +74,8 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747685718/Ca%C3%B1uelas-87_snzhwq.jpg",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747685718/Ca%C3%B1uelas-87_snzhwq.jpg",
     },
     {
       id: "post-7",
@@ -84,7 +86,8 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747686441/1-28_x6to6o.jpg",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747686441/1-28_x6to6o.jpg",
     },
     {
       id: "post-8",
@@ -95,7 +98,8 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747686462/1-3_my5jcn.jpg",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747686462/1-3_my5jcn.jpg",
     },
 
     {
@@ -107,18 +111,8 @@ const demoData = {
       author: "Jane Doe",
       published: "1 Jan 2024",
       url: "https://www.youtube.com/watch?v=34BQ1mWAyC4",
-      image: "https://res.cloudinary.com/dtbryiptz/image/upload/v1747686470/1-17_y45edo.jpg",
+      image:
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747686470/1-17_y45edo.jpg",
     },
   ],
 };
-
-function NewsComponent() {
-  return (
-    <div className="flex ">
-      <SidebarNews />
-      <News {...demoData} />;
-    </div>
-  );
-}
-
-export { NewsComponent };

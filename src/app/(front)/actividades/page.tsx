@@ -1,6 +1,7 @@
 import React from "react";
 import BannerHero from "../../../components/BannerHero/BannerHero";
-import { ActivitiesCardComponent } from "@/components/ActivitiesCardsComponent/ActivitiesCardsComponent";
+import { seedDataActivities } from "@/components/Activities/ActivitiesCardsComponent";
+import { ActivitiesCards } from "@/components/Activities/ActivitiesCards";
 
 const Actividades = () => {
   return (
@@ -12,7 +13,7 @@ const Actividades = () => {
           description="Capacitaciones, jornadas, simulacros y encuentros en distintas ciudades del país, pensados para enseñar a salvar vidas."
         />
 
-        <ActivitiesCardComponent />     
+        <ActivitiesCards {...seedDataActivities} />
       </div>
     </div>
   );
