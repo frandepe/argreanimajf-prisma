@@ -1,5 +1,4 @@
 import React from "react";
-import { Course } from "@/generated/prisma";
 import {
   AccordionItem,
   AccordionTrigger,
@@ -14,8 +13,9 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { useCourse } from "@/context/CourseContext";
+import { ICourse } from "@/interfaces/courses";
 
-const CourseCard = ({ n }: { n: Course }) => {
+const CourseCard = ({ n }: { n: ICourse }) => {
   const { deleteCourse, setSelectedCourse } = useCourse();
 
   return (

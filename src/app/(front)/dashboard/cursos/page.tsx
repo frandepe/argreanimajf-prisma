@@ -2,13 +2,10 @@
 
 import CourseCard from "@/components/Dashboard/Courses/CourseCard";
 import FormCreateCourse from "@/components/Dashboard/Courses/FormCreateCourse";
-import FormCreateNews from "@/components/Dashboard/News/FormCreateNews";
-import NewsCard from "@/components/Dashboard/News/NewsCard";
 import { SidebarContent } from "@/components/Dashboard/SidebarContent";
 import { Accordion } from "@/components/ui/accordion";
-import { SimplePagination } from "@/components/ui/simple-pagination";
+import { SimplePagination } from "@/components/SimplePagination/SimplePagination";
 import { useCourse } from "@/context/CourseContext";
-import { useNews } from "@/context/NewsContext";
 import { useEffect, useState } from "react";
 
 const ITEMS_PER_PAGE = 5;
