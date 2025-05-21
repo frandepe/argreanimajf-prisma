@@ -21,13 +21,16 @@ const NoticiasDashboardPage = () => {
 
   return (
     <SidebarContent>
-      <div className="flex items-center justify-around w-full h-full">
+      <div className="flex flex-col lg:flex-row items-center justify-around w-full h-full">
+
         <FormCreateNews />
-        <div className="flex md:w-[600px] flex-col space-y-4 rounded-lg border p-4">
+
+
+        <div className="px-3 pb-7 md:pb-0 md:px-0 flex w-full md:w-[600px] flex-col space-y-4 rounded-lg border md:p-4    ">
           <Accordion
             type="single"
             collapsible
-            className="w-full"
+            className="w-full px-6 "
             defaultValue="3"
           >
             {news
@@ -36,7 +39,7 @@ const NoticiasDashboardPage = () => {
                 currentPage * ITEMS_PER_PAGE
               )
               .map((n) => (
-                <NewsCard n={n} key={n.id} />
+                <NewsCard n={n} key={n.id}  />
               ))}
           </Accordion>
 
@@ -46,6 +49,9 @@ const NoticiasDashboardPage = () => {
             onPageChange={setCurrentPage}
           />
         </div>
+
+
+
       </div>
     </SidebarContent>
   );

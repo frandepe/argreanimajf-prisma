@@ -6,7 +6,13 @@ import {
   PaginationItem,
   PaginationLink,
 } from "@/components/ui/pagination";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ArrowLeft,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "lucide-react";
 
 type PaginationProps = {
   currentPage: number;
@@ -35,11 +41,11 @@ function SimplePagination({
 
   return (
     <Pagination>
-      <PaginationContent className="w-full justify-between">
+      <PaginationContent className="w-full justify-between pl-5">
         <PaginationItem>
           <PaginationLink
             className={cn(
-              "aria-disabled:pointer-events-none aria-disabled:opacity-50",
+              "aria-disabled:pointer-events-none aria-disabled:opacity-50 h-11 w-11",
               buttonVariants({
                 variant: "outline",
               })
@@ -49,19 +55,19 @@ function SimplePagination({
             aria-label="Go to previous page"
             aria-disabled={currentPage === 1}
           >
-            <ChevronLeft size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronLeftIcon size={40} strokeWidth={3} />
           </PaginationLink>
         </PaginationItem>
         <PaginationItem>
           <p className="text-sm text-muted-foreground" aria-live="polite">
-            Page <span className="text-foreground">{currentPage}</span> of{" "}
+            Página <span className="text-foreground">{currentPage}</span> de{" "}
             <span className="text-foreground">{totalPages}</span>
           </p>
         </PaginationItem>
         <PaginationItem>
           <PaginationLink
             className={cn(
-              "aria-disabled:pointer-events-none aria-disabled:opacity-50",
+              "aria-disabled:pointer-events-none aria-disabled:opacity-50 h-11 w-11",
               buttonVariants({
                 variant: "outline",
               })
@@ -71,7 +77,7 @@ function SimplePagination({
             aria-label="Go to next page"
             aria-disabled={currentPage === totalPages}
           >
-            <ChevronRight size={16} strokeWidth={2} aria-hidden="true" />
+            <ChevronRightIcon size={40} strokeWidth={3} />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

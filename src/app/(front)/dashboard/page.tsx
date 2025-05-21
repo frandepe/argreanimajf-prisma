@@ -1,6 +1,8 @@
 "use client";
 
 import { SidebarContent } from "@/components/Dashboard/SidebarContent";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { cn } from "@/libs/utils";
 import { Newspaper, School, Video } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -12,29 +14,34 @@ function DashboardPage() {
       title: "Noticias",
       href: "/dashboard/noticias",
       description:
-        "Built for engineers, developers, dreamers, thinkers and doers.",
+        "Creá las últimas noticias para mantener informada a tu comunidad.",
       icon: <Newspaper />,
+      cta: "Crear Noticia",
     },
     {
       title: "Cursos",
       href: "/dashboard/cursos",
       description:
-        "It's as easy as using an Apple, and as expensive as buying one.",
+        "Creá y gestioná tus cursos para ofrecer contenido de calidad a tus usuarios.",
       icon: <School />,
+      cta: "Ir a Cursos",
     },
     {
       title: "Videos",
       href: "/dashboard/videos",
       description:
-        "Our prices are best in the market. No cap, no lock, no credit card required.",
+        "Compartí videos con tu audiencia y hacé crecer tu contenido.",
       icon: <Video />,
+      cta: "Subir Videos",
     },
   ];
   return (
     <SidebarContent>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  relative z-10 py-10 md:max-w-7xl mx-auto  gap-10 ">
         {features.map((feature, index) => (
-          <Feature key={feature.title} {...feature} index={index} />
+          <Card key={feature.title} className="h-[250px] ">
+            <Feature {...feature} index={index} />
+          </Card>
         ))}
       </div>
     </SidebarContent>
@@ -46,12 +53,14 @@ const Feature = ({
   description,
   href,
   icon,
+  cta,
   index,
 }: {
   title: string;
   description: string;
   href: string;
   icon: React.ReactNode;
+  cta: string;
   index: number;
 }) => {
   const router = useRouter();
@@ -59,9 +68,9 @@ const Feature = ({
     <div
       onClick={() => router.push(href)}
       className={cn(
-        "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800 cursor-pointer",
+        "flex flex-col   gap-1  py-7 relative group/feature dark:border-neutral-800 cursor-pointer",
         (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
-        index < 4 && "lg:border-b dark:border-neutral-800"
+        index < 4 && " dark:border-neutral-800"
       )}
     >
       {index < 4 && (
@@ -70,7 +79,7 @@ const Feature = ({
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
       )}
-      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
+      <div className="group-hover/feature:translate-x-2 transition duration-200 mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
@@ -79,9 +88,14 @@ const Feature = ({
           {title}
         </span>
       </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+      <p className="group-hover/feature:translate-x-2 transition duration-200 text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10 mb-2">
         {description}
       </p>
+      <div className=" group-hover/feature:translate-x-2 transition duration-200 mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400  ">
+        <Button className="text-sm  dark:text-neutral-300  w-fit relative z-10 px-10 text-white">
+          {cta}
+        </Button>
+      </div>
     </div>
   );
 };
