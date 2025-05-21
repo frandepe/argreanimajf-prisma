@@ -91,7 +91,7 @@ const VideoPlayer = ({ src }: { src: string }) => {
           volume={isMuted ? 0 : volume}
           onProgress={handleProgress}
           onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
+          onPause={() => setIsPlaying(false)}           
           playbackRate={playbackSpeed}
           width="auto"
           height="300px"

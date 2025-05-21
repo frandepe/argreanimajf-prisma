@@ -4,7 +4,7 @@ import FormCreateNews from "@/components/Dashboard/News/FormCreateNews";
 import NewsCard from "@/components/Dashboard/News/NewsCard";
 import { SidebarContent } from "@/components/Dashboard/SidebarContent";
 import { Accordion } from "@/components/ui/accordion";
-import { SimplePagination } from "@/components/ui/simple-pagination";
+import { SimplePagination } from "@/components/SimplePagination/SimplePagination";
 import { useNews } from "@/context/NewsContext";
 import { useEffect, useState } from "react";
 
@@ -22,10 +22,7 @@ const NoticiasDashboardPage = () => {
   return (
     <SidebarContent>
       <div className="flex flex-col lg:flex-row items-center justify-around w-full h-full">
-
         <FormCreateNews />
-
-
         <div className="px-3 pb-7 md:pb-0 md:px-0 flex w-full md:w-[600px] flex-col space-y-4 rounded-lg border md:p-4    ">
           <Accordion
             type="single"
@@ -49,9 +46,6 @@ const NoticiasDashboardPage = () => {
             onPageChange={setCurrentPage}
           />
         </div>
-
-
-
       </div>
     </SidebarContent>
   );

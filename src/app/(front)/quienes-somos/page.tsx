@@ -1,9 +1,10 @@
 import React from "react";
-import BannerHero from "../../../components/BannerHero/BannerHero";
-import { TimelineComponent } from "@/components/TimeLineComponent/TimeLineComponent";
-import { MagictTextComponent } from "@/components/MagicTextComponent/MagicTextComponent";
+import BannerHero from "@/components/BannerHero/BannerHero";
 import { TitleH2 } from "../../../components/Texts/TitleH2";
 import { Separator } from "@/components/ui/separator";
+import { Timeline } from "@/components/TimeLineComponent/TimeLineComponent";
+import { MagicText } from "@/components/MagicTextComponent/MagicTextComponent";
+
 
 const QuienesSomosPage = () => {
   return (
@@ -21,14 +22,17 @@ const QuienesSomosPage = () => {
           title="En Argentina Reanima, creemos que cada segundo cuenta."
           className="pt-20"
         />
-        <MagictTextComponent />
+        <MagicText
+          text={
+            "Somos una organizacion dedicada a la formación en Reanimación Cardiopulmonar (RCP) y primeros auxilios, con la misión de empoderar a personas y comunidades para actuar con rapidez y eficacia ante emergencias. Con años de experiencia, capacitamos a ciudadanos, instituciones educativas, empresas y profesionales de la salud con técnicas actualizadas, basadas en estándares internacionales. Nuestro compromiso es simple pero poderoso: salvar vidas. A través de la educación, la conciencia y la acción, trabajamos para construir una Argentina más preparada, más segura y más humana."
+          }
+        />
 
         {/* <TeamComponent /> */}
 
-
         <Separator />
 
-        <TimelineComponent />
+        <Timeline />
       </div>
     </div>
   );

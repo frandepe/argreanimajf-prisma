@@ -1,9 +1,8 @@
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { seedDataNews } from "@/components/News/SeedDataNews";
-
 import { NewsSection } from "@/components/News/NewsSection";
 import { SidebarNews } from "@/components/News/SidebarNews";
-import { SearchBarComponent } from "@/components/SearchBarComponent/SearchBarComponent";
+import { SearchBar } from "@/components/SearchBarComponent/SearchBarComponent";
 
 import React from "react";
 
@@ -113,7 +112,7 @@ const NoticiasPage = () => {
         />
 
         <div className="pt-20">
-          <SearchBarComponent />
+         <SearchBar/>
         </div>
         <div className="flex">
           <SidebarNews />
