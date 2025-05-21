@@ -1,10 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { CircleCheck, LoaderIcon } from "lucide-react";
 import { cn } from "@/libs/utils";
-// Adjust the import path for NewsContext based on your project structure
-// Common locations are: @/contexts/NewsContext, @/lib/contexts/NewsContext, or @/app/contexts/NewsContext
 import { Toaster, toast } from "sonner";
 import type { ICreateNews } from "@/interfaces/news";
 import { Controller, useForm } from "react-hook-form";
@@ -26,7 +23,6 @@ const FormCreateNews = () => {
   const { createNews, selectedNews, setSelectedNews, updateNews } = useNews();
   const [step, setStep] = useState(1);
   const [isExpanded, setIsExpanded] = useState(true);
-  const [errorMessage, setErrorMessage] = useState<any>();
   const [isLoading, setIsLoading] = useState(false);
   const [picture, setPicture] = useState<any>(null);
 
@@ -112,22 +108,26 @@ const FormCreateNews = () => {
         });
       }
       setIsLoading(false);
+      reset();
+      setStep(1);
 
-      toast.success("¡Noticia creada con éxito!", {
-        description: `¡Excelente! Tu noticia ya está disponible.`,
-        duration: 10000,
-        action: {
-          label: "X",
-          onClick: () => {
-            window.close();
+      toast.success(
+        `${selectedNews ? "Noticia editada" : "Noticia creada con éxito"}`,
+        {
+          description: `${
+            selectedNews
+              ? "¡Excelente! Tu noticia ya se encuentra actualizada"
+              : "¡Excelente! Tu noticia ya está disponible."
+          }`,
+          duration: 10000,
+          action: {
+            label: "X",
+            onClick: () => {
+              window.close();
+            },
           },
-        },
-      });
-
-      setTimeout(() => {
-        // ✅ redirección para ambos casos
-        window.location.href = "/dashboard/noticias";
-      }, 7000);
+        }
+      );
     } catch (error) {
       alert("Algo salió mal, consulte al programador");
       console.error(error);
@@ -371,15 +371,7 @@ const FormCreateNews = () => {
                       mass: 0.5,
                       bounce: 0.4,
                     }}
-                  >
-                    {/* {isLoading ? (
-                      <LoaderIcon size={16} />
-                    ) : (
-                      <CircleCheck size={16} />
-                    )} */}
-                  </motion.div>
-                  {/* {isLoading ? "Finalizando..." : "Finalizar"} */}
-
+                  ></motion.div>
                   {isLoading ? (
                     <span className="flex items-center justify-center h-[20px] relative bottom-[14px] right-1">
                       <span className="flex items-center">

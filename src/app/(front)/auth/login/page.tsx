@@ -91,7 +91,6 @@ const SignInCard = () => {
 
   return (
     <div className="flex w-full h-full items-center justify-center">
-      
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -147,7 +146,6 @@ const SignInCard = () => {
               Bienvenido de nuevo
             </h1>
             <p className="text-gray-500 mb-8">Acceda a su cuenta</p>
-            
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               <div>
