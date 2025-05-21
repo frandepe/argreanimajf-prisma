@@ -1,9 +1,9 @@
 "use client";
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { useState } from "react";
-
 import GalleryModalCanuelas from "../Modal/GalleryModalCanuelas";
 import GalleryModalRioGrande from "../Modal/GalleryModalRioGrande";
 import GalleryModalMardelPlata from "../Modal/GalleryModalMardePlata";
