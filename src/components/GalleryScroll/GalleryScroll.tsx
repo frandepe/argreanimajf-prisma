@@ -1,12 +1,12 @@
 "use client";
 
-import { InView } from "@/components/ui/in-view";
+import { InView } from "./InView";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface GalleryScrollProps {
   images: string[];
 }
-
 
 function GalleryScroll({ images }: GalleryScrollProps) {
   return (
@@ -40,10 +40,13 @@ function GalleryScroll({ images }: GalleryScrollProps) {
                 key={index}
                 className="mb-4"
               >
-                <img
+                <Image
                   src={imgSrc}
                   alt={`Image from gallery index:${index}`}
-                  className="size-full rounded-lg object-contain h-full "
+                  className="size-full rounded-lg object-contain h-full"
+                  width={100}
+                  height={100}
+                  style={{ objectFit: "contain" }}
                 />
               </motion.div>
             ))}
