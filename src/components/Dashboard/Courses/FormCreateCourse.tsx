@@ -1,7 +1,7 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import type React from "react";
-
 import { motion } from "framer-motion";
 import { cn } from "@/libs/utils";
 import { Toaster, toast } from "sonner";
@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { useCourse } from "@/context/CourseContext";
 import { Button } from "@/components/ui/button";
 import { Plus, Trash2 } from "lucide-react";
+import "../News/form.css";
 
 // Define the interface based on your backend requirements
 interface ICreateCourseForm {
@@ -90,6 +91,7 @@ const FormCreateCourse = () => {
 
   const onSubmit = async (data: ICreateCourseForm) => {
     if (step !== 3) return;
+    console.log("dataform", data);
 
     // Filter out empty lessons
     const filteredLessons = data.lessons.filter(
@@ -338,7 +340,7 @@ const FormCreateCourse = () => {
                       variant="destructive"
                       size="sm"
                       onClick={() => remove(index)}
-                      className="mt-2"
+                      className="mt-2 text-white"
                     >
                       <Trash2 className="h-4 w-4 mr-2" />
                       Eliminar

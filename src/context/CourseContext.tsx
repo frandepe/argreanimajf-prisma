@@ -1,11 +1,10 @@
 "use client";
 
 import { createContext, useContext, useState } from "react";
-import { Course } from "@/generated/prisma"; // Asegurate de tener esto generado
 import { ICourse, ICreateCourse, IUpdateCourse } from "@/interfaces/courses";
 
 export const CourseContext = createContext<{
-  courses: Course[];
+  courses: ICourse[];
   loadCourses: () => Promise<void>;
   createCourse: (newCourse: ICreateCourse) => Promise<void>;
   deleteCourse: (id: number) => Promise<void>;
@@ -31,13 +30,13 @@ export const useCourse = () => {
 };
 
 export const CourseProvider = ({ children }: { children: React.ReactNode }) => {
-  const [courses, setCourses] = useState<Course[]>([]);
+  const [courses, setCourses] = useState<ICourse[]>([]);
   const [selectedCourse, setSelectedCourse] = useState<ICourse | null>(null);
 
   async function loadCourses() {
     const res = await fetch("/api/courses");
     const data = await res.json();
-    setCourses(data);
+    setCourses(data.courses);
   }
 
   async function createCourse(newCourse: ICreateCourse) {
@@ -57,6 +56,8 @@ export const CourseProvider = ({ children }: { children: React.ReactNode }) => {
       method: "DELETE",
     });
     const data = await res.json();
+    console.log(data);
+
     setCourses(courses.filter((c) => c.id !== id));
   }
 
@@ -69,6 +70,8 @@ export const CourseProvider = ({ children }: { children: React.ReactNode }) => {
       },
     });
     const data = await res.json();
+    console.log(data);
+
     setCourses(courses.map((c) => (c.id === id ? data.updatedCourse : c)));
   }
 

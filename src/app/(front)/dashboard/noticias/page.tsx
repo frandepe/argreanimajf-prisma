@@ -36,7 +36,7 @@ const NoticiasDashboardPage = () => {
                 currentPage * ITEMS_PER_PAGE
               )
               .map((n) => (
-                <NewsCard n={n} key={n.id}  />
+                <NewsCard n={n} key={n.id} />
               ))}
           </Accordion>
 
