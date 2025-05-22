@@ -232,7 +232,7 @@ const Navbar = ({
                 {/* Cursos gratuitos */}
 
                 <NavigationMenu>
-                  <NavigationMenuItem className="text-muted-foreground ">
+                  <NavigationMenuItem className="text-muted-foreground"    onClick={() => router.push("/capacitaciones")}>
                     <NavigationMenuTrigger className="cursor-pointer">
                       <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         Capacitaciones
@@ -487,7 +487,7 @@ const Navbar = ({
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/editar-perfil">
+                    <DropdownWithoutIcon href="/capacitaciones">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <Pen className="mr-2" />
                         <span className="text-lg">Capacitaciones </span>
