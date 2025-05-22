@@ -19,7 +19,19 @@ export const Timeline = () => {
             El sábado 22 de marzo de 2025, en el marco de la responsabilidad que
             nos confió con orgullo la Federación Argentina de Cardiología
             (@fac_cardio), llevamos a cabo el examen práctico de cinco nuevos
-            instructores de RCP y DEA.
+            instructores de RCP y DEA. Junto al Dr. André Rossi
+            (@andrericardorossi), a quien agradecemos por su hospitalidad y
+            profesionalismo, logramos cumplir un nuevo desafío para nuestra
+            Asociación. Esta instancia forma parte del convenio recientemente
+            firmado en Mar del Plata con esta prestigiosa sociedad científica.
+            Agradecemos a todos los asistentes que viajaron desde distintos
+            puntos de Buenos Aires y CABA para completar su formación. Un
+            reconocimiento especial a todo el equipo de Argentina Reanima, que
+            trabaja incansablemente con pasión y compromiso, sin perder de vista
+            nuestros valores y objetivos. Este esfuerzo constante nos impulsa a
+            seguir creciendo y nos reafirma que estamos en el camino correcto.
+            Seguimos profesionalizando la capacitación para luchar contra la
+            muerte súbita. Solo bajamos los brazos para hacer RCP.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
@@ -46,9 +58,36 @@ export const Timeline = () => {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            El viernes 14 de marzo de 2025 viajamos a Mar del Plata y, con gran
-            orgullo, firmamos un convenio con la Federación Argentina de
-            Cardiología (FAC).
+            Compartimos con ustedes las emociones de un fin de semana intenso e
+            importante para nuestra Asociación. El viernes 14 de marzo de 2025
+            viajamos a Mar del Plata y, con gran orgullo, firmamos un convenio
+            con la Federación Argentina de Cardiología (FAC). A través de esta
+            alianza, seguiremos enseñando RCP a la comunidad, formando nuevos
+            socorristas y trabajando de manera conjunta en diversas iniciativas
+            y fechas clave, con el objetivo de sumar más manos que salven vidas
+            y continuar difundiendo la Ley 27159 para garantizar su aplicación
+            efectiva. Por la tarde, en nuestra labor como instructores de la
+            FAC, tuvimos el honor de evaluar a nuevos instructores provenientes
+            de distintas regiones del país, quienes rindieron su examen práctico
+            final y ahora forman parte de una creciente red en toda Argentina.
+            Cerramos este intenso recorrido el sábado por la mañana con una
+            actividad de RCP abierta a la comunidad. No solo brindamos esta
+            herramienta vital a los asistentes, sino que también recolectamos
+            una significativa cantidad de ropa y alimentos para enviar a
+            nuestros hermanos de Bahía. Esta acción solidaria fue posible
+            gracias al trabajo conjunto con la @FAC y la @Fundación Desfibrilar.
+            Nuestro crecimiento y avances en estos convenios son el reflejo de
+            nuestra transparencia, humildad y firme compromiso en minimizar las
+            40.000 muertes súbitas anuales que engrosan las estadísticas del
+            país. Estamos convencidos de que este es el camino y seguiremos
+            recorriéndolo con la misma dedicación. Gracias a la Federación
+            Argentina de Cardiología por confiar en nosotros. Gracias a nuestros
+            socios, instructores y socorristas de Argentina Reanima por su
+            entrega inquebrantable. Gracias a quienes participan en cada
+            capacitación, a las empresas que nos apoyan y a nuestras familias,
+            que nos brindan su tiempo para que podamos seguir alimentando esta
+            pasión. Somos la Asociación Civil Argentina Reanima y solo bajamos
+            los brazos para hacer RCP.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image

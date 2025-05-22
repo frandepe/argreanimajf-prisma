@@ -42,31 +42,31 @@ function Footer() {
             <h3 className="mb-4 text-lg font-semibold">Menu</h3>
             <nav className="space-y-2 text-sm">
               <Link
-                href="#"
+                href="/"
                 className="block transition-colors  hover:text-gray-600"
               >
                 Inicio
               </Link>
               <Link
-                href="#"
+                href="/quienes-somos"
                 className="block transition-colors hover:text-gray-600"
               >
                 ¿Quiénes somos?
               </Link>
               <Link
-                href="#"
+                href="/noticias"
                 className="block transition-colors hover:text-gray-600"
               >
                 Noticias
               </Link>
               <Link
-                href="/jornadas-y-actividades"
+                href="/actividades"
                 className="block transition-colors hover:text-gray-600"
               >
-                Jornadas y actividades
+               Actividades
               </Link>
               <Link
-                href="#"
+                href="/capacitaciones"
                 className="block transition-colors hover:text-gray-600"
               >
                 Cursos gratuitos
@@ -76,14 +76,14 @@ function Footer() {
                 href="#"
                 className="block transition-colors hover:text-gray-600"
               >
-                Biblioteca de contenido
+               Más
               </Link>
 
               <Link
-                href="#"
+                href="/contacto"
                 className="block transition-colors hover:text-gray-600"
               >
-                Galería / Redes sociales
+                Contacto
               </Link>
             </nav>
           </div>

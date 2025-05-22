@@ -112,7 +112,7 @@ const Navbar = ({
                 width={200}
                 height={200}
                 src={logo.src}
-                className="img-logo transform transition-transform duration-300 hover:scale-105 w-18 cursro-pointer"
+                className="img-logo transform transition-transform duration-300 hover:scale-105 w-18 cursor-pointer"
                 alt={logo.alt}
               />
             </Link>
@@ -185,10 +185,11 @@ const Navbar = ({
                             <Activity className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Participaciones en eventos.
+                                Noticias en los medios
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Nuestra misión es innovar y empoderar al mundo
+                                Todas las noticias en los medios de
+                                comunicacion.
                               </p>
                             </div>
                           </Link>
@@ -201,11 +202,10 @@ const Navbar = ({
                             <Star className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Publicaciones destacadas.
+                            Noticias Alianza con Camuzzi Gas
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Explora nuestras iniciativas y logros a lo largo
-                                de los años.
+                                Explora nuestras noticias con Camuzzi Gas
                               </p>
                             </div>
                           </Link>
@@ -232,7 +232,10 @@ const Navbar = ({
                 {/* Cursos gratuitos */}
 
                 <NavigationMenu>
-                  <NavigationMenuItem className="text-muted-foreground"    onClick={() => router.push("/capacitaciones")}>
+                  <NavigationMenuItem
+                    className="text-muted-foreground"
+                    onClick={() => router.push("/capacitaciones")}
+                  >
                     <NavigationMenuTrigger className="cursor-pointer">
                       <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         Capacitaciones
@@ -249,11 +252,10 @@ const Navbar = ({
                             <Download className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Capacitaciones disponibles para ver/descargar.
+                                Cursos Gratuitos
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Accede a nuestras capacitaciones en línea y
-                                recursos educativos.
+                                Accede a nuestras capacitaciones gratuitas.
                               </p>
                             </div>
                           </Link>
@@ -266,11 +268,10 @@ const Navbar = ({
                             <ImageDown className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Archivos PDF, videos o enlaces externos.
+                                RCP
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Recursos multimedia para enriquecer tu
-                                aprendizaje.
+                               Cursos de RCP.
                               </p>
                             </div>
                           </Link>
@@ -283,44 +284,27 @@ const Navbar = ({
                             <Search className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Explora nuestras categorías de contenido
+                               DEA
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Encuentra recursos organizados por temas
-                                relevantes.
+                               Cursos de DEA
                               </p>
                             </div>
                           </Link>
                         </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
-                          >
-                            <User2 className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Instructores o responsables de cada curso.
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Conoce a los expertos detrás de cada curso y
-                                accede a su información de contacto.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
+                       
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 </NavigationMenu>
 
-                {/* Biblioteca de contenido */}
+                {/* sM */}
 
                 <NavigationMenu>
                   <NavigationMenuItem className="text-muted-foreground ">
                     <NavigationMenuTrigger className="cursor-pointer">
                       <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
-                        Biblioteca de contenido
+                        Más
                       </span>
                     </NavigationMenuTrigger>
 
@@ -334,57 +318,40 @@ const Navbar = ({
                             <HeartPulse className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Guías de primeros auxilios.
+                                Filiales
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Pasos clave para actuar en emergencias médicas.
+                                Sedes regionales que ofrecen capacitación en RCP
+                                y primeros auxilios.
                               </p>
                             </div>
                           </Link>
                         </li>
-                        <li>
+                         <li>
                           <Link
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
-                          >
-                            <BookDownIcon className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Manuales visuales o descargables.
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Material práctico para consulta rápida o
-                                descarga.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
-                          >
-                            <Video className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Infografías y videos educativos.
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Contenido visual para aprender de forma clara y
-                                rápida.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
+                            href="/galeria"
                           >
                             <Network className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                                Galeria / Redes Sociales
+                              Galeria de Imagenes
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                Explora nuestra galeria de imagenes.
+                              </p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                            href="/redes-sociales"
+                          >
+                            <Network className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                Redes Sociales
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
                                 Encuentra fácilmente el contenido que buscas por
@@ -402,7 +369,7 @@ const Navbar = ({
                 <NavigationMenuItem className="text-muted-foreground">
                   <Link
                     className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
-                    href="#"
+                    href="/contacto"
                   >
                     <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                       {" "}
@@ -497,11 +464,11 @@ const Navbar = ({
                     <DropdownWithoutIcon href="/editar-perfil">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <Library className="mr-2" />
-                        <span className="text-lg">Biblioteca de contenido</span>
+                        <span className="text-lg">Más</span>
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/editar-perfil">
+                    <DropdownWithoutIcon href="/contacto">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <Headset className="mr-2" />
                         <span className="text-lg">Contacto</span>

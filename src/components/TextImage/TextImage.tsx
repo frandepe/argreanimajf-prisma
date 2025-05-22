@@ -1,7 +1,11 @@
-import { PhoneCall } from "lucide-react";
+"use client";
+import { PhoneCall, Router } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 function TextImage() {
+  const router = useRouter();
+
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="container mx-auto">
@@ -23,6 +27,7 @@ function TextImage() {
                 size="lg"
                 className="gap-4 cursor-pointer"
                 variant="outline"
+                onClick={() => router.push("/contacto")}
               >
                 Contactanos <PhoneCall className="w-4 h-4" />
               </Button>

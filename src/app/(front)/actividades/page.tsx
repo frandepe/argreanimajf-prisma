@@ -2,6 +2,7 @@ import React from "react";
 import BannerHero from "../../../components/BannerHero/BannerHero";
 import { seedDataActivities } from "@/components/Activities/ActivitiesCardsComponent";
 import { ActivitiesCards } from "@/components/Activities/ActivitiesCards";
+import { Timeline } from "@/components/TimeLineComponent/TimeLineComponent";
 
 const Actividades = () => {
   return (
@@ -14,6 +15,9 @@ const Actividades = () => {
         />
 
         <ActivitiesCards {...seedDataActivities} />
+
+        <Timeline />
+        
       </div>
     </div>
   );

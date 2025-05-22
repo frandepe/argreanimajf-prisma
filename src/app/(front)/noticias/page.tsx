@@ -18,7 +18,7 @@ const NoticiasPage = () => {
       <div className="flex flex-col gap-16">
         <BannerHero
           src={
-            "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg"
+            "https://res.cloudinary.com/dtbryiptz/image/upload/v1747876454/banner-noticias_cgbfet.png"
           }
           title="Novedades"
           description="Enterate de las últimas acciones, eventos y novedades de Argentina Reanima."

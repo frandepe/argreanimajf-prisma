@@ -2,9 +2,6 @@ import React from "react";
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { TitleH2 } from "../../../components/Texts/TitleH2";
 import { Separator } from "@/components/ui/separator";
-import { Timeline } from "@/components/TimeLineComponent/TimeLineComponent";
-import { MagicText } from "@/components/MagicTextComponent/MagicTextComponent";
-
 
 const QuienesSomosPage = () => {
   return (
@@ -22,17 +19,39 @@ const QuienesSomosPage = () => {
           title="En Argentina Reanima, creemos que cada segundo cuenta."
           className="pt-20"
         />
-        <MagicText
-          text={
-            "Somos una organizacion dedicada a la formación en Reanimación Cardiopulmonar (RCP) y primeros auxilios, con la misión de empoderar a personas y comunidades para actuar con rapidez y eficacia ante emergencias. Con años de experiencia, capacitamos a ciudadanos, instituciones educativas, empresas y profesionales de la salud con técnicas actualizadas, basadas en estándares internacionales. Nuestro compromiso es simple pero poderoso: salvar vidas. A través de la educación, la conciencia y la acción, trabajamos para construir una Argentina más preparada, más segura y más humana."
-          }
-        />
+
+        <div className="md:px-10 w-full max-w-7xl mx-auto">
+          <p className="md:px-10 w-full max-w-7xl mx-auto">
+            Somos una organizacion dedicada a la formación en Reanimación
+            Cardiopulmonar (RCP) y primeros auxilios, con la misión de empoderar
+            a personas y comunidades para actuar con rapidez y eficacia ante
+            emergencias.
+          </p>{" "}
+          <br />
+          <p className="md:px-10 w-full max-w-7xl mx-auto">
+            Con años de experiencia, capacitamos a ciudadanos, instituciones
+            educativas, empresas y profesionales de la salud con técnicas
+            actualizadas, basadas en estándares internacionales. Nuestro
+            compromiso es simple pero poderoso: salvar vidas.
+          </p>{" "}
+          <br />
+          <p className="md:px-10 w-full max-w-7xl mx-auto">
+            Con años de experiencia, capacitamos a ciudadanos, instituciones
+            educativas, empresas y profesionales de la salud con técnicas
+            actualizadas, basadas en estándares internacionales. Nuestro
+            compromiso es simple pero poderoso: salvar vidas.
+          </p>
+          <br />
+          <p className="md:px-10 w-full max-w-7xl mx-auto ">
+            A través de la educación, la conciencia y la acción, trabajamos para
+            construir una Argentina más preparada, más segura y más humana.
+          </p>
+        </div>
 
         {/* <TeamComponent /> */}
 
         <Separator />
 
-        <Timeline />
       </div>
     </div>
   );
