@@ -133,19 +133,6 @@ const Navbar = ({
                   </Link>
                 </NavigationMenuItem>
 
-                {/* Inicio */}
-                <NavigationMenuItem>
-                  <Link
-                    href="/quienes-somos"
-                    // inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground
-                    className="relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors"
-                  >
-                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
-                      ¿Quiénes somos?
-                    </span>
-                  </Link>
-                </NavigationMenuItem>
-
                 {/* Noticias  asdas t se */}
                 <NavigationMenu>
                   <NavigationMenuItem
@@ -202,7 +189,7 @@ const Navbar = ({
                             <Star className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                            Noticias Alianza con Camuzzi Gas
+                                Noticias Alianza con Camuzzi Gas
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
                                 Explora nuestras noticias con Camuzzi Gas
@@ -267,11 +254,9 @@ const Navbar = ({
                           >
                             <ImageDown className="size-5 shrink-0" />
                             <div>
-                              <div className="text-sm font-semibold">
-                                RCP
-                              </div>
+                              <div className="text-sm font-semibold">RCP</div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                               Cursos de RCP.
+                                Cursos de RCP.
                               </p>
                             </div>
                           </Link>
@@ -283,16 +268,13 @@ const Navbar = ({
                           >
                             <Search className="size-5 shrink-0" />
                             <div>
-                              <div className="text-sm font-semibold">
-                               DEA
-                              </div>
+                              <div className="text-sm font-semibold">DEA</div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                               Cursos de DEA
+                                Cursos de DEA
                               </p>
                             </div>
                           </Link>
                         </li>
-                       
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -327,7 +309,7 @@ const Navbar = ({
                             </div>
                           </Link>
                         </li>
-                         <li>
+                        <li>
                           <Link
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
                             href="/galeria"
@@ -335,7 +317,7 @@ const Navbar = ({
                             <Network className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
-                              Galeria de Imagenes
+                                Galeria de Imagenes
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
                                 Explora nuestra galeria de imagenes.
@@ -364,6 +346,19 @@ const Navbar = ({
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                 </NavigationMenu>
+
+                {/* Quienes somos */}
+                <NavigationMenuItem>
+                  <Link
+                    href="/quienes-somos"
+                    // inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground
+                    className="relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors"
+                  >
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
+                      ¿Quiénes somos?
+                    </span>
+                  </Link>
+                </NavigationMenuItem>
 
                 {/* Blog */}
                 <NavigationMenuItem className="text-muted-foreground">

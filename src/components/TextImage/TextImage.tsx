@@ -1,5 +1,5 @@
 "use client";
-import { PhoneCall, Router } from "lucide-react";
+import { PhoneCall, Router, Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
@@ -7,7 +7,7 @@ function TextImage() {
   const router = useRouter();
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full pb-20 lg:pb-40">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
           <div className="flex gap-4 flex-col">
@@ -27,9 +27,9 @@ function TextImage() {
                 size="lg"
                 className="gap-4 cursor-pointer"
                 variant="outline"
-                onClick={() => router.push("/contacto")}
+                onClick={() => router.push("/capacitaciones")}
               >
-                Contactanos <PhoneCall className="w-4 h-4" />
+                Ver cursos <Video className="w-4 h-4" />
               </Button>
             </div>
           </div>

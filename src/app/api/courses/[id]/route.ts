@@ -2,6 +2,55 @@ import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/libs/db";
 import { NextResponse } from "next/server";
 
+export async function GET(
+  request: Request,
+  {
+    params,
+  }: {
+    params: Readonly<{ id: string }> | Promise<Readonly<{ id: string }>>;
+  }
+) {
+  const resolvedParams = await params;
+  const id = Number(resolvedParams.id);
+
+  try {
+    const course = await prisma.course.findUnique({
+      where: { id },
+      include: {
+        lessons: true,
+      },
+    });
+
+    if (!course) {
+      return NextResponse.json(
+        {
+          message: `No se encontró el curso con id ${id}`,
+          status: 404,
+          success: false,
+        },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({
+      message: "Curso encontrado",
+      course,
+      status: 200,
+      success: true,
+    });
+  } catch (error) {
+    console.error(`Error al obtener curso con id ${id}:`, error);
+    return NextResponse.json(
+      {
+        message: "Error interno del servidor",
+        status: 500,
+        success: false,
+      },
+      { status: 500 }
+    );
+  }
+}
+
 export async function PUT(
   request: Request,
   {

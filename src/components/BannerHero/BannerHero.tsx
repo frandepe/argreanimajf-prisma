@@ -13,7 +13,7 @@ export default function BannerHero({
   src,
 }: BannerHeroProps) {
   return (
-    <div className=" overflow-hidden  h-[700px] flex items-center justify-center w-full">
+    <div className=" overflow-hidden h-[700px] flex items-center justify-center w-full">
       <div className="inset-0 w-full h-full -z-10">
         <Image
           src={src || ""}
@@ -23,7 +23,7 @@ export default function BannerHero({
           quality={100}
           priority
         />
-        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       <div className="absolute container text-center text-white w-full">
