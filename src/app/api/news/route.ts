@@ -1,10 +1,23 @@
 import cloudinary from "@/libs/cloudinary";
 import { prisma } from "@/libs/db";
-import { NextResponse } from "next/server";
-
-export async function GET() {
+import { NextRequest, NextResponse } from "next/server";
+export async function GET(request: NextRequest) {
   try {
-    const news = await prisma.news.findMany();
+    const { searchParams } = new URL(request.url);
+    const category = searchParams.get("category");
+    const search = searchParams.get("search");
+
+    const news = await prisma.news.findMany({
+      where: {
+        ...(category && { category }),
+        ...(search && {
+          OR: [
+            { title: { contains: search, mode: "insensitive" } },
+            { description: { contains: search, mode: "insensitive" } },
+          ],
+        }),
+      },
+    });
 
     return NextResponse.json({
       message: "Noticias obtenidas correctamente",

@@ -1,32 +1,17 @@
 "use client";
-import { ArrowRight } from "lucide-react";
 
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { useState } from "react";
+import { useNews } from "@/context/NewsContext";
+import { TitleH2 } from "../Texts/TitleH2";
+import Link from "next/link";
 
-
-interface New {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  imageUrl: string;
-  imagePublicId: string;
-  redirect: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface NewsProps {
-  news: New[];
-}
-
-const NewsSection = ({
-  news,
-}: NewsProps) => {
+const NewsSection = () => {
+  const { news } = useNews();
   const [expandedSummaries, setExpandedSummaries] = useState<
     Record<string, boolean>
   >({});
@@ -42,19 +27,18 @@ const NewsSection = ({
       <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
         <div className="text-center">
           <Badge variant="secondary" className="mb-6 text-white">
-           Ultimas Novedades
+            Ultimas Novedades
           </Badge>
-          <h2 className="mb-3 text-pretty text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
-            Noticias
-          </h2>
+          <TitleH2 title="Actualidad" className="mb-4" />
           <p className="mb-8 text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
-           Entérate de las últimas acciones, eventos y novedades de Argentina Reanima.
+            Entérate de las últimas acciones, eventos y novedades de Argentina
+            Reanima.
           </p>
           <Button variant="link" className="w-full sm:w-auto" asChild>
-            <a href={"https://www.shadcnblocks.com"} target="_blank">
-             Explorar todas las publicaciones
+            <Link href={"/noticias#videos"}>
+              Noticias en acción
               <ArrowRight className="ml-2 size-4" />
-            </a>
+            </Link>
           </Button>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
@@ -72,7 +56,7 @@ const NewsSection = ({
               >
                 <div className="aspect-[16/9] w-full">
                   <a
-                    href={singleNew.imageUrl}
+                    href={singleNew.redirect}
                     target="_blank"
                     className="transition-opacity duration-200 fade-in hover:opacity-70"
                   >
@@ -93,7 +77,7 @@ const NewsSection = ({
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {singleNew.title}
+                        {singleNew.title} - {singleNew.category}
                       </a>
                     </h3>
                   </CardHeader>
@@ -101,7 +85,7 @@ const NewsSection = ({
                     {summaryText}
                     {isLong && (
                       <button
-                        onClick={() => toggleSummary(singleNew.id)}
+                        onClick={() => toggleSummary(singleNew.id.toString())}
                         className="ml-2 text-blue-500 hover:underline cursor-pointer"
                       >
                         {isExpanded ? "Leer menos" : "Leer más..."}

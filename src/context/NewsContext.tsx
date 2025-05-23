@@ -1,12 +1,12 @@
 "use client";
 
 import { ICreateNewsBase64, IUpdateNote } from "@/interfaces/news";
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useCallback } from "react";
 import { News } from "@/generated/prisma";
 
 export const NewsContext = createContext<{
   news: News[];
-  loadNews: () => Promise<void>;
+  loadNews: (category: string, search: string) => Promise<void>;
   createNews: (singleNew: ICreateNewsBase64) => Promise<void>;
   deleteNews: (id: number) => Promise<void>;
   selectedNews: News | null;
@@ -14,7 +14,7 @@ export const NewsContext = createContext<{
   updateNews: (id: number, singleNews: IUpdateNote) => Promise<void>;
 }>({
   news: [],
-  loadNews: async () => {},
+  loadNews: async (category: string, search: string) => {},
   createNews: async (singleNew: ICreateNewsBase64) => {},
   deleteNews: async (id: number) => {},
   selectedNews: null,
@@ -34,11 +34,18 @@ export const NewsProvider = ({ children }: { children: React.ReactNode }) => {
   const [news, setNews] = useState<News[]>([]);
   const [selectedNews, setSelectedNews] = useState<News | null>(null);
 
-  async function loadNews() {
-    const res = await fetch("/api/news");
+  const loadNews = useCallback(async (category: string, search: string) => {
+    const params = new URLSearchParams();
+
+    if (category) params.append("category", category);
+    if (search) params.append("search", search);
+
+    const url = `/api/news?${params.toString()}`;
+
+    const res = await fetch(url);
     const data = await res.json();
     setNews(data.news);
-  }
+  }, []);
 
   async function createNews(singleNews: ICreateNewsBase64) {
     const res = await fetch("/api/news", {

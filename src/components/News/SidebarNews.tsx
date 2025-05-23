@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home } from "lucide-react";
+import { Filter, Newspaper } from "lucide-react";
 import Image from "next/image";
 
 const CollapsibleSection = ({
@@ -67,7 +67,12 @@ const XIcon = () => (
   </motion.svg>
 );
 
-const SidebarNews = () => {
+const SidebarNews = ({
+  setCategory,
+}: {
+  setCategory: (category: string) => void;
+}) => {
+  const [showMenu, setShowMenu] = useState(false); // visible o hidden
   const mobileSidebarVariants = {
     hidden: { x: "-100%" },
     visible: { x: 0 },
@@ -78,18 +83,25 @@ const SidebarNews = () => {
     src: "/logo/logo.png",
     alt: "argentinareanima",
   };
+
   return (
     <div className="flex  h-[500px]  bg-gray-300">
       {/* Mobile Sidebar */}
       <AnimatePresence>
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={showMenu ? "visible" : "hidden"}
           exit="hidden"
           variants={mobileSidebarVariants}
           transition={{ duration: 0.3 }}
           className="md:hidden fixed inset-0 z-50 bg-white text-black "
         >
+          <button
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="md:hidden fixed top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 z-50 bg-white shadow-lg border rounded-full p-3 hover:bg-gray-100 transition"
+          >
+            <Filter className="w-5 h-5 text-black" />
+          </button>
           <div className="flex flex-col h-full ">
             {/* Profile Section */}
             <div className="p-4 border-b border-gray-200 ">
@@ -114,28 +126,50 @@ const SidebarNews = () => {
               <ul>
                 <li className="mb-2">
                   <button className="flex gap-2 font-medium text-sm items-center w-full py-2 px-4 rounded-xl hover:bg-gray-100">
-                    <Home className="h-5 w-5" />
-                    Home
+                    <Newspaper className="h-5 w-5" />
+                    Noticias
                   </button>
                 </li>
               </ul>
               {/* Toggleable Sections */}
               <div className="mt-4">
-                <CollapsibleSection title="Extra Options">
+                <CollapsibleSection title="Categorías">
                   <ul>
                     <li>
-                      <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                        Subscriptions
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("Medios")}
+                      >
+                        Medios
                       </button>
                     </li>
                     <li>
-                      <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                        Appearance
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("Alianza con Camuzzi Gas")}
+                      >
+                        Alianza con Camuzzi Gas
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("Categoria 3")}
+                      >
+                        Categoria 3
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("Categoria 4")}
+                      >
+                        Categoria 4
                       </button>
                     </li>
                   </ul>
                 </CollapsibleSection>
-                <CollapsibleSection title="More Info">
+                <CollapsibleSection title="Más información">
                   <p className="text-sm text-gray-500">
                     Additional details and settings can be found here.
                   </p>
@@ -174,8 +208,8 @@ const SidebarNews = () => {
           <ul>
             <li className="mb-2">
               <button className="flex gap-2 font-medium text-sm items-center w-full py-2 px-4 rounded-xl hover:bg-gray-100">
-                <Home className="h-5 w-5" />
-                Inicio
+                <Newspaper className="h-5 w-5" />
+                Noticias
               </button>
             </li>
           </ul>
@@ -184,23 +218,35 @@ const SidebarNews = () => {
             <CollapsibleSection title="Categorias">
               <ul>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Novedades institucionales
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("Medios")}
+                  >
+                    Medios
                   </button>
                 </li>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Eventos
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("Alianza con Camuzzi Gas")}
+                  >
+                    Alianza con Camuzzi Gas
                   </button>
                 </li>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Noticias en los medios
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("Categoria 3")}
+                  >
+                    Categoria 3
                   </button>
                 </li>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Noticias Alianza con Camuzzi Gas
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("Categoria 4")}
+                  >
+                    Categoria 4
                   </button>
                 </li>
               </ul>

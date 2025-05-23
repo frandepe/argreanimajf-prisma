@@ -256,8 +256,10 @@ const FormCreateNews = () => {
                         <SelectValue placeholder="Selecciona una categoría" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Categoria 1">Categoria 1</SelectItem>
-                        <SelectItem value="Categoria 2">Categoria 2</SelectItem>
+                        <SelectItem value="Medios">Medios</SelectItem>
+                        <SelectItem value="Alianza con Camuzzi Gas">
+                          Alianza con Camuzzi Gas
+                        </SelectItem>
                         <SelectItem value="Categoria 3">Categoria 3</SelectItem>
                         <SelectItem value="Categoria 4">Categoria 4</SelectItem>
                       </SelectContent>

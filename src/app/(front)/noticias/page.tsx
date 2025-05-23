@@ -1,17 +1,28 @@
+"use client";
+
 import BannerHero from "@/components/BannerHero/BannerHero";
-import { seedDatanews } from "@/components/News/SeedDataNews";
 import { NewsSection } from "@/components/News/NewsSection";
 import { SidebarNews } from "@/components/News/SidebarNews";
-import { SearchBar } from "@/components/SearchBarComponent/SearchBarComponent";
+import SearchBar from "@/components/SearchBarComponent/SearchBarComponent";
+import { Button } from "@/components/ui/button";
+import { useNews } from "@/context/NewsContext";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const NoticiasPage = () => {
-  // const news = await fetch("http://localhost:3000/api/news");
-  // const data = await news.json();
-  // console.log(data.news);
+  const { loadNews } = useNews();
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
 
-  //console.log(SeedDatanews);
+  const clearFilters = () => {
+    setCategory("");
+    setSearch("");
+    loadNews("", "");
+  };
+
+  useEffect(() => {
+    loadNews(category, search);
+  }, [loadNews, search, category]);
 
   return (
     <div className="py-20 px-7 md:px-40">
@@ -25,11 +36,27 @@ const NoticiasPage = () => {
         />
 
         <div className="pt-20">
-         <SearchBar/>
+          <SearchBar
+            onSearch={(query) => {
+              setSearch(query);
+            }}
+          />
         </div>
         <div className="flex">
-          <SidebarNews />
-          <NewsSection news={seedDatanews} />
+          <SidebarNews setCategory={setCategory} />
+          <div>
+            <NewsSection />
+
+            {(category || search) && (
+              <Button
+                variant="outline"
+                className="mt-10 ml-16"
+                onClick={clearFilters}
+              >
+                🧹 Limpiar filtros
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>
