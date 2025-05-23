@@ -93,7 +93,7 @@ const CapacitacionPorId = () => {
                   </div>
                 }
               >
-                <VideoPlayer src={currentLesson.href} />
+                <VideoPlayer src={currentLesson?.href} />
               </Suspense>
             </div>
 

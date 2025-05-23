@@ -65,7 +65,7 @@ const VideoPlayer = ({ src }: { src: string }) => {
     setProgress(value);
   };
 
-  const playerRef = useRef<ReactPlayer>(null);
+const playerRef = useRef<ReactPlayer>(null);
 
   const handleProgress = (state: any) => {
     setCurrentTime(state.playedSeconds);
@@ -73,6 +73,9 @@ const VideoPlayer = ({ src }: { src: string }) => {
     const prog = (state.playedSeconds / (state.loadedSeconds || 1)) * 100;
     setProgress(prog);
   };
+
+  const isClient = typeof window !== "undefined";
+  
 //   className="h-full w-full object-cover object-center"
   return (
     <motion.div
@@ -83,6 +86,7 @@ const VideoPlayer = ({ src }: { src: string }) => {
       onMouseEnter={() => setShowControls(true)}
       onMouseLeave={() => setShowControls(false)}
     >
+
       {isYouTubeUrl(src) ? (
         <ReactPlayer
           ref={playerRef}

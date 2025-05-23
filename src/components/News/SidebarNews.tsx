@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, Newspaper } from "lucide-react";
+import { Newspaper } from "lucide-react";
 import Image from "next/image";
 
 const CollapsibleSection = ({
@@ -96,12 +96,12 @@ const SidebarNews = ({
           transition={{ duration: 0.3 }}
           className="md:hidden fixed inset-0 z-50 bg-white text-black "
         >
-          <button
+          {/* <button
             onClick={() => setShowMenu((prev) => !prev)}
             className="md:hidden fixed top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 z-50 bg-white shadow-lg border rounded-full p-3 hover:bg-gray-100 transition"
           >
             <Filter className="w-5 h-5 text-black" />
-          </button>
+          </button> */}
           <div className="flex flex-col h-full ">
             {/* Profile Section */}
             <div className="p-4 border-b border-gray-200 ">
