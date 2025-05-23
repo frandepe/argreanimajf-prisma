@@ -3,7 +3,6 @@
 import {
   Activity,
   ActivityIcon,
-  BookDownIcon,
   Download,
   Headset,
   HeartPulse,
@@ -17,9 +16,7 @@ import {
   Pen,
   Search,
   Star,
-  User2,
   Users,
-  Video,
 } from "lucide-react";
 import Link from "next/link";
 import { Accordion } from "@/components/ui/accordion";
