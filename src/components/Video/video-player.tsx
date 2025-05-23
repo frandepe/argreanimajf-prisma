@@ -94,7 +94,7 @@ const VideoPlayer = ({ src }: { src: string }) => {
           onPause={() => setIsPlaying(false)}           
           playbackRate={playbackSpeed}
           width="auto"
-          height="300px"
+          height="100%"
         //   style={{ aspectRatio: "16/9" }}
         />
       ) : (

@@ -92,7 +92,7 @@ function Footer() {
             <address className="space-y-2 text-sm not-italic">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <p>Phone: (0221) 418-1611</p>
+                <p>Teléfono: (0221) 418-1611</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />

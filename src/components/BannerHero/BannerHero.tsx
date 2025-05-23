@@ -2,26 +2,29 @@ import Image from "next/image";
 import { BlurFade } from "../Texts/BlurFade";
 
 interface BannerHeroProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   src?: string | null;
+  imgClassname?: string;
 }
 
 export default function BannerHero({
+  imgClassname,
   title,
   description,
   src,
 }: BannerHeroProps) {
   return (
-    <div className=" overflow-hidden h-[700px] flex items-center justify-center w-full">
+    <div className="overflow-hidden h-[700px] flex items-center justify-center w-full">
       <div className="inset-0 w-full h-full -z-10">
         <Image
           src={src || ""}
           alt="Argentina Reanima"
           fill
-          style={{ objectFit: "cover" }}
+          className={`${imgClassname} object-cover`}
           quality={100}
           priority
+     
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>

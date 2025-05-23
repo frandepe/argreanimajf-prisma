@@ -48,10 +48,19 @@ const QuienesSomosPage = () => {
           </p>
         </div>
 
+        <div className="my-8 text-center space-y-10 relative bottom-20">
+          <TitleH2 title="Ley 27159 de Muerte Súbita" className="pt-20" />
+          <p>Objetivo Cumplido: Reglamentación de la Ley 27159 de Muerte Súbita y Sistema Integral de Prevención</p>
+
+          <audio controls className="mx-auto w-1/3" autoPlay>
+            <source src="/audio/audioMuerteSubita.mp3" type="audio/mpeg" />
+            Tu navegador no soporta audio HTML5.
+          </audio>
+        </div>
+
         {/* <TeamComponent /> */}
 
         <Separator />
-
       </div>
     </div>
   );

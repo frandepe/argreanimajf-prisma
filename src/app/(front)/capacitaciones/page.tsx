@@ -11,7 +11,7 @@ const CapacitacionesPage = () => {
       <div className="flex flex-col gap-16">
         <BannerHero
           src={
-            "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg"
+            "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750355/IMG_8272_vqatui.jpg"
           }
           title="Capacitaciones"
           description="
