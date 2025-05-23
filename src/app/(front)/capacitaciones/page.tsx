@@ -1,9 +1,9 @@
 import React from "react";
 import BannerHero from "@/components/BannerHero/BannerHero";
-import { SearchBar } from "@/components/SearchBarComponent/SearchBarComponent";
 import { SidebarCourses } from "@/components/Courses/SideBarCourses";
 import { CoursesSection } from "@/components/Courses/CourseSection";
 import { seedDataCourses } from "@/components/Courses/SeedDataCourses";
+import SearchBar from "@/components/SearchBarComponent/SearchBarComponent";
 
 const CapacitacionesPage = () => {
   return (
