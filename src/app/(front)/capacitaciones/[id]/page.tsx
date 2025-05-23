@@ -4,74 +4,76 @@ import dynamic from "next/dynamic";
 import { useParams } from "next/navigation";
 import React, { Suspense, useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ICourse } from "@/interfaces/courses";
 // import { ICourse } from "@/interfaces/courses";
 
 const VideoPlayer = dynamic(() => import("@/components/Video/video-player"), {
   ssr: false,
 });
 
-const course = {
-  id: 1,
-  title: "Introducción a React",
-  category: "Desarrollo Web",
-  createdAt: new Date(),
-  updatedAt: new Date(),
-  lessons: [
-    {
-      id: 1,
-      title: "¿Qué es React?",
-      href: "https://www.youtube.com/watch?v=ReK0kscoF8o",
-      courseId: 1,
-    },
-    {
-      id: 2,
-      title: "JSX y componentes",
-      href: "https://www.youtube.com/watch?v=CWcfNuO696M",
-      courseId: 1,
-    },
-    {
-      id: 3,
-      title: "Props y estado",
-      href: "https://www.youtube.com/watch?v=BWQ_PS5jomM",
-      courseId: 1,
-    },
-    {
-      id: 4,
-      title: "Efectos con useEffect",
-      href: "https://www.youtube.com/watch?v=EPF8D92ssas",
-      courseId: 1,
-    },
-  ],
-};
+// const course = {
+//   id: 1,
+//   title: "Introducción a React",
+//   category: "Desarrollo Web",
+//   createdAt: new Date(),
+//   updatedAt: new Date(),
+//   lessons: [
+//     {
+//       id: 1,
+//       title: "¿Qué es React?",
+//       href: "https://www.youtube.com/watch?v=ReK0kscoF8o",
+//       courseId: 1,
+//     },
+//     {
+//       id: 2,
+//       title: "JSX y componentes",
+//       href: "https://www.youtube.com/watch?v=CWcfNuO696M",
+//       courseId: 1,
+//     },
+//     {
+//       id: 3,
+//       title: "Props y estado",
+//       href: "https://www.youtube.com/watch?v=BWQ_PS5jomM",
+//       courseId: 1,
+//     },
+//     {
+//       id: 4,
+//       title: "Efectos con useEffect",
+//       href: "https://www.youtube.com/watch?v=EPF8D92ssas",
+//       courseId: 1,
+//     },
+//   ],
+// };
 
 const CapacitacionPorId = () => {
   const { id } = useParams();
 
   // Estado para el video seleccionado
-  //   const [course, setCourse] = useState<ICourse | null>(null);
+  const [course, setCourse] = useState<ICourse | null>(null);
   const [currentLesson, setCurrentLesson] = useState(course?.lessons[0]);
 
-  //   useEffect(() => {
-  //     if (!id) return;
+  useEffect(() => {
+    if (!id) return;
 
-  //     const fetchCourse = async () => {
-  //       try {
-  //         const res = await fetch(`/api/courses/${id}`);
-  //         const data = await res.json();
+    const fetchCourse = async () => {
+      try {
+        const res = await fetch(`/api/courses/${id}`);
+        const data = await res.json();
 
-  //         if (res.ok) {
-  //           setCourse(data.course);
-  //           setCurrentLesson(data.course.lessons[0] || null);
-  //         } else {
-  //           console.error("Error al obtener curso:", data.message);
-  //         }
-  //       } catch (error) {
-  //         console.error("Error de red:", error);
-  //       }
-  //     };
+        if (res.ok) {
+          setCourse(data.course);
+          setCurrentLesson(data.course.lessons[0] || null);
+        } else {
+          console.error("Error al obtener curso:", data.message);
+        }
+      } catch (error) {
+        console.error("Error de red:", error);
+      }
+    };
 
-  //     fetchCourse();
-  //   }, [id]);
+    fetchCourse();
+  }, [id]);
 
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString("es-AR", {
@@ -103,9 +105,9 @@ const CapacitacionPorId = () => {
             d="M15 19l-7-7 7-7"
           />
         </svg>
-        <a href="/capacitaciones" className="hover:underline font-medium">
+        <Link href="/capacitaciones" className="hover:underline font-medium">
           Volver a capacitaciones
-        </a>
+        </Link>
       </div>
 
       <main className="flex flex-col md:flex-row gap-8 px-6 py-12 max-w-7xl mx-auto">
