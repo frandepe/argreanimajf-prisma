@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Home } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const CollapsibleSection = ({
   title,
@@ -88,7 +89,7 @@ const SidebarCourses = () => {
           exit="hidden"
           variants={mobileSidebarVariants}
           transition={{ duration: 0.3 }}
-          className="md:hidden fixed inset-0 z-50 bg-white text-black "
+          className="hidden  fixed inset-0 z-50 bg-white text-black "
         >
           <div className="flex flex-col h-full ">
             {/* Profile Section */}
@@ -185,14 +186,10 @@ const SidebarCourses = () => {
               <ul>
                 <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                   Cursos Gratuitos
+                    Cursos Gratuitos
                   </button>
                 </li>
-                <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                   Cursos de pago
-                  </button>
-                </li>
+             
                 <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
                     Cursos introductorios
@@ -203,7 +200,7 @@ const SidebarCourses = () => {
                     Cursos de RCP
                   </button>
                 </li>
-                  <li>
+                <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
                     Cursos de DEA
                   </button>
@@ -211,9 +208,34 @@ const SidebarCourses = () => {
               </ul>
             </CollapsibleSection>
             <CollapsibleSection title="Más Información">
-              <p className="text-sm text-gray-500">
-                Additional details and settings can be found here.
-              </p>
+              <div>
+                <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                  <Link
+                    href={
+                      "https://www.youtube.com/channel/UCUe7YAlQawPP9VHg_1B172w"
+                    }
+                    target="_blank"
+                  >
+                    Youtube
+                  </Link>
+                </li>
+                <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                  <Link
+                    href={"https://www.facebook.com/argentinareanima"}
+                    target="_blank"
+                  >
+                    Facebook
+                  </Link>
+                </li>
+                <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                  <Link
+                    href={"https://www.instagram.com/argentinareanima"}
+                    target="_blank"
+                  >
+                    Instagram
+                  </Link>
+                </li>
+              </div>
             </CollapsibleSection>
           </div>
         </nav>

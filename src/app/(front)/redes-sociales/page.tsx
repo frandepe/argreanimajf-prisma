@@ -48,6 +48,9 @@ const RedesSocialesPage = () => {
           </div>
         </div>
 
+
+        <TitleH2 title={"Pregunta por la vida"}/>
+
         <div className="md:px-10 w-full max-w-7xl mx-auto">
           <p>
             🎶 ¡Gracias, Bee Gees! Ahora, Argentina Reanima marca el ritmo. 🎶
@@ -88,15 +91,16 @@ const RedesSocialesPage = () => {
           </p>
         </div>
 
-        <Card className="max-w-7xl flex text-start w-[800px] md:px-10  mx-auto ">
+        <Card className="max-w-7xl flex text-start w-[800px] mx-auto ">
           <div className="h-full w-full transition-opacity duration-200 fade-in hover:opacity-70">
             <Suspense fallback={<div>Cargando video...</div>}>
               <VideoPlayer
                 src={"https://www.youtube.com/watch?v=RAJHlryxTGw"}
+                height="500px"
               />
             </Suspense>
           </div>
-          <CardContent className="p-4"> </CardContent>
+    
         </Card>
       </div>
     </div>

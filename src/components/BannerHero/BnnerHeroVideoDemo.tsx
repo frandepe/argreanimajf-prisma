@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ScrollExpandMedia from "./BannerHeroVideo";
+import { TitleH2 } from '../Texts/TitleH2';
 
 interface MediaAbout {
   overview: string;
@@ -59,11 +60,9 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   const currentMedia = sampleMediaContent[mediaType];
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
-        Somos una asociación civil que lucha contra la muerte súbita
-      </h2>
-      <p className="text-lg mb-8 text-black dark:text-white">
+    <div className=" mx-auto">
+      <TitleH2 title={"Somos una asociación civil que lucha contra la muerte súbita"} className="mb-6 text-black dark:text-white"/>
+      <p className="text-lg text-black dark:text-white">
         {currentMedia.about.overview}
       </p>
 

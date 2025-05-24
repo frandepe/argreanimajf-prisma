@@ -29,7 +29,7 @@ export const BoxTresHome = () => {
       {news?.map((card) => (
         <div
           key={card.id}
-          className="lg:w-fit w-full group/card"
+          className=" w-full group/card"
           onClick={() => window.open(card.redirect, "_blank")}
         >
           <div
@@ -51,7 +51,7 @@ export const BoxTresHome = () => {
               <div className="flex flex-col">
                 <p className="font-normal text-base text-gray-50 relative z-10">
                   Argentina Reanima
-                </p>
+                </p>a>
               </div>
             </div>
 

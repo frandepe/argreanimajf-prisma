@@ -291,7 +291,7 @@ const Navbar = ({
                       <ul className="w-80 p-3">
                         <li>
                           <Link
-                            href="#"
+                            href="/filiales"
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
                           >
                             <HeartPulse className="size-5 shrink-0" />
@@ -425,13 +425,6 @@ const Navbar = ({
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/quienes-somos">
-                      <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
-                        <Users className="mr-2" />
-                        <span className="text-lg">¿Quiénes somos?</span>
-                      </div>
-                    </DropdownWithoutIcon>
-
                     <DropdownWithoutIcon href="/noticias">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <NewspaperIcon className="mr-2" />
@@ -457,6 +450,13 @@ const Navbar = ({
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <Library className="mr-2" />
                         <span className="text-lg">Más</span>
+                      </div>
+                    </DropdownWithoutIcon>
+
+                    <DropdownWithoutIcon href="/quienes-somos">
+                      <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                        <Users className="mr-2" />
+                        <span className="text-lg">¿Quiénes somos?</span>
                       </div>
                     </DropdownWithoutIcon>
 

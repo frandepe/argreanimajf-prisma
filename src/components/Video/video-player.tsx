@@ -48,7 +48,7 @@ const isYouTubeUrl = (url: string) => {
   return url.includes("youtube.com") || url.includes("youtu.be");
 };
 
-const VideoPlayer = ({ src }: { src: string }) => {
+const VideoPlayer = ({ src, height = "100%" }: { src: string; height?: string }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
@@ -74,7 +74,7 @@ const playerRef = useRef<ReactPlayer>(null);
     setProgress(prog);
   };
 
-  const isClient = typeof window !== "undefined";
+
   
 //   className="h-full w-full object-cover object-center"
   return (
@@ -98,7 +98,8 @@ const playerRef = useRef<ReactPlayer>(null);
           onPause={() => setIsPlaying(false)}           
           playbackRate={playbackSpeed}
           width="auto"
-          height="100%"
+          // height="100%"
+          height={height}
         //   style={{ aspectRatio: "16/9" }}
         />
       ) : (
@@ -195,8 +196,8 @@ const playerRef = useRef<ReactPlayer>(null);
                 </div>
               </div>
 
-              <div className="flex items-center gap-2">
-                {[0.5, 1, 1.5, 2].map((speed) => (
+              <div className="flex items-center gap-2 w-full">
+                {[0.5, 1, 1.5].map((speed) => (
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}

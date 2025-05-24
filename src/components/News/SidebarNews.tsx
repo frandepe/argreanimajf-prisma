@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Newspaper } from "lucide-react";
+import { Newspaper, Facebook } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const CollapsibleSection = ({
   title,
@@ -171,7 +172,7 @@ const SidebarNews = ({
                 </CollapsibleSection>
                 <CollapsibleSection title="Más información">
                   <p className="text-sm text-gray-500">
-                    Additional details and settings can be found here.
+                    Additional details and settings can be found here.aaa
                   </p>
                 </CollapsibleSection>
               </div>
@@ -252,9 +253,17 @@ const SidebarNews = ({
               </ul>
             </CollapsibleSection>
             <CollapsibleSection title="Más Información">
-              <p className="text-sm text-gray-500">
-                Additional details and settings can be found here.
-              </p>
+              <div>
+                <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                  <Link href={"https://www.youtube.com/channel/UCUe7YAlQawPP9VHg_1B172w"} target="_blank">Youtube</Link>
+                </li>
+                <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                  <Link href={"https://www.facebook.com/argentinareanima"} target="_blank">Facebook</Link>
+                </li>
+                <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                  <Link href={"https://www.instagram.com/argentinareanima"} target="_blank">Instagram</Link>
+                </li>
+              </div>
             </CollapsibleSection>
           </div>
         </nav>

@@ -34,7 +34,9 @@ export default function Home() {
           autoPlayInterval={4000}
           imageHeight="h-[500px]"
         />
-        <LogoSlider />
+        <div className="md:pb-10">
+          <LogoSlider />
+        </div>
       </main>
     </div>
   );
