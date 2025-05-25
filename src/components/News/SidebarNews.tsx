@@ -2,7 +2,14 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Newspaper, Facebook } from "lucide-react";
+import {
+  ArrowLeftFromLine,
+  ArrowLeftRight,
+  ArrowLeftToLine,
+  ArrowRightFromLine,
+  Filter,
+  Newspaper,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -97,12 +104,16 @@ const SidebarNews = ({
           transition={{ duration: 0.3 }}
           className="md:hidden fixed inset-0 z-50 bg-white text-black "
         >
-          {/* <button
+          <button
             onClick={() => setShowMenu((prev) => !prev)}
             className="md:hidden fixed top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 z-50 bg-white shadow-lg border rounded-full p-3 hover:bg-gray-100 transition"
           >
-            <Filter className="w-5 h-5 text-black" />
-          </button> */}
+            {!showMenu ? (
+              <ArrowRightFromLine className="ml-2 w-5 h-5 text-black" />
+            ) : (
+              <ArrowLeftFromLine className="mr-2 w-5 h-5 text-black" />
+            )}
+          </button>
           <div className="flex flex-col h-full ">
             {/* Profile Section */}
             <div className="p-4 border-b border-gray-200 ">
@@ -255,13 +266,30 @@ const SidebarNews = ({
             <CollapsibleSection title="Más Información">
               <div>
                 <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
-                  <Link href={"https://www.youtube.com/channel/UCUe7YAlQawPP9VHg_1B172w"} target="_blank">Youtube</Link>
+                  <Link
+                    href={
+                      "https://www.youtube.com/channel/UCUe7YAlQawPP9VHg_1B172w"
+                    }
+                    target="_blank"
+                  >
+                    Youtube
+                  </Link>
                 </li>
                 <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
-                  <Link href={"https://www.facebook.com/argentinareanima"} target="_blank">Facebook</Link>
+                  <Link
+                    href={"https://www.facebook.com/argentinareanima"}
+                    target="_blank"
+                  >
+                    Facebook
+                  </Link>
                 </li>
                 <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
-                  <Link href={"https://www.instagram.com/argentinareanima"} target="_blank">Instagram</Link>
+                  <Link
+                    href={"https://www.instagram.com/argentinareanima"}
+                    target="_blank"
+                  >
+                    Instagram
+                  </Link>
                 </li>
               </div>
             </CollapsibleSection>

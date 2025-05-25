@@ -2,6 +2,7 @@
 
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { NewsSection } from "@/components/News/NewsSection";
+import { seedDataYoutubeNews } from "@/components/News/SeedDataYoutubeNews";
 import { SidebarNews } from "@/components/News/SidebarNews";
 import SearchBar from "@/components/SearchBarComponent/SearchBarComponent";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,7 @@ import { CardVideoNews } from "@/components/Video/card-video-news";
 import { useNews } from "@/context/NewsContext";
 
 import React, { useEffect, useState } from "react";
-import { seedDataYoutubeNews } from "./SeedDataYoutubeNews";
+
 
 const NoticiasPage = () => {
   const { loadNews } = useNews();
