@@ -16,7 +16,6 @@ function TextImage() {
             <div className="flex gap-4 flex-col items-start">
               <Titleh1 title="Actuar salva vidas" className="max-w-lg tracking-tighter text-start font-regular"/>
           
-            
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
                 Aprendé los pasos esenciales para responder ante una emergencia.
                 Con nuestras capacitaciones en primeros auxilios, podés marcar
