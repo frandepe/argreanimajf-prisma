@@ -62,13 +62,13 @@ const GaleriaPage = () => {
         </ContainerAnimated>
 
         <ContainerAnimated>
-          <Button className="gap-2" onClick={() => router.push("/cursos")}>
+          <Button className="gap-2" onClick={() => router.push("/capacitaciones")}>
             Ver cursos <VideoIcon className="size-4" />
           </Button>
           <Button
             variant={"link"}
             className="text-sencondary"
-            onClick={() => router.push("/sobre-nosotros")}
+            onClick={() => router.push("/quienes-somos")}
           >
             Sobre nosotros
           </Button>
@@ -84,7 +84,7 @@ const GaleriaPage = () => {
         }}
       />
 
-      <ContainerScroll className="relative h-[350vh]">
+      <ContainerScroll className="relative md:h-[350vh]">
         <ContainerSticky className="h-svh">
           <GalleryContainer className="">
             <GalleryCol yRange={["-10%", "2%"]} className="-mt-2">

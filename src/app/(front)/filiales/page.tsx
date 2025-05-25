@@ -1,54 +1,53 @@
 import BannerHero from "@/components/BannerHero/BannerHero";
-import { TitleH2 } from "@/components/Texts/TitleH2";
-import { Separator } from "@/components/ui/separator";
+import { Titleh1 } from "@/components/Texts/Titleh1";
 import Image from "next/image";
 import React from "react";
 
-
 const FilialesPage = () => {
   return (
-    <div className="py-20 px-7 md:px-40">
-      <div className="flex flex-col gap-16">
-        <BannerHero
-          src={
-            "https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
-          }
-          title="Filiales"
-          description="Somos 7 filiales en el país, con equipo de instructores y recursos propios, para continuar multiplicando manos que salvan vidas"
-        />
+    <div className="flex flex-col  gap-7 md:gap-16">
+      <BannerHero
+        src={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
+        }
+        title="Filiales"
+        description="Somos 7 filiales en el país, con equipo de instructores y recursos propios, para continuar multiplicando manos que salvan vidas"
+      />
+      <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
+        <div>
+          <Titleh1
+            title="Expandiendo Nuestra Misión: 7 Filiales en Todo el País"
+            className="mx-auto mb-4 text-pretty text-3xl font-semibold md:text-4xl"
+          />
+          <div className="w-full space-y-1">
+            <p>
+              Queremos contarte que continuamos creciendo gracias a todos los
+              que confían en Argentina Reanima. Somos 7 filiales en el país, con
+              equipo de instructores y recursos propios, para continuar
+              multiplicando manos que salvan vidas.
+            </p>
 
-        <TitleH2
-          title="Expandiendo Nuestra Misión: 7 Filiales en Todo el País"
-          className="pt-5 md:pt-20"
-        />
+            <p>
+              Ushuaia, Rio Grande, Mar del Plata, Puerto Iguazú, Río Tercero,
+              Lobería y La Plata. Seguinos atentos en nuestras redes, para
+              enterarte de las próximas actividades que realizaremos en los
+              diferentes lugares.
+            </p>
 
-        <div className="md:px-10 w-full max-w-7xl mx-auto">
-          <p className="md:px-10 w-full max-w-7xl mx-auto">
-            Queremos contarte que continuamos creciendo gracias a todos los que
-            confían en Argentina Reanima. <br />
-            Somos 7 filiales en el país, con equipo de instructores y recursos
-            propios, para continuar multiplicando manos que salvan vidas.
-          </p>{" "}
-          <br />
-    
-          <p className="md:px-10 w-full max-w-7xl mx-auto">
-            Ushuaia, Rio Grande, Mar del Plata, Puerto Iguazú, Río Tercero,
-            Lobería y La Plata.
-          </p>
-          <br />
-          <p className="md:px-10 w-full max-w-7xl mx-auto ">
-            Seguinos atentos en nuestras redes, para enterarte de las próximas
-            actividades que realizaremos en los diferentes lugares.
-          </p>
-          <p className="md:px-10 w-full max-w-7xl mx-auto ">
-            Solo bajamos los brazos para hacer RCP
-          </p>
+            <p>Solo bajamos los brazos para hacer RCP</p>
+          </div>
         </div>
 
         <div className="w-full flex justify-center ">
-            <Image width={500} height={300} src={"https://res.cloudinary.com/dtbryiptz/image/upload/v1748047099/filiales_n3sf6h.png"} alt={""}/>
+          <Image
+            width={500}
+            height={300}
+            src={
+              "https://res.cloudinary.com/dtbryiptz/image/upload/v1748047099/filiales_n3sf6h.png"
+            }
+            alt={""}
+          />
         </div>
-
       </div>
     </div>
   );

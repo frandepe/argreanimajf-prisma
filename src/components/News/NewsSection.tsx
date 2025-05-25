@@ -7,7 +7,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { useState } from "react";
 import { useNews } from "@/context/NewsContext";
-import { TitleH2 } from "../Texts/TitleH2";
+import { Titleh1 } from "../Texts/Titleh1";
 import Link from "next/link";
 
 const NewsSection = () => {
@@ -24,12 +24,12 @@ const NewsSection = () => {
   };
   return (
     <section>
-      <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
+      <div className="container mx-auto flex flex-col items-center   gap-7 md:gap-16 lg:px-16">
         <div className="text-center">
           <Badge variant="secondary" className="mb-6 text-white">
             Ultimas Novedades
           </Badge>
-          <TitleH2 title="Actualidad" className="mb-4" />
+          <Titleh1 title="Actualidad" className="mb-4" />
           <p className="mb-8 text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
             Entérate de las últimas acciones, eventos y novedades de Argentina
             Reanima.

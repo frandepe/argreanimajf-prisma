@@ -62,7 +62,7 @@ export const ContainerScroll = ({
     <ContainerScrollContext.Provider value={{ scrollYProgress }}>
       <div
         ref={scrollRef}
-        className={cn("relative min-h-[120vh]", className)}
+        className={cn("relative top-20 md:top-0 h-[60vh] md:min-h-[120vh]", className)}
         style={{
           perspective: "1000px",
           perspectiveOrigin: "center top",
@@ -85,7 +85,7 @@ export const ContainerSticky = ({
   return (
     <div
       className={cn(
-        "sticky left-0 top-0 min-h-[120rem] w-full overflow-hidden",
+        "sticky left-0 top-0 min-h-[70rem] md:min-h-[120rem] w-full overflow-hidden",
         className
       )}
       style={{

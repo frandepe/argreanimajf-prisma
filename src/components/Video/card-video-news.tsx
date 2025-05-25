@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
 import { Clock, Tv } from "lucide-react";
-
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import dynamic from "next/dynamic";
+import { Titleh1 } from "../Texts/Titleh1";
 
 const VideoPlayer = dynamic(() => import("./video-player"), {
   ssr: false,
 });
 
 const CardVideoNews = ({
-  youtubeLink = [
+  seedDataYoutubeNews = [
     {
       id: "1",
       title: "Asociación Civil Argentina Reanima filial Cba, Julio Godoy",
@@ -58,7 +58,8 @@ const CardVideoNews = ({
     {
       id: "6",
       title: "Leonardo Hariyo (Rep. Argentina reanima).",
-      description: "Entrevista a Leonardo Hariyo (representante de Argentina Reanima). Proyecto de ordenanza referente a capacitaciones de RCP.",
+      description:
+        "Entrevista a Leonardo Hariyo (representante de Argentina Reanima). Proyecto de ordenanza referente a capacitaciones de RCP.",
       author: "CVINOTICIAS",
       published: "17-06-2023",
       url: "https://www.youtube.com/watch?v=1x1zSiDuRZk",
@@ -66,7 +67,8 @@ const CardVideoNews = ({
     {
       id: "7",
       title: "Argentina Reanima. RCP/Heimlich Instituto Esperanza Pto. Iguazú",
-      description: "4ta. Jornada Nacional de Argentina Reanima por la Reglamentación de la Ley 27159 de Muerte Súbita y Prevención Integral. Bomberos Voluntarios de Puerto Iguazú y Filial Cataratas de Estudiantes de La Plata.",
+      description:
+        "4ta. Jornada Nacional de Argentina Reanima por la Reglamentación de la Ley 27159 de Muerte Súbita y Prevención Integral. Bomberos Voluntarios de Puerto Iguazú y Filial Cataratas de Estudiantes de La Plata.",
       author: "Cadena Sur 94.5",
       published: "30-04-2021",
       url: "https://www.youtube.com/watch?v=_rg8NztSOKc",
@@ -74,7 +76,8 @@ const CardVideoNews = ({
     {
       id: "8",
       title: "CAMPAÑA DE RCP ARGENTINA REANIMA 2021",
-      description: "Dialogamos con Alejandra Nogues ,coordinadora de gestión de riesgo & defensa civil de la municipalidad de Cosquin y nos comenta que este sábado 27 desde las 10 de la mañana , se realizara la segunda (CAMPAÑA DE RCP ARGENTINA REANIMA 2021) en la plaza San Martin contara con la presencia de  profesionales del área, será dirigido al publico en general..",
+      description:
+        "Dialogamos con Alejandra Nogues ,coordinadora de gestión de riesgo & defensa civil de la municipalidad de Cosquin y nos comenta que este sábado 27 desde las 10 de la mañana , se realizara la segunda (CAMPAÑA DE RCP ARGENTINA REANIMA 2021) en la plaza San Martin contara con la presencia de  profesionales del área, será dirigido al publico en general..",
       author: "TD Cosquin",
       published: "25-02-2021",
       url: "https://www.youtube.com/watch?v=wqWC-M_4dfM",
@@ -82,7 +85,8 @@ const CardVideoNews = ({
     {
       id: "9",
       title: "Capacitación Gratuita en RCP //Julio Godoy paramédico",
-      description: "Integrantes de Argentina Reanima organizan una jornada Nacional por la reglamentación por muerte súbita. Capacitación Gratuita en RCP. para integrantes de la Liga Riotercerense de Fútbol.",
+      description:
+        "Integrantes de Argentina Reanima organizan una jornada Nacional por la reglamentación por muerte súbita. Capacitación Gratuita en RCP. para integrantes de la Liga Riotercerense de Fútbol.",
       author: "Somos Rio Tercero - Flow",
       published: "21-03-2022",
       url: "https://www.youtube.com/watch?v=Ub3l0KzZuxY",
@@ -98,7 +102,8 @@ const CardVideoNews = ({
     {
       id: "11",
       title: "Argentina Reanima.Barrio Las Leñas ,Puerto Iguazú",
-      description: "Bomberos Voluntarios de Puerto Iguazú, Filial  Cataratas  de Estudiantes de La Plata, Argentina Reanima.",
+      description:
+        "Bomberos Voluntarios de Puerto Iguazú, Filial  Cataratas  de Estudiantes de La Plata, Argentina Reanima.",
       author: "Leonardo Hariyo",
       published: "14-06-2021",
       url: "https://www.youtube.com/watch?v=G40uBp3c5Bc",
@@ -106,15 +111,18 @@ const CardVideoNews = ({
     {
       id: "12",
       title: "Capacitación en RCP",
-      description: "El Sábado 5 de octubre, se realizo una jornada de Prevención de Muerte Súbita. El Hospital Provincial junto a representantes de Argentina Reanima, se unen para llevar a cabo esta actividad libre y gratuita desde las 10.30 hs. en nosocomio local. Juntos, podemos salvar vidas...",
+      description:
+        "El Sábado 5 de octubre, se realizo una jornada de Prevención de Muerte Súbita. El Hospital Provincial junto a representantes de Argentina Reanima, se unen para llevar a cabo esta actividad libre y gratuita desde las 10.30 hs. en nosocomio local. Juntos, podemos salvar vidas...",
       author: "Somos Rio Tercero - Flow",
       published: "5-10-2024",
       url: "https://www.youtube.com/watch?v=3ZXbFr6PwEI",
     },
-       {
+    {
       id: "13",
-      title: "Campaña Nacional por la reglamentación de la Ley 27.159 para evitar la muerte súbita",
-      description: "NICOLÁS DE PAULO - Impulsado por la organización “Argentina Reanima” el próximo martes habrá un evento nacional para la reglamentación de la Ley  27.159 de Sistema de Prevención Integral para Evitar la Muerte Súbita. Esta norma busca prevenir y evitar más casos de fallecimientos por un paro cardiorrespiratorio a través de la enseñanza de maniobras de RCP.",
+      title:
+        "Campaña Nacional por la reglamentación de la Ley 27.159 para evitar la muerte súbita",
+      description:
+        "NICOLÁS DE PAULO - Impulsado por la organización “Argentina Reanima” el próximo martes habrá un evento nacional para la reglamentación de la Ley  27.159 de Sistema de Prevención Integral para Evitar la Muerte Súbita. Esta norma busca prevenir y evitar más casos de fallecimientos por un paro cardiorrespiratorio a través de la enseñanza de maniobras de RCP.",
       author: "Noticias 12 Trenque Lauquen",
       published: "22-01-2021",
       url: "https://www.youtube.com/watch?v=1O9yrxPGGcU",
@@ -123,9 +131,12 @@ const CardVideoNews = ({
 }) => {
   return (
     <section className="">
+      <div id="videos" className="pb-7 md:pb-10">
+        <Titleh1 title="Actividades historicas" />
+      </div>
       <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
         <div className="grid gap-6 xl:grid-cols-2 2xl:grid-cols-3 lg:gap-8">
-          {youtubeLink.map((post) => (
+          {seedDataYoutubeNews.map((post) => (
             <Card
               key={post.id}
               className="grid grid-rows-[auto_auto_1fr_auto] "

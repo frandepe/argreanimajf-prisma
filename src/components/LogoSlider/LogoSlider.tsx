@@ -26,11 +26,14 @@ export const LogoSlider = () => {
                     <TooltipTrigger>
                       <Image
                         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747672052/fac-logo_ghhy7j.png"
-                        alt="Spotify"
+                        alt="Federación Argentina de Cardiología"
                         width={80}
                         height={80}
+                        className="w-18 h-18 md:w-26 md:h-26"
                       />
-                      <p className="text-lg font-semibold opacity-80">F.A.C</p>
+                      <p className="text-base md:text-lg font-semibold opacity-80">
+                        RF.A.C
+                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>Federación Argentina de Cardiología</p>
@@ -44,11 +47,15 @@ export const LogoSlider = () => {
                     <TooltipTrigger>
                       <Image
                         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747672053/IUFAC-logo_wqwxz7.png"
-                        alt="Spotify"
+                        alt="Instructor Universitario Federación Argentina de
+                        Cardiología"
                         width={80}
                         height={80}
+                        className="w-18 h-18 md:w-26 md:h-26"
                       />
-                      <p className="text-lg font-semibold opacity-80">I.U</p>
+                      <p className="text-base md:text-lg font-semibold opacity-80">
+                        RI.U
+                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>
@@ -65,11 +72,14 @@ export const LogoSlider = () => {
                     <TooltipTrigger>
                       <Image
                         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747672052/logofac-logo_cgycz8.png"
-                        alt="Spotify"
+                        alt="Red Nacional Prevención Muerte Subita"
                         width={80}
                         height={80}
+                        className="w-18 h-18 md:w-26 md:h-26"
                       />
-                      <p className="text-lg font-semibold opacity-80">R.C.P</p>
+                      <p className="text-base md:text-lg font-semibold opacity-80">
+                        R.C.P
+                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>Red Nacional Prevención Muerte Subita</p>

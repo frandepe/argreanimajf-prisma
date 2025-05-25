@@ -25,7 +25,7 @@ export const BoxTresHome = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 px-7 lg:px-32 2xl:px-64 max-w-8xl lg:grid-cols-2 xl:grid-cols-3 justify-center w-full items-center mx-auto gap-4">
+    <div className="grid grid-cols-1 px-0 container  lg:grid-cols-2 xl:grid-cols-3 justify-center w-full items-center mx-auto gap-4">
       {news?.map((card) => (
         <div
           key={card.id}
@@ -51,7 +51,7 @@ export const BoxTresHome = () => {
               <div className="flex flex-col">
                 <p className="font-normal text-base text-gray-50 relative z-10">
                   Argentina Reanima
-                </p>a>
+                </p>
               </div>
             </div>
 

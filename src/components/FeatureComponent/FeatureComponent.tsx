@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { cn } from "@/libs/utils";
-import { TitleH2 } from "../Texts/TitleH2";
+import { Titleh1 } from "../Texts/Titleh1";
+
+
 
 interface Feature {
   step: string;
@@ -69,9 +71,9 @@ export function FeatureSteps({
   }, [progress, features.length, autoPlayInterval]);
 
   return (
-    <div className={cn("px-8 md:px-2 py-16", className)}>
-      <div className="max-w-[87rem] mx-auto w-full">
-        <TitleH2 title={title || ""} className="mb-6" />
+    <div className={cn(className)}>
+      <div className="container mx-auto w-full">
+        <Titleh1 title={title || ""} className="mb-4" />
 
         <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-10">
           <div className="order-2 md:order-1 space-y-8">

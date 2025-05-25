@@ -1,10 +1,10 @@
 "use client";
 
 import BannerHero from "@/components/BannerHero/BannerHero";
-import { TitleH2 } from "@/components/Texts/TitleH2";
+import { Titleh1 } from "@/components/Texts/Titleh1";
 import React, { Suspense } from "react";
 import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import dynamic from "next/dynamic";
 import InstagramEmbed from "@/components/RedesSociales/InstagramEmbed";
 
@@ -14,26 +14,27 @@ const VideoPlayer = dynamic(() => import("@/components/Video/video-player"), {
 
 const RedesSocialesPage = () => {
   return (
-    <div className="py-20 px-7 md:px-40">
-      <div className="flex flex-col gap-16">
-        <BannerHero
-          src={
-            "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
-          }
-          title="Redes Sociales"
-          description="En esta sección encontrarás todo sobre nuestras redes sociales: síguenos y entérate de cursos, tips y novedades en RCP."
-        />
+    <div className="flex flex-col gap-7 md:gap-16">
+      <BannerHero
+        src={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
+        }
+        title="Redes Sociales"
+        description="En esta sección encontrarás todo sobre nuestras redes sociales: síguenos y entérate de cursos, tips y novedades en RCP."
+      />
 
-        <TitleH2 title="Con la RCP NO." className="pt-20" />
+      <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
+        <Titleh1 title="Con la RCP NO." />
 
         <div className="w-full flex justify-center gap-10 flex-wrap">
-          <div className="w-auto flex items-center justify-center h-full">
+          <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
             <InstagramEmbed url="https://www.instagram.com/reel/CoalPgtDGhL/?igsh=a2pldzZtZHpxejJv" />
           </div>
 
-          <div className="w-auto flex items-center justify-center h-full">
+          <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
             <InstagramEmbed url="https://www.instagram.com/p/CnHaZbJumgG/?igsh=MWZvdHR5MHR5MXlxOA==" />
           </div>
+
         </div>
 
         <div className="w-full">
@@ -48,8 +49,7 @@ const RedesSocialesPage = () => {
           </div>
         </div>
 
-
-        <TitleH2 title={"Pregunta por la vida"}/>
+        <Titleh1 title={"Pregunta por la vida"} />
 
         <div className="md:px-10 w-full max-w-7xl mx-auto">
           <p>
@@ -91,7 +91,7 @@ const RedesSocialesPage = () => {
           </p>
         </div>
 
-        <Card className="max-w-7xl flex text-start w-[800px] mx-auto ">
+        <Card className="max-w-7xl flex text-start md:w-[800px] md:mx-auto ">
           <div className="h-full w-full transition-opacity duration-200 fade-in hover:opacity-70">
             <Suspense fallback={<div>Cargando video...</div>}>
               <VideoPlayer
@@ -100,7 +100,6 @@ const RedesSocialesPage = () => {
               />
             </Suspense>
           </div>
-    
         </Card>
       </div>
     </div>

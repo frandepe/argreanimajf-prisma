@@ -22,7 +22,7 @@ export const ContactForm = () => {
               </p>
             </div>
             <div className="mx-auto w-fit lg:mx-0">
-              <h3 className="mb-6 text-center text-2xl font-semibold lg:text-left">
+              <h3 className="mb-4 text-center text-2xl font-semibold lg:text-left">
                 Detalles de contacto
               </h3>
               <ul className="ml-4 list-disc">

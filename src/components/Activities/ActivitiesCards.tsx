@@ -24,8 +24,6 @@ interface Post {
 }
 
 interface ActivitiesProps {
-  heading: string;
-  description: string;
   canuelasEvent: Post[];
   mardelPlataEvent: Post[];
   rioGrandeEvent: Post[];
@@ -33,8 +31,6 @@ interface ActivitiesProps {
 }
 
 const ActivitiesCards = ({
-  heading,
-  description,
   canuelasEvent,
   rioGrandeEvent,
   mardelPlataEvent,
@@ -66,18 +62,9 @@ const ActivitiesCards = ({
   };
 
   return (
-    <section className="pb-32 pt-20">
-      <div className="container flex flex-col items-center gap-16">
-        <div className="text-center">
-          <h2 className="mx-auto mb-6 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl">
-            {heading}
-          </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
-            {description}
-          </p>
-        </div>
-
-        <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
+    <section>
+      <div className="container flex flex-col items-center gap-7 md:gap-16">
+        <div className="grid gap-y-10 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
           {canuelasEvent.map((post) => (
             <Card
               key={post.id}
@@ -141,7 +128,7 @@ const ActivitiesCards = ({
           ))}
         </div>
 
-        <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
+        <div >
           {rioGrandeEvent.map((post) => (
             <Card
               key={post.id}
@@ -205,7 +192,7 @@ const ActivitiesCards = ({
           ))}
         </div>
 
-        <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
+        <div>
           {mardelPlataEvent.map((post) => (
             <Card
               key={post.id}
@@ -269,7 +256,7 @@ const ActivitiesCards = ({
           ))}
         </div>
 
-        <div className="grid gap-y-10 sm:grid-cols-12 sm:gap-y-12 md:gap-y-16 lg:gap-y-20">
+        <div >
           {ushuaiaEvent.map((post) => (
             <Card
               key={post.id}

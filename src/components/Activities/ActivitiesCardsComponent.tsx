@@ -1,7 +1,5 @@
 export const seedDataActivities = {
-  heading: "Nuestros Eventos",
-  description:
-    "Descubre los últimos eventos y actividades sobre nuestra misión de salvar vidas. Participa y mantente informado.",
+ 
   canuelasEvent: [
     {
       id: "post-1",

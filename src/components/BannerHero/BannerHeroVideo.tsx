@@ -162,7 +162,7 @@ const ScrollExpandMedia = ({
   }, []);
 
   const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
-  const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
+  // const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
 
   const firstWord = title ? title.split(" ")[0] : "";
@@ -202,9 +202,9 @@ const ScrollExpandMedia = ({
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-none rounded-2xl"
                 style={{
                   width: `${mediaWidth}px`,
-                  height: `${mediaHeight}px`,
+                  height: `100vh`,
                   maxWidth: "95vw",
-                  maxHeight: "85vh",
+                  maxHeight: "100vh",
                   boxShadow: "0px 0px 50px rgba(0, 0, 0, 0.3)",
                 }}
               >
@@ -328,7 +328,7 @@ const ScrollExpandMedia = ({
             </div>
 
             <motion.section
-              className="flex flex-col w-full  py-10  lg:py-20"
+              className="flex flex-col w-full"
               initial={{ opacity: 0 }}
               animate={{ opacity: showContent ? 1 : 0 }}
               transition={{ duration: 0.7 }}

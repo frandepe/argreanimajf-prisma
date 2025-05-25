@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ScrollExpandMedia from "./BannerHeroVideo";
-import { TitleH2 } from '../Texts/TitleH2';
+import { Titleh1 } from "../Texts/Titleh1";
 
 interface MediaAbout {
   overview: string;
@@ -60,8 +60,8 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
   const currentMedia = sampleMediaContent[mediaType];
 
   return (
-    <div className=" mx-auto">
-      <TitleH2 title={"Somos una asociación civil que lucha contra la muerte súbita"} className="mb-6 text-black dark:text-white"/>
+    <div className=" px-4 md:px-0 mx-auto">
+      <Titleh1 title={"Somos una asociación civil que lucha contra la muerte súbita"} className="mb-4 text-black dark:text-white"/>
       <p className="text-lg text-black dark:text-white">
         {currentMedia.about.overview}
       </p>
@@ -96,7 +96,7 @@ export const VideoExpansionTextBlend = () => {
         scrollToExpand={currentMedia.scrollToExpand}
         textBlend
       >
-        <MediaContent mediaType={mediaType} />
+
       </ScrollExpandMedia>
     </div>
   );

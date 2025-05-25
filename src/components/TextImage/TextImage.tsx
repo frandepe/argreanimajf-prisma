@@ -1,28 +1,29 @@
 "use client";
-import { PhoneCall, Router, Video } from "lucide-react";
+import {Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { Titleh1 } from "../Texts/Titleh1";
 
 function TextImage() {
   const router = useRouter();
 
   return (
-    <div className="w-full pb-20 lg:pb-40">
+    <div className="w-full ">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
-          <div className="flex gap-4 flex-col">
+        <div className="grid grid-cols-1 items-center md:grid-cols-2">
+          <div className="flex flex-col">
             <div></div>
-            <div className="flex gap-4 flex-col">
-              <h1 className="text-5xl md:text-7xl max-w-lg tracking-tighter text-left font-regular">
-                Actuar salva vidas
-              </h1>
+            <div className="flex gap-4 flex-col items-start">
+              <Titleh1 title="Actuar salva vidas" className="max-w-lg tracking-tighter text-start font-regular"/>
+          
+            
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
                 Aprendé los pasos esenciales para responder ante una emergencia.
                 Con nuestras capacitaciones en primeros auxilios, podés marcar
                 la diferencia cuando cada segundo cuenta.
               </p>
             </div>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 py-4">
               <Button
                 size="lg"
                 className="gap-4 cursor-pointer"

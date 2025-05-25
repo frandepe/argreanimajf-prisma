@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { TitleH2 } from "../Texts/TitleH2";
+import { Titleh1 } from "../Texts/Titleh1";
 
 const TeamComponent = () => {
   return (
     <div>
       <section className="bg-white dark:bg-gray-900">
         <div className="container px-6 py-10 mx-auto">
-          <TitleH2 title="Nuestro Equipo de trabajo" />
+          <Titleh1 title="Nuestro Equipo de trabajo" />
 
           <p className="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
             Nuestro equipo está formado por auxiliares médicos especializados en

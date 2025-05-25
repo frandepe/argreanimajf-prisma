@@ -15,18 +15,17 @@ export default function BannerHero({
   src,
 }: BannerHeroProps) {
   return (
-    <div className="overflow-hidden h-[700px] flex items-center justify-center w-full">
-      <div className="inset-0 w-full h-full -z-10">
+    <div className="relative  overflow-hidden min-h-screen flex items-center justify-center w-full">
+      <div className=" absolute  inset-0 w-full -z-10 ">
         <Image
           src={src || ""}
           alt="Argentina Reanima"
-          fill
-          className={`${imgClassname} object-cover`}
+          width={300}
+          height={300}
+          className={`${imgClassname} object-cover h-screen w-full`}
           quality={100}
-          priority
-     
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40 w-full min-h-screen h-full" />
       </div>
 
       <div className="absolute container text-center text-white w-full">

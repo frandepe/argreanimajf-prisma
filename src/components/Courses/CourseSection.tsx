@@ -1,11 +1,8 @@
 "use client";
-
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
-import { useState } from "react";
+
 
 interface Course {
   id: string;
@@ -20,24 +17,15 @@ export interface CoursesProps {
 }
 
 const CoursesSection = ({ courses }: CoursesProps) => {
-  const [expandedSummaries, setExpandedSummaries] = useState<
-    Record<string, boolean>
-  >({});
 
-  const toggleSummary = (courseId: string) => {
-    setExpandedSummaries((prev) => ({
-      ...prev,
-      [courseId]: !prev[courseId],
-    }));
-  };
   return (
     <section>
-      <div className="container mx-auto flex flex-col items-center gap-16 lg:px-16">
+      <div className="container mx-auto flex flex-col items-center gap-7 md:gap-16 lg:px-16">
         <div className="text-center">
           <Badge variant="secondary" className="mb-6 text-white">
             Cursos Online
           </Badge>
-          <h2 className="mb-3 text-pretty text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6 lg:max-w-3xl lg:text-5xl">
+          <h2 className="mb-3 text-pretty text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-4 lg:max-w-3xl lg:text-5xl">
             Cursos
           </h2>
           <p className="text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
