@@ -61,7 +61,10 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
 
   return (
     <div className=" px-4 md:px-0 mx-auto">
-      <Titleh1 title={"Somos una asociación civil que lucha contra la muerte súbita"} className="mb-4 text-black dark:text-white"/>
+      <Titleh1
+        title={"Somos una asociación civil que lucha contra la muerte súbita"}
+        className="mb-4 text-black dark:text-white"
+      />
       <p className="text-lg text-black dark:text-white">
         {currentMedia.about.overview}
       </p>
@@ -95,9 +98,7 @@ export const VideoExpansionTextBlend = () => {
         date={currentMedia.date}
         scrollToExpand={currentMedia.scrollToExpand}
         textBlend
-      >
-
-      </ScrollExpandMedia>
+      ></ScrollExpandMedia>
     </div>
   );
 };
