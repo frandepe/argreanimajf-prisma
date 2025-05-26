@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import ScrollExpandMedia from "./BannerHeroVideo";
+import { Titleh1 } from "../Texts/Titleh1";
 
 interface MediaAbout {
   overview: string;
@@ -39,20 +40,6 @@ const sampleMediaContent: MediaContentCollection = {
         "Promovemos una comunidad más consciente, solidaria y preparada para actuar ante emergencias. Nuestra misión es que cada persona pueda ser el primer eslabón en la cadena de la vida.",
     },
   },
-  image: {
-    src: "https://images.unsplash.com/photo-1682687982501-1e58ab814714?q=80&w=1280&auto=format&fit=crop",
-    background:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1920&auto=format&fit=crop",
-    title: "Dynamic Image Showcase",
-    date: "Underwater Adventure",
-    scrollToExpand: "",
-    about: {
-      overview:
-        "En Argentina Reanima trabajamos para salvar vidas. Somos una asociación civil dedicada a capacitar a personas en Reanimación Cardiopulmonar (RCP), uso de desfibriladores (DEA) y primeros auxilios.",
-      conclusion:
-        "Promovemos una comunidad más consciente, solidaria y preparada para actuar ante emergencias. Nuestra misión es que cada persona pueda ser el primer eslabón en la cadena de la vida.",
-    },
-  },
 };
 
 const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
@@ -60,9 +47,10 @@ const MediaContent = ({ mediaType }: { mediaType: "video" | "image" }) => {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
-        Somos una asociación civil que lucha contra la muerte súbita
-      </h2>
+      <Titleh1
+        title={"Somos una asociación civil que lucha contra la muerte súbita"}
+        className="mb-4 text-black dark:text-white"
+      />
       <p className="text-lg mb-8 text-black dark:text-white">
         {currentMedia.about.overview}
       </p>

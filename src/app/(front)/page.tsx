@@ -15,20 +15,18 @@ export default function Home() {
       <VideoExpansionTextBlend />
       <div className="px-4 md:px-0 container mx-auto">
         <Titleh1
-          title={"Somos una asociación civil que lucha contra la muerte súbita"}
+          title={"Dedicamos nuestros esfuerzos a prevenir la muerte súbita."}
           className="mb-4 text-black dark:text-white"
         />
         <p className="text-lg text-black dark:text-white">
-          En Argentina Reanima trabajamos para salvar vidas. Somos una
-          asociación civil dedicada a capacitar a personas en Reanimación
-          Cardiopulmonar (RCP), uso de desfibriladores (DEA) y primeros
-          auxilios.
+          Capacitamos a la gente en reanimación cardiopulmonar (RCP), manejo de
+          desfibriladores (DEA) y primeros auxilios.
         </p>
 
         <p className="text-lg  text-black dark:text-white">
-          Promovemos una comunidad más consciente, solidaria y preparada para
-          actuar ante emergencias. Nuestra misión es que cada persona pueda ser
-          el primer eslabón en la cadena de la vida.
+          Impulsamos una comunidad más consciente, solidaria y preparada para
+          responder ante emergencias, con la misión de que cada persona pueda
+          convertirse en el primer eslabón de la cadena que sostiene la vida.
         </p>
       </div>
 

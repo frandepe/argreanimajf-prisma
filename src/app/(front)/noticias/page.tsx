@@ -11,7 +11,6 @@ import { useNews } from "@/context/NewsContext";
 
 import React, { useEffect, useState } from "react";
 
-
 const NoticiasPage = () => {
   const { loadNews } = useNews();
   const [search, setSearch] = useState("");
@@ -31,7 +30,7 @@ const NoticiasPage = () => {
     <div className="flex flex-col  gap-7 md:gap-16">
       <BannerHero
         src={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747673633/banner-noticias_ibxcjw.jpg"
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214527/Ca%C3%B1uelas-97_rpyvyl_amuuye.jpg"
         }
         title="Novedades"
         description="Enterate de las últimas acciones, eventos y novedades de Argentina Reanima."
