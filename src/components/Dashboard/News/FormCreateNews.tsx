@@ -260,8 +260,6 @@ const FormCreateNews = () => {
                         <SelectItem value="Alianza con Camuzzi Gas">
                           Alianza con Camuzzi Gas
                         </SelectItem>
-                        <SelectItem value="Categoria 3">Categoria 3</SelectItem>
-                        <SelectItem value="Categoria 4">Categoria 4</SelectItem>
                       </SelectContent>
                     </Select>
                   )}

@@ -156,22 +156,6 @@ const SidebarNews = ({
                         Alianza con Camuzzi Gas
                       </button>
                     </li>
-                    <li>
-                      <button
-                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
-                        onClick={() => setCategory("Categoria 3")}
-                      >
-                        Categoria 3
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
-                        onClick={() => setCategory("Categoria 4")}
-                      >
-                        Categoria 4
-                      </button>
-                    </li>
                   </ul>
                 </CollapsibleSection>
                 <CollapsibleSection title="Más información">
@@ -261,22 +245,6 @@ const SidebarNews = ({
                     onClick={() => setCategory("Alianza con Camuzzi Gas")}
                   >
                     Alianza con Camuzzi Gas
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
-                    onClick={() => setCategory("Categoria 3")}
-                  >
-                    Categoria 3
-                  </button>
-                </li>
-                <li>
-                  <button
-                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
-                    onClick={() => setCategory("Categoria 4")}
-                  >
-                    Categoria 4
                   </button>
                 </li>
               </ul>
