@@ -2,8 +2,24 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-
-   images: {
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "20mb",
+    },
+    // reactRefresh: false,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    // ignoreBuildErrors: true,
+  },
+  reactStrictMode: true,
+  devIndicators: {
+    buildActivity: true,
+  },
+  images: {
     unoptimized: true,
     remotePatterns: [
       {
@@ -11,11 +27,8 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "**",
       },
-      
     ],
   },
-
-
 };
 
 export default nextConfig;
