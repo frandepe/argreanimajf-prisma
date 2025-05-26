@@ -16,7 +16,7 @@ const NoticiasDashboardPage = () => {
   const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
 
   useEffect(() => {
-    loadNews();
+    loadNews("", "");
   }, []);
 
   return (

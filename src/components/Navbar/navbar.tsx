@@ -68,10 +68,6 @@ interface Navbar1Props {
   };
 }
 
-function MenuAccordion() {
-  return <div className="mx-auto w-full  p-4 "></div>;
-}
-
 const Navbar = ({
   logo = {
     url: "/",
@@ -346,7 +342,7 @@ const Navbar = ({
                       >
                         <AccordionTrigger className="dark:hover:bg-gray-800 hover:bg-gray-100 hover:no-underline">
                           <div className="flex items-center gap-2 text-lg font-normal">
-                            <span >
+                            <span>
                               <Library className="mr-2" />
                             </span>
                             Más
