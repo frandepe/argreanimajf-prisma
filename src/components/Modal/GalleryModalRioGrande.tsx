@@ -19,20 +19,20 @@ export default function GalleryModal({
   };
 
   const images = [
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750333/IMG_8507_muyksz.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750331/IMG_8504_mlccp1.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750324/IMG_8485_uu6xui.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750323/IMG_8483_kozx1f.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750321/IMG_8451_nywpku.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750320/IMG_8438_ccskv7.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750318/IMG_8435_gejyax.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750317/IMG_8424_dwccn3.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750316/IMG_8420_ymwvlq.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750314/IMG_8413_p6teus.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750313/IMG_8409_daoo3t.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750312/IMG_8406_fu26rw.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750310/IMG_8405_eouvij.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747751113/IMG_8499_els4uj.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216265/IMG_8507_muyksz_xcggyg.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216264/IMG_8499_els4uj_xy9i8n.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216261/IMG_8504_mlccp1_txzleo.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216260/IMG_8485_uu6xui_hz4vdw.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216254/IMG_8451_nywpku_bxxrsx.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216253/IMG_8483_kozx1f_fo0lu6.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216252/IMG_8424_dwccn3_a1sxnk.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216250/IMG_8438_ccskv7_beiyf1.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216249/IMG_8435_gejyax_tlvroo.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216243/IMG_8413_p6teus_lgfmju.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216241/IMG_8420_ymwvlq_bus7ff.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216240/IMG_8405_eouvij_a80cay.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216240/IMG_8409_daoo3t_wby1gg.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216239/IMG_8406_fu26rw_zq0nyh.jpg",
   ];
 
   return (

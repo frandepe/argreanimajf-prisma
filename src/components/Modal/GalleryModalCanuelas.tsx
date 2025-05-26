@@ -19,19 +19,18 @@ export default function GalleryModalCanuelas({
   };
 
   const images = [
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750235/DSC_4090_ubdn0i.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750234/DSC_4082_ko7fqp.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750233/DSC_4078_gn9ddu.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750232/DSC_4071_j2difk.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750230/DSC_0478_juus3e.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750229/DSC_0477_wttont.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750228/Ca%C3%B1uelas-99_xsr6ci.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750227/Ca%C3%B1uelas-97_rpyvyl.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750226/Ca%C3%B1uelas-94_fxfucf.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750225/Ca%C3%B1uelas-91_vxyh45.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750225/Ca%C3%B1uelas-89_io1gpj.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750224/Ca%C3%B1uelas-88_yw8yse.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750223/Ca%C3%B1uelas-87_zui7je.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214532/Ca%C3%B1uelas-89_io1gpj_uhhkyn.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214531/Ca%C3%B1uelas-88_yw8yse_cv5tnq.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214530/Ca%C3%B1uelas-87_zui7je_vnsbol.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214530/DSC_4090_ubdn0i_ozdz69.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214529/DSC_4082_ko7fqp_dbjk68.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214528/DSC_4071_j2difk_hvlglb.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214527/Ca%C3%B1uelas-97_rpyvyl_amuuye.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214526/DSC_0478_juus3e_fegcqk.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214525/DSC_0477_wttont_d0k04m.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214525/Ca%C3%B1uelas-99_xsr6ci_xc75sf.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214525/Ca%C3%B1uelas-91_vxyh45_em7awm.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214525/Ca%C3%B1uelas-91_vxyh45_em7awm.jpg",
   ];
 
   return (

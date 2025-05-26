@@ -39,7 +39,7 @@ const GaleriaPage = () => {
   const router = useRouter();
   return (
     <div className="relative bg-white ">
-      <ContainerStagger className="relative z-[9999] -mb-12 place-self-center px-6 pt-12 text-center ">
+      <ContainerStagger className="relative  -mb-12 place-self-center px-6 pt-12 text-center ">
         <ContainerAnimated>
           <h1 className="font-serif text-4xl font-extralight md:text-5xl">
             Nuestra{" "}

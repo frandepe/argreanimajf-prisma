@@ -19,20 +19,18 @@ export default function GalleryModalMardelPlata({
   };
 
   const images = [
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750297/1-90_rfgtlz.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750296/1-79_qj1rml.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750295/1-53_dmk8ns.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750293/1-50_rsrp9y.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750292/1-39_f31gay.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750291/1-33_tyxxgt.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750289/1-28_wupdfa.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750288/1-15_p60zbe.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750287/1-14_n4vdqu.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750285/1-7_yvoyje.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750284/1-4_txbnzy.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750283/1-3_f2iirr.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750281/1-2_ox0sng.jpg",
-    "https://res.cloudinary.com/dtbryiptz/image/upload/v1747750280/1_gr00qz.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216984/1-79_qj1rml_dayjhj.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216981/1-90_rfgtlz_kylwdq.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216977/1-53_dmk8ns_r4bjel.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216968/1-39_f31gay_pd4sql.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216962/1-14_n4vdqu_ukiohy.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216954/1-33_tyxxgt_yd1x2f.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216949/1-15_p60zbe_n9faxg.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216947/1-28_wupdfa_l4k7gf.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216940/1_gr00qz_tgocse.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216941/1-4_txbnzy_odlcq0.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216939/1-3_f2iirr_vgrunn.jpg",
+    "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216938/1-2_ox0sng_uuyra7.jpg",
   ];
 
   return (

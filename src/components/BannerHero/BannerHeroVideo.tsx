@@ -161,7 +161,7 @@ const ScrollExpandMedia = ({
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
-  const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
+  const mediaWidth = 500 + scrollProgress * (isMobileState ? 650 : 1250);
   // const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
 

@@ -269,14 +269,36 @@ const SearchBar = ({ placeholder = "Buscar...", onSearch }: SearchBarProps) => {
               }, 100);
             }}
             className={cn(
-              "w-full rounded-full bg-transparent py-2 pl-14 pr-4 text-gray-900 dark:text-gray-100 placeholder-gray-500 outline-none focus:ring-0",
+              "w-[300px] rounded-full bg-transparent py-2 pl-14 pr-4 text-gray-900 dark:text-gray-100 placeholder-gray-500 outline-none focus:ring-0",
               isUnsupportedBrowser ? "text-gray-700 dark:text-gray-300" : ""
             )}
             spellCheck={false}
           />
+
+          <AnimatePresence>
+            {searchQuery && (
+              <motion.button
+                type="submit"
+                initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                exit={{ opacity: 0, scale: 0.8, x: -20 }}
+                style={{color: "white",background: "#1A9DD9"}}
+                whileHover={{
+                  scale: 1.05,
+                  background:
+                    "#1A9DD9",
+                  boxShadow: "0 10px 25px -5px rgba(139, 92, 246, 0.5)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="px-5 py-2 mr-2 text-sm font-medium rounded-full bg-[#1A9DD9] text-white backdrop-blur-sm transition-all shadow-lg cursor-pointer"
+              >
+                Buscar
+              </motion.button>
+            )}
+          </AnimatePresence>
           <motion.button
             type="submit"
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-2  text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
             aria-label="Buscar"
             variants={searchIconVariants}
             animate="animate"

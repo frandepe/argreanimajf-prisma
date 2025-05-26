@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home } from "lucide-react";
+import { ArrowLeftFromLine, ArrowRightFromLine, Home, Pen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -69,6 +69,7 @@ const XIcon = () => (
 );
 
 const SidebarCourses = () => {
+  const [showMenu, setShowMenu] = useState(false); // visible o hidden
   const mobileSidebarVariants = {
     hidden: { x: "-100%" },
     visible: { x: 0 },
@@ -85,12 +86,23 @@ const SidebarCourses = () => {
       <AnimatePresence>
         <motion.div
           initial="hidden"
-          animate="visible"
+          animate={showMenu ? "visible" : "hidden"}
           exit="hidden"
           variants={mobileSidebarVariants}
           transition={{ duration: 0.3 }}
-          className="hidden  fixed inset-0 z-50 bg-white text-black "
+          className="md:hidden  fixed inset-0 z-50 bg-white text-black "
         >
+          <button
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="md:hidden fixed top-1/2 right-0 transform -translate-y-1/2 translate-x-1/2 z-50 bg-white shadow-lg border rounded-full p-3 hover:bg-gray-100 transition"
+          >
+            {!showMenu ? (
+              <ArrowRightFromLine className="ml-2 w-5 h-5 text-black" />
+            ) : (
+              <ArrowLeftFromLine className="mr-2 w-5 h-5 text-black" />
+            )}
+          </button>
+
           <div className="flex flex-col h-full ">
             {/* Profile Section */}
             <div className="p-4 border-b border-gray-200 ">
@@ -115,31 +127,56 @@ const SidebarCourses = () => {
               <ul>
                 <li className="mb-2">
                   <button className="flex gap-2 font-medium text-sm items-center w-full py-2 px-4 rounded-xl hover:bg-gray-100">
-                    <Home className="h-5 w-5" />
-                    Home
+                    <Pen className="h-5 w-5" />
+                    Cursos
                   </button>
                 </li>
               </ul>
               {/* Toggleable Sections */}
               <div className="mt-4">
-                <CollapsibleSection title="Extra Options">
+                <CollapsibleSection title="Categorías">
                   <ul>
                     <li>
                       <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                        Subscriptions
+                        Cursos RCP
                       </button>
                     </li>
                     <li>
                       <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                        Appearance
+                        Cursos DEA
                       </button>
                     </li>
                   </ul>
                 </CollapsibleSection>
-                <CollapsibleSection title="More Info">
-                  <p className="text-sm text-gray-500">
-                    Additional details and settings can be found here.
-                  </p>
+                <CollapsibleSection title="Más Información">
+                  <div>
+                    <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                      <Link
+                        href={
+                          "https://www.youtube.com/channel/UCUe7YAlQawPP9VHg_1B172w"
+                        }
+                        target="_blank"
+                      >
+                        Youtube
+                      </Link>
+                    </li>
+                    <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                      <Link
+                        href={"https://www.facebook.com/argentinareanima"}
+                        target="_blank"
+                      >
+                        Facebook
+                      </Link>
+                    </li>
+                    <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
+                      <Link
+                        href={"https://www.instagram.com/argentinareanima"}
+                        target="_blank"
+                      >
+                        Instagram
+                      </Link>
+                    </li>
+                  </div>
                 </CollapsibleSection>
               </div>
             </nav>
@@ -182,14 +219,14 @@ const SidebarCourses = () => {
           </ul>
           {/* Toggleable Sections */}
           <div className="mt-4 ">
-            <CollapsibleSection title="Categorias">
+            <CollapsibleSection title="Categorías">
               <ul>
                 <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
                     Cursos Gratuitos
                   </button>
                 </li>
-             
+
                 <li>
                   <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
                     Cursos introductorios

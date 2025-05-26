@@ -1,25 +1,25 @@
 "use client";
 
 import {
-  Activity,
   ActivityIcon,
-  Download,
   Headset,
   HeartPulse,
   Home,
-  ImageDown,
+  Images,
   Library,
   Menu,
   Network,
-  Newspaper,
   NewspaperIcon,
   Pen,
-  Search,
-  Star,
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import { Accordion } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -37,15 +37,6 @@ import {
 } from "@/components/ui/sheet";
 import { JSX } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-
-interface DropdownWithoutIconProps {
-  href?: string;
-  goToMenu?: string;
-  rightIcon?: React.ReactNode;
-  children: React.ReactNode;
-  onClick?: () => void;
-}
 
 interface MenuItem {
   url: string;
@@ -77,6 +68,10 @@ interface Navbar1Props {
   };
 }
 
+function MenuAccordion() {
+  return <div className="mx-auto w-full  p-4 "></div>;
+}
+
 const Navbar = ({
   logo = {
     url: "/",
@@ -84,20 +79,18 @@ const Navbar = ({
     alt: "argentinareanima",
   },
 }: Navbar1Props) => {
-  function DropdownWithoutIcon({
-    href,
-    rightIcon,
-    children,
-  }: DropdownWithoutIconProps) {
+  function DropdownWithoutIcon(props: any) {
     return (
-      <Link href={href || ""} className="menu-item bg-none w-full">
-        {children}
-        <span className="icon-right">{rightIcon}</span>
-      </Link>
+      <a
+        href={props.href} // Establecer href utilizando la propiedad href del componente
+        className="menu-item bg-none "
+        onClick={() => props.goToMenu}
+      >
+        {props.children}
+        <span className="icon-right">{props.rightIcon}</span>
+      </a>
     );
   }
-
-  const router = useRouter();
 
   return (
     <section className="py-4 w-full bg-white px-10">
@@ -131,73 +124,18 @@ const Navbar = ({
                 </NavigationMenuItem>
 
                 {/* Noticias  asdas t se */}
-                <NavigationMenu>
-                  <NavigationMenuItem
-                    className="text-muted-foreground"
-                    onClick={() => router.push("/noticias")}
+
+                <NavigationMenuItem>
+                  <Link
+                    href="/noticias"
+                    // inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground
+                    className="relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors"
                   >
-                    <NavigationMenuTrigger className="cursor-pointer relative inline-flex items-center px-4 py-2 text-sm font-medium  hover:bg-muted text-muted-foreground hover:text-accent-foreground transition-colors">
-                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
-                        {" "}
-                        Noticias
-                      </span>
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="w-80 p-3">
-                        <li>
-                          <Link
-                            href="/noticias"
-                            className="flex  gap-4 rounded-md p-3 leading-none no-underline bg-background  outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                          >
-                            <Newspaper className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Novedades institucionales.
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Resumen de los orígenes y evolución de nuestra
-                                entidad.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="/noticias"
-                          >
-                            <Activity className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Noticias en los medios
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Todas las noticias en los medios de
-                                comunicacion.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="/noticias"
-                          >
-                            <Star className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Noticias Alianza con Camuzzi Gas
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Explora nuestras noticias con Camuzzi Gas
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenu>
+                    <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
+                      Noticias
+                    </span>
+                  </Link>
+                </NavigationMenuItem>
 
                 {/* Jornadas y actividades */}
                 <NavigationMenuItem className="text-muted-foreground">
@@ -215,67 +153,18 @@ const Navbar = ({
 
                 {/* Cursos gratuitos */}
 
-                <NavigationMenu>
-                  <NavigationMenuItem
-                    className="text-muted-foreground"
-                    onClick={() => router.push("/capacitaciones")}
-                  >
-                    <NavigationMenuTrigger className="cursor-pointer">
+                <NavigationMenuItem className="text-muted-foreground">
+                  <div className="group">
+                    <Link
+                      className=" inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+                      href="/capacitaciones"
+                    >
                       <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
                         Capacitaciones
                       </span>
-                    </NavigationMenuTrigger>
-
-                    <NavigationMenuContent>
-                      <ul className="w-80 p-3">
-                        <li>
-                          <Link
-                            href="#"
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                          >
-                            <Download className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">
-                                Cursos Gratuitos
-                              </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Accede a nuestras capacitaciones gratuitas.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
-                          >
-                            <ImageDown className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">RCP</div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Cursos de RCP.
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
-                            href="#"
-                          >
-                            <Search className="size-5 shrink-0" />
-                            <div>
-                              <div className="text-sm font-semibold">DEA</div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                Cursos de DEA
-                              </p>
-                            </div>
-                          </Link>
-                        </li>
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenu>
+                    </Link>
+                  </div>
+                </NavigationMenuItem>
 
                 {/* sM */}
 
@@ -311,7 +200,7 @@ const Navbar = ({
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
                             href="/galeria"
                           >
-                            <Network className="size-5 shrink-0" />
+                            <Images className="size-5 shrink-0" />
                             <div>
                               <div className="text-sm font-semibold">
                                 Galeria de Imagenes
@@ -432,7 +321,7 @@ const Navbar = ({
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/actvidades">
+                    <DropdownWithoutIcon href="/actividades">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <ActivityIcon className="mr-2" />
                         <span className="text-lg">Actividades</span>
@@ -446,12 +335,49 @@ const Navbar = ({
                       </div>
                     </DropdownWithoutIcon>
 
-                    <DropdownWithoutIcon href="/editar-perfil">
-                      <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
-                        <Library className="mr-2" />
-                        <span className="text-lg">Más</span>
-                      </div>
-                    </DropdownWithoutIcon>
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="w-full px-4 "
+                    >
+                      <AccordionItem
+                        value={`item-1}`}
+                        className="border border-none"
+                      >
+                        <AccordionTrigger className="dark:hover:bg-gray-800 hover:bg-gray-100 hover:no-underline">
+                          <div className="flex items-center gap-2 text-lg font-normal">
+                            <span >
+                              <Library className="mr-2" />
+                            </span>
+                            Más
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <DropdownWithoutIcon href="/filiales">
+                            <div className="ml-2 flex items-center py-3  dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                              <HeartPulse className="mr-2" />
+
+                              <span className="text-lg">Filiales</span>
+                            </div>
+                          </DropdownWithoutIcon>
+                          <DropdownWithoutIcon href="/galeria">
+                            <div className="ml-2  flex items-center py-3  dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                              <Images className="mr-2 size-5 shrink-0" />
+                              <span className="text-lg">
+                                Galeria de Imagenes
+                              </span>
+                            </div>
+                          </DropdownWithoutIcon>
+
+                          <DropdownWithoutIcon href="/redes-sociales">
+                            <div className="ml-2  flex items-center py-3  dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                              <Network className=" mr-2 size-5 shrink-0" />
+                              <span className="text-lg">Redes Sociales</span>
+                            </div>
+                          </DropdownWithoutIcon>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
 
                     <DropdownWithoutIcon href="/quienes-somos">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
