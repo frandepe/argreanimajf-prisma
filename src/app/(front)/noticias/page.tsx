@@ -5,26 +5,31 @@ import { NewsSection } from "@/components/News/NewsSection";
 import { seedDataYoutubeNews } from "@/components/News/SeedDataYoutubeNews";
 import { SidebarNews } from "@/components/News/SidebarNews";
 import SearchBar from "@/components/SearchBarComponent/SearchBarComponent";
+import { SimplePagination } from "@/components/SimplePagination/SimplePagination";
 import { Button } from "@/components/ui/button";
 import { CardVideoNews } from "@/components/Video/card-video-news";
 import { useNews } from "@/context/NewsContext";
 
 import React, { useEffect, useState } from "react";
 
+const ITEMS_PER_PAGE = 6;
+
 const NoticiasPage = () => {
-  const { loadNews } = useNews();
+  const { loadNews, total } = useNews();
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   const clearFilters = () => {
     setCategory("");
     setSearch("");
-    loadNews("", "");
+    loadNews("", "", 1);
   };
 
   useEffect(() => {
-    loadNews(category, search);
-  }, [loadNews, search, category]);
+    loadNews(category, search, currentPage);
+  }, [loadNews, search, category, currentPage]);
 
   return (
     <div className="flex flex-col  gap-7 md:gap-16">
@@ -48,6 +53,11 @@ const NoticiasPage = () => {
           <SidebarNews setCategory={setCategory} />
           <div className="flex flex-col gap-7 md:gap-16">
             <NewsSection />
+            <SimplePagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
             {(category || search) && (
               <Button
                 variant="outline"

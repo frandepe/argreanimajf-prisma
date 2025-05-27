@@ -68,7 +68,11 @@ const XIcon = () => (
   </motion.svg>
 );
 
-const SidebarCourses = () => {
+const SidebarCourses = ({
+  setCategory,
+}: {
+  setCategory: (category: string) => void;
+}) => {
   const [showMenu, setShowMenu] = useState(false); // visible o hidden
   const mobileSidebarVariants = {
     hidden: { x: "-100%" },
@@ -137,13 +141,27 @@ const SidebarCourses = () => {
                 <CollapsibleSection title="Categorías">
                   <ul>
                     <li>
-                      <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                        Cursos RCP
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("RCP")}
+                      >
+                        RCP
                       </button>
                     </li>
                     <li>
-                      <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                        Cursos DEA
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("DEA")}
+                      >
+                        DEA
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                        onClick={() => setCategory("RCP y DEA")}
+                      >
+                        RCP y DEA
                       </button>
                     </li>
                   </ul>
@@ -222,24 +240,27 @@ const SidebarCourses = () => {
             <CollapsibleSection title="Categorías">
               <ul>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Cursos Gratuitos
-                  </button>
-                </li>
-
-                <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Cursos introductorios
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("RCP")}
+                  >
+                    RCP
                   </button>
                 </li>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Cursos de RCP
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("DEA")}
+                  >
+                    DEA
                   </button>
                 </li>
                 <li>
-                  <button className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100">
-                    Cursos de DEA
+                  <button
+                    className="w-full font-medium text-sm text-left p-2 rounded-xl hover:bg-gray-100"
+                    onClick={() => setCategory("RCP y DEA")}
+                  >
+                    RCP y DEA
                   </button>
                 </li>
               </ul>

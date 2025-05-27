@@ -1,23 +1,29 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 import { ICourse, ICreateCourse, IUpdateCourse } from "@/interfaces/courses";
 
 export const CourseContext = createContext<{
   courses: ICourse[];
-  loadCourses: () => Promise<void>;
+  loadCourses: (
+    category: string,
+    search: string,
+    page: number
+  ) => Promise<void>;
   createCourse: (newCourse: ICreateCourse) => Promise<void>;
   deleteCourse: (id: number) => Promise<void>;
   updateCourse: (id: number, updated: IUpdateCourse) => Promise<void>;
   selectedCourse: ICourse | null;
+  total: number;
   setSelectedCourse: (c: ICourse | null) => void;
 }>({
   courses: [],
-  loadCourses: async () => {},
+  loadCourses: async (category: string, search: string, page: number) => {},
   createCourse: async () => {},
   deleteCourse: async () => {},
   updateCourse: async () => {},
   selectedCourse: null,
+  total: 0,
   setSelectedCourse: () => {},
 });
 
@@ -32,12 +38,23 @@ export const useCourse = () => {
 export const CourseProvider = ({ children }: { children: React.ReactNode }) => {
   const [courses, setCourses] = useState<ICourse[]>([]);
   const [selectedCourse, setSelectedCourse] = useState<ICourse | null>(null);
+  const [total, setTotal] = useState<number>(0);
 
-  async function loadCourses() {
-    const res = await fetch("/api/courses");
-    const data = await res.json();
-    setCourses(data.courses);
-  }
+  const loadCourses = useCallback(
+    async (category: string, search: string, page: number) => {
+      const params = new URLSearchParams();
+
+      if (category) params.append("category", category);
+      if (search) params.append("search", search);
+      if (page) params.append("page", page.toString());
+
+      const res = await fetch(`/api/courses?${params.toString()}`);
+      const data = await res.json();
+      setCourses(data.courses);
+      setTotal(data.totalCourses);
+    },
+    []
+  );
 
   async function createCourse(newCourse: ICreateCourse) {
     const res = await fetch("/api/courses", {
@@ -84,6 +101,7 @@ export const CourseProvider = ({ children }: { children: React.ReactNode }) => {
         deleteCourse,
         updateCourse,
         selectedCourse,
+        total,
         setSelectedCourse,
       }}
     >

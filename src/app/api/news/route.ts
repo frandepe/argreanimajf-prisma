@@ -1,28 +1,59 @@
+import { Prisma } from "@/generated/prisma";
 import cloudinary from "@/libs/cloudinary";
 import { prisma } from "@/libs/db";
 import { NextRequest, NextResponse } from "next/server";
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const category = searchParams.get("category");
     const search = searchParams.get("search");
+    const pageParam = searchParams.get("page") || "1";
 
+    const page = Math.max(parseInt(pageParam, 10) || 1, 1);
+    const limit = 6;
+    const skip = (page - 1) * limit;
+
+    const where: Prisma.NewsWhereInput = {
+      ...(category && { category }),
+      ...(search && {
+        OR: [
+          {
+            title: {
+              contains: search,
+              mode: Prisma.QueryMode.insensitive,
+            },
+          },
+          {
+            description: {
+              contains: search,
+              mode: Prisma.QueryMode.insensitive,
+            },
+          },
+        ],
+      }),
+    };
+
+    // Obtener las noticias paginadas
     const news = await prisma.news.findMany({
-      where: {
-        ...(category && { category }),
-        ...(search && {
-          OR: [
-            { title: { contains: search, mode: "insensitive" } },
-            { description: { contains: search, mode: "insensitive" } },
-          ],
-        }),
+      where,
+      skip,
+      take: limit,
+      orderBy: {
+        createdAt: "desc",
       },
+    });
+
+    // Obtener el total de noticias que coinciden con el filtro
+    const totalNews = await prisma.news.count({
+      where,
     });
 
     return NextResponse.json({
       message: "Noticias obtenidas correctamente",
       news,
-      status: 200,
+      totalNews,
+      currentPage: page,
       success: true,
     });
   } catch (error) {

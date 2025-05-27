@@ -8,16 +8,16 @@ import { SimplePagination } from "@/components/SimplePagination/SimplePagination
 import { useNews } from "@/context/NewsContext";
 import { useEffect, useState } from "react";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 6;
 
 const NoticiasDashboardPage = () => {
-  const { news, loadNews } = useNews();
+  const { news, loadNews, total } = useNews();
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   useEffect(() => {
-    loadNews("", "");
-  }, []);
+    loadNews("", "", currentPage);
+  }, [currentPage]);
 
   return (
     <SidebarContent>

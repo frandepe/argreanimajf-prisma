@@ -255,12 +255,12 @@ const FormCreateCourse = () => {
                         <SelectValue placeholder="Selecciona una categoría" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="Programación">
-                          Programación
+                        <SelectItem value="RCP">RCP</SelectItem>
+                        <SelectItem value="DEA">DEA</SelectItem>
+                        <SelectItem value="RCP y DEA">RCP y DEA</SelectItem>
+                        <SelectItem value="Primeros auxilios">
+                          Primeros auxilios
                         </SelectItem>
-                        <SelectItem value="Diseño">Diseño</SelectItem>
-                        <SelectItem value="Marketing">Marketing</SelectItem>
-                        <SelectItem value="Negocios">Negocios</SelectItem>
                       </SelectContent>
                     </Select>
                   )}

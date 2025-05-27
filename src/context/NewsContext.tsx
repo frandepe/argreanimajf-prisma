@@ -6,18 +6,20 @@ import { News } from "@/generated/prisma";
 
 export const NewsContext = createContext<{
   news: News[];
-  loadNews: (category: string, search: string) => Promise<void>;
+  loadNews: (category: string, search: string, page: number) => Promise<void>;
   createNews: (singleNew: ICreateNewsBase64) => Promise<void>;
   deleteNews: (id: number) => Promise<void>;
   selectedNews: News | null;
+  total: number;
   setSelectedNews: (singleNew: News | null) => void;
   updateNews: (id: number, singleNews: IUpdateNote) => Promise<void>;
 }>({
   news: [],
-  loadNews: async (category: string, search: string) => {},
+  loadNews: async (category: string, search: string, page: number) => {},
   createNews: async (singleNew: ICreateNewsBase64) => {},
   deleteNews: async (id: number) => {},
   selectedNews: null,
+  total: 0,
   setSelectedNews: (singleNew: News | null) => {},
   updateNews: async (id: number, singleNews: IUpdateNote) => {},
 });
@@ -33,19 +35,25 @@ export const useNews = () => {
 export const NewsProvider = ({ children }: { children: React.ReactNode }) => {
   const [news, setNews] = useState<News[]>([]);
   const [selectedNews, setSelectedNews] = useState<News | null>(null);
+  const [total, setTotal] = useState<number>(0);
 
-  const loadNews = useCallback(async (category: string, search: string) => {
-    const params = new URLSearchParams();
+  const loadNews = useCallback(
+    async (category: string, search: string, page: number) => {
+      const params = new URLSearchParams();
 
-    if (category) params.append("category", category);
-    if (search) params.append("search", search);
+      if (category) params.append("category", category);
+      if (search) params.append("search", search);
+      if (page) params.append("page", page.toString());
 
-    const url = `/api/news?${params.toString()}`;
+      const url = `/api/news?${params.toString()}`;
 
-    const res = await fetch(url);
-    const data = await res.json();
-    setNews(data.news);
-  }, []);
+      const res = await fetch(url);
+      const data = await res.json();
+      setTotal(data.totalNews);
+      setNews(data.news);
+    },
+    []
+  );
 
   async function createNews(singleNews: ICreateNewsBase64) {
     const res = await fetch("/api/news", {
@@ -95,6 +103,7 @@ export const NewsProvider = ({ children }: { children: React.ReactNode }) => {
         createNews,
         deleteNews,
         selectedNews,
+        total,
         setSelectedNews,
         updateNews,
       }}

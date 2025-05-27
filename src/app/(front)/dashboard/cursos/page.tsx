@@ -8,17 +8,16 @@ import { Accordion } from "@/components/ui/accordion";
 import { useCourse } from "@/context/CourseContext";
 import { useEffect, useState } from "react";
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 6;
 
 const NoticiasDashboardPage = () => {
-  const { courses, loadCourses } = useCourse();
+  const { courses, loadCourses, total } = useCourse();
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(courses.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   useEffect(() => {
-    loadCourses();
-  }, []);
-  console.log(courses);
+    loadCourses("", "", currentPage);
+  }, [currentPage]);
 
   return (
     <SidebarContent>

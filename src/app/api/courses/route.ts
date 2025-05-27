@@ -1,18 +1,52 @@
+import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/libs/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
+    const { searchParams } = new URL(request.url);
+    const category = searchParams.get("category");
+    const search = searchParams.get("search");
+    const pageParam = searchParams.get("page") || "1";
+
+    const page = Math.max(parseInt(pageParam, 10) || 1, 1);
+    const limit = 2; // puedes ajustar el límite como necesites
+    const skip = (page - 1) * limit;
+
+    const where: Prisma.CourseWhereInput = {
+      ...(category && { category }),
+      ...(search && {
+        OR: [
+          {
+            title: {
+              contains: search,
+              mode: Prisma.QueryMode.insensitive,
+            },
+          },
+        ],
+      }),
+    };
+
+    // Obtener los cursos paginados
     const courses = await prisma.course.findMany({
+      where,
+      skip,
+      take: limit,
+      orderBy: {
+        createdAt: "desc",
+      },
       include: {
         lessons: true,
       },
     });
 
+    // Total de cursos que coinciden con el filtro
+    const totalCourses = await prisma.course.count({ where });
+
     return NextResponse.json({
       message: "Cursos obtenidos correctamente",
       courses,
-      status: 200,
+      totalCourses,
       success: true,
     });
   } catch (error) {

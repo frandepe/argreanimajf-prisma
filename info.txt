@@ -79,3 +79,18 @@ Sin necesidad de poner --name, porque la migración ya está creada.
 ---------------------------
 
 Interfaz grafica de prisma npx prisma studio
+
+############# DEPLOY ###########
+Luego de tener la URL de la DB:
+
+1 - Agregar el siguiente script:
+
+ "scripts": {
+    "postinstall": "prisma generate"
+  },
+
+2 - Ejecutar en consola:
+npx prisma generate
+npx prisma db push
+
+3 - Hacer deploy a Vercel

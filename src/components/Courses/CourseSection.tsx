@@ -1,22 +1,14 @@
 "use client";
+
 import { Card, CardContent, CardHeader } from "../ui/card";
 import { Badge } from "../ui/badge";
 import Image from "next/image";
+import { useCourse } from "@/context/CourseContext";
+import Link from "next/link";
 
-
-interface Course {
-  id: string;
-  title: string;
-  category: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface CoursesProps {
-  courses: Course[];
-}
-
-const CoursesSection = ({ courses }: CoursesProps) => {
+const CoursesSection = () => {
+  const { courses } = useCourse();
+  console.log(courses);
 
   return (
     <section>
@@ -33,30 +25,23 @@ const CoursesSection = ({ courses }: CoursesProps) => {
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {courses?.map((course) => {
+          {courses?.map((n) => {
             return (
-              <Card
-                key={course.id}
-                className="grid grid-rows-[auto_auto_1fr_auto]"
-              >
+              <Card key={n.id} className="grid grid-rows-[auto_auto_1fr_auto]">
                 <div className="aspect-[16/9] w-full">
-                  <a
-                    href={
-                      "https://res.cloudinary.com/dtbryiptz/image/upload/v1747831009/images/mgeqbvdxrext2jzutfzc.jpg"
-                    }
+                  <Link
+                    href={`/capacitaciones/${n.id}`}
                     target="_blank"
                     className="transition-opacity duration-200 fade-in hover:opacity-70"
                   >
                     <Image
-                      src={
-                        "https://res.cloudinary.com/dtbryiptz/image/upload/v1747831009/images/mgeqbvdxrext2jzutfzc.jpg"
-                      }
-                      alt={course.title}
+                      src="/images/curso-gratuito-thumb.jpg"
+                      alt={n.title}
                       className="h-full w-full object-cover object-center"
                       width={40}
                       height={40}
                     />
-                  </a>
+                  </Link>
                 </div>
                 <CardContent className="p-4">
                   <CardHeader>
@@ -68,11 +53,13 @@ const CoursesSection = ({ courses }: CoursesProps) => {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {course.title}
+                        {n.title}
                       </a>
                     </h3>
                   </CardHeader>
-                  <p className="text-muted-foreground">Categoria: {course.category}</p>
+                  <p className="text-muted-foreground">
+                    Categoria: {n.category}
+                  </p>
                 </CardContent>
               </Card>
             );
