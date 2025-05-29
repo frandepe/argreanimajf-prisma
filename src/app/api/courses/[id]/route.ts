@@ -3,20 +3,25 @@ import { prisma } from "@/libs/db";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest, context: any) {
-  const id = Number(context.params.id);
-  if (isNaN(id)) {
+  const { id } = await context.params;
+  const numericId = Number(id);
+
+  if (isNaN(numericId)) {
     return NextResponse.json({ error: "ID inválido" }, { status: 400 });
   }
 
   try {
     const course = await prisma.course.findUnique({
-      where: { id },
+      where: { id: numericId },
       include: { lessons: true },
     });
 
     if (!course) {
       return NextResponse.json(
-        { message: `No se encontró el curso con id ${id}`, success: false },
+        {
+          message: `No se encontró el curso con id ${numericId}`,
+          success: false,
+        },
         { status: 404 }
       );
     }
@@ -27,7 +32,7 @@ export async function GET(request: NextRequest, context: any) {
       success: true,
     });
   } catch (error) {
-    console.error(`Error al obtener curso con id ${id}:`, error);
+    console.error(`Error al obtener curso con id ${numericId}:`, error);
     return NextResponse.json(
       { message: "Error interno del servidor", success: false },
       { status: 500 }

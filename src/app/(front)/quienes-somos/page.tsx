@@ -10,6 +10,9 @@ const QuienesSomosPage = () => {
         src={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
         }
+        srcMobile={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
+        }
         title="¿Quiénes somos?"
         description="Somos una Asociación Civil que lucha contra la muerte súbita Conoce más sobre nuestra misión y visión."
       />

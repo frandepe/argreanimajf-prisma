@@ -1,3 +1,5 @@
+"use client";
+
 import {
   features,
   FeatureSteps,
@@ -7,12 +9,29 @@ import { Titleh1 } from "@/components/Texts/Titleh1";
 import { LogoSlider } from "@/components/LogoSlider/LogoSlider";
 import { TextImage } from "@/components/TextImage/TextImage";
 import { BoxTresHome } from "@/components/Box3Home/BoxTresHome";
-import { VideoExpansionTextBlend } from "@/components/BannerHero/BnnerHeroVideoDemo";
+import BannerHero from "@/components/BannerHero/BannerHero";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // puedes ajustar el breakpoint
+    };
+
+    handleResize(); // set initial state
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="flex flex-col gap-7 md:gap-16">
-      <VideoExpansionTextBlend />
+      <BannerHero
+        src="/images/4.jpeg"
+        srcMobile="/images/9.jpeg"
+        imgClassname={isMobile ? "object-[center_10%]" : "object-[center_30%]"}
+      />
       <div className="px-4 md:px-0 container mx-auto">
         <Titleh1
           title={"Dedicamos nuestros esfuerzos a prevenir la muerte súbita."}

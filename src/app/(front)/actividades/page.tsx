@@ -10,6 +10,7 @@ const Actividades = () => {
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747684788/DSC_4071_ebrq8f.jpg"
+        srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1747684788/DSC_4071_ebrq8f.jpg"
         title="Actividades"
         imgClassname="object-fit md:object-cover object-[left_0px]"
         description="Capacitaciones, jornadas, simulacros y encuentros en distintas ciudades del país, pensados para enseñar a salvar vidas."

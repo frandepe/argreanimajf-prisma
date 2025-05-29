@@ -5,8 +5,6 @@ import Image from "next/image";
 import { cn } from "@/libs/utils";
 import { Titleh1 } from "../Texts/Titleh1";
 
-
-
 interface Feature {
   step: string;
   title?: string;
@@ -28,8 +26,7 @@ export const features = [
     title: "Aprende lo básico",
     content:
       "Flexible y accesible: aprendé cuándo y dónde quieras, a tu propio ritmo.",
-    image:
-      "https://res.cloudinary.com/dtbryiptz/image/upload/v1747443318/step1_abqguw.jpg",
+    image: "/images/2.jpeg",
   },
   {
     step: "Step 2",
@@ -43,8 +40,7 @@ export const features = [
     step: "Step 3",
     title: "Aprende todo sobre rcp y desfibriladores",
     content: "Aprende a usar desfibriladores y a realizar RCP.",
-    image:
-      "https://res.cloudinary.com/dtbryiptz/image/upload/v1747443546/step3_jp7rfj.jpg",
+    image: "/images/5.jpeg",
   },
 ];
 

@@ -10,6 +10,9 @@ const ContactoPage = () => {
         src={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748027840/banner-contacto_iukk0c.png"
         }
+        srcMobile={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748027840/banner-contacto_iukk0c.png"
+        }
         title="Contacto"
         description="Comunicate con nosotros para consultas institucionales, alianzas estratégicas o información sobre nuestras actividades"
       />

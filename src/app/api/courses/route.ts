@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     const pageParam = searchParams.get("page") || "1";
 
     const page = Math.max(parseInt(pageParam, 10) || 1, 1);
-    const limit = 2; // puedes ajustar el límite como necesites
+    const limit = 6; // puedes ajustar el límite como necesites
     const skip = (page - 1) * limit;
 
     const where: Prisma.CourseWhereInput = {

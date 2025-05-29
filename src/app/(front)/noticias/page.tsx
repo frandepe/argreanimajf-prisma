@@ -37,6 +37,9 @@ const NoticiasPage = () => {
         src={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214527/Ca%C3%B1uelas-97_rpyvyl_amuuye.jpg"
         }
+        srcMobile={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748214527/Ca%C3%B1uelas-97_rpyvyl_amuuye.jpg"
+        }
         title="Novedades"
         description="Enterate de las últimas acciones, eventos y novedades de Argentina Reanima."
       />

@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import { BlurFade } from "../Texts/BlurFade";
+import { useEffect, useState } from "react";
 
 interface BannerHeroProps {
   title?: string;
   description?: string;
-  src?: string | null;
+  src: string | null;
   imgClassname?: string;
+  srcMobile: string;
 }
 
 export default function BannerHero({
@@ -13,16 +17,31 @@ export default function BannerHero({
   title,
   description,
   src,
+  srcMobile,
 }: BannerHeroProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // puedes ajustar el breakpoint
+    };
+
+    handleResize(); // set initial state
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const selectedSrc = isMobile ? srcMobile : src || "";
+
   return (
-    <div className="relative  overflow-hidden min-h-screen flex items-center justify-center w-full">
-      <div className=" absolute  inset-0 w-full -z-10 ">
+    <div className="relative overflow-hidden min-h-screen flex items-center justify-center w-full">
+      <div className="absolute inset-0 w-full -z-10">
         <Image
-          src={src || ""}
+          src={selectedSrc}
           alt="Argentina Reanima"
           width={300}
           height={300}
-          className={`${imgClassname} object-cover h-screen w-full`}
+          className={`${imgClassname} object-cover h-screen w-full `}
           quality={100}
         />
         <div className="absolute inset-0 bg-black/40 w-full min-h-screen h-full" />

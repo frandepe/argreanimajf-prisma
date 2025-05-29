@@ -31,7 +31,6 @@ const CoursesSection = () => {
                 <div className="aspect-[16/9] w-full">
                   <Link
                     href={`/capacitaciones/${n.id}`}
-                    target="_blank"
                     className="transition-opacity duration-200 fade-in hover:opacity-70"
                   >
                     <Image

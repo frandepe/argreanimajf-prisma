@@ -1,13 +1,26 @@
+"use client";
+
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { Titleh1 } from "@/components/Texts/Titleh1";
-import Image from "next/image";
 import React from "react";
+
+import dynamic from "next/dynamic";
+
+const FilialesMap = dynamic(
+  () => import("@/components/FilialesMap/FilialesMap"),
+  {
+    ssr: false, // 👈 importante
+  }
+);
 
 const FilialesPage = () => {
   return (
     <div className="flex flex-col  gap-7 md:gap-16">
       <BannerHero
         src={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
+        }
+        srcMobile={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
         }
         title="Filiales"
@@ -39,14 +52,7 @@ const FilialesPage = () => {
         </div>
 
         <div className="w-full flex justify-center ">
-          <Image
-            width={500}
-            height={300}
-            src={
-              "https://res.cloudinary.com/dtbryiptz/image/upload/v1748047099/filiales_n3sf6h.png"
-            }
-            alt={""}
-          />
+          <FilialesMap />
         </div>
       </div>
     </div>

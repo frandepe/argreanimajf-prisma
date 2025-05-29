@@ -1,5 +1,5 @@
 "use client";
-import {Video } from "lucide-react";
+import { Video } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { Titleh1 } from "../Texts/Titleh1";
@@ -14,8 +14,11 @@ function TextImage() {
           <div className="flex flex-col">
             <div></div>
             <div className="flex gap-4 flex-col items-start">
-              <Titleh1 title="Actuar salva vidas" className="max-w-lg tracking-tighter text-start font-regular"/>
-          
+              <Titleh1
+                title="Actuar salva vidas"
+                className="max-w-lg tracking-tighter text-start font-regular"
+              />
+
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
                 Aprendé los pasos esenciales para responder ante una emergencia.
                 Con nuestras capacitaciones en primeros auxilios, podés marcar
@@ -36,8 +39,7 @@ function TextImage() {
           <div className="grid grid-cols-2 gap-8">
             <div
               style={{
-                backgroundImage:
-                  "url(https://res.cloudinary.com/dtbryiptz/image/upload/v1747450753/gallery1_jztmbg.jpg)",
+                backgroundImage: "url(/images/1.jpeg)",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
@@ -46,8 +48,7 @@ function TextImage() {
             ></div>
             <div
               style={{
-                backgroundImage:
-                  "url(https://res.cloudinary.com/dtbryiptz/image/upload/v1747450752/gallery2_lh3llx.jpg)",
+                backgroundImage: "url(/images/6.jpeg)",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
@@ -56,8 +57,7 @@ function TextImage() {
             ></div>
             <div
               style={{
-                backgroundImage:
-                  "url(https://res.cloudinary.com/dtbryiptz/image/upload/v1747450752/gallery3_bklgdp.jpg)",
+                backgroundImage: "url(/images/3.jpeg)",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",

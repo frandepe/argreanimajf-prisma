@@ -19,6 +19,9 @@ const RedesSocialesPage = () => {
         src={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
         }
+        srcMobile={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
+        }
         title="Redes Sociales"
         description="En esta sección encontrarás todo sobre nuestras redes sociales: síguenos y entérate de cursos, tips y novedades en RCP."
       />
@@ -34,7 +37,6 @@ const RedesSocialesPage = () => {
           <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
             <InstagramEmbed url="https://www.instagram.com/p/CnHaZbJumgG/?igsh=MWZvdHR5MHR5MXlxOA==" />
           </div>
-
         </div>
 
         <div className="w-full">

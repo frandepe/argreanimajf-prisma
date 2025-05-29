@@ -33,6 +33,9 @@ const CapacitacionesPage = () => {
         src={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748218532/IMG_8272_vqatui_s7v0kz.jpg"
         }
+        srcMobile={
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748218532/IMG_8272_vqatui_s7v0kz.jpg"
+        }
         title="Capacitaciones"
         description="
             Aprendé técnicas de reanimación cardiopulmonar y primeros auxilios con nuestros cursos diseñados para toda la comunidad."

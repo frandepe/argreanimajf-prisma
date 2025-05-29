@@ -57,7 +57,7 @@ export const seedDataActivities = {
       published: "12 Dic 2024",
       url: "https://shadcnblocks.com",
       image:
-        "https://res.cloudinary.com/dtbryiptz/image/upload/v1748218509/IMG_8269_eppgef_ddhxwy.jpg",
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1748218545/IMG_8338_zwv3tc_i7dmso.jpg",
       tags: ["RCP", "DEA"],
     },
   ],
