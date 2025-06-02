@@ -11,6 +11,7 @@ import { TextImage } from "@/components/TextImage/TextImage";
 import { BoxTresHome } from "@/components/Box3Home/BoxTresHome";
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { useEffect, useState } from "react";
+import { AnimatedLogos } from "@/components/AnimatedCarousel/AnimatedLogos";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -66,6 +67,8 @@ export default function Home() {
           imageHeight="h-[500px]"
         />
       </div>
+
+      <AnimatedLogos />
 
       <div className="pb-7 md:pb-10 px-4 md:px-0">
         <LogoSlider />

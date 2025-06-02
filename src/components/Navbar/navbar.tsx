@@ -3,6 +3,7 @@
 import {
   ActivityIcon,
   Headset,
+  HeartHandshake,
   HeartPulse,
   Home,
   Images,
@@ -174,6 +175,22 @@ const Navbar = ({
 
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
+                        <li>
+                          <Link
+                            href="/rcp-y-cuidado-emocional"
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                          >
+                            <HeartHandshake className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                La RCP y el cuidado emocional
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                Brindar apoyo emocional a quienes lo necesitan
+                              </p>
+                            </div>
+                          </Link>
+                        </li>
                         <li>
                           <Link
                             href="/filiales"
@@ -354,6 +371,15 @@ const Navbar = ({
                               <HeartPulse className="mr-2" />
 
                               <span className="text-lg">Filiales</span>
+                            </div>
+                          </DropdownWithoutIcon>
+                          <DropdownWithoutIcon href="/rcp-y-cuidado-emocional">
+                            <div className="ml-2 flex items-center py-3  dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                              <HeartHandshake className="mr-2" />
+
+                              <span className="text-lg">
+                                La RCP y el cuidado emocional
+                              </span>
                             </div>
                           </DropdownWithoutIcon>
                           <DropdownWithoutIcon href="/galeria">

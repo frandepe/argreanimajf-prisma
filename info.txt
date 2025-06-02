@@ -94,3 +94,10 @@ npx prisma generate
 npx prisma db push
 
 3 - Hacer deploy a Vercel
+
+---------------------------
+
+TODO: 
+
+Meter esta info sobre el marco normativo, no se si en una LP nueva o ya existentes
+https://drive.google.com/drive/u/4/folders/1W9G_CDp-jPCfmzswNhWv174Qv4Hem4Z-

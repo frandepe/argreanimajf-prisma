@@ -13,7 +13,7 @@ const Actividades = () => {
         srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1747684788/DSC_4071_ebrq8f.jpg"
         title="Actividades"
         imgClassname="object-fit md:object-cover object-[left_0px]"
-        description="Capacitaciones, jornadas, simulacros y encuentros en distintas ciudades del país, pensados para enseñar a salvar vidas."
+        description="Capacitaciones, jornadas y encuentros en distintas ciudades del país, porque “Solo bajamos los brazos para hacer RCP”"
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16">
@@ -25,7 +25,7 @@ const Actividades = () => {
 
           <p className="mx-auto max-w-2xl text-muted-foreground md:text-lg">
             Descubre los últimos eventos y actividades sobre nuestra misión de
-            salvar vidas. Participa y mantente informado.
+            “Luchar contra la muerte Súbita”. Participa y mantente informado.
           </p>
         </div>
 
