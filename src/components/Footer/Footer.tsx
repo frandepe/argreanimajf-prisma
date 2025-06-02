@@ -63,7 +63,7 @@ function Footer() {
                 href="/actividades"
                 className="block transition-colors hover:text-gray-600"
               >
-               Actividades
+                Actividades
               </Link>
               <Link
                 href="/capacitaciones"
@@ -76,7 +76,7 @@ function Footer() {
                 href="#"
                 className="block transition-colors hover:text-gray-600"
               >
-               Más
+                Más
               </Link>
 
               <Link
@@ -100,10 +100,10 @@ function Footer() {
                   Email:{" "}
                   <Link
                     className="hover:text-gray-600"
-                    href="mailto:argentinareanima@gmail.com"
+                    href="mailto:argentinareanima.ac@gmail.com"
                     target="_blank"
                   >
-                    argentinareanima@gmail.com
+                    argentinareanima.ac@gmail.com
                   </Link>
                 </div>
               </div>

@@ -70,7 +70,10 @@ export async function DELETE(request: NextRequest, context: any) {
       );
     }
 
-    await cloudinary.uploader.destroy(deletedNews.imagePublicId);
+    // Si hay una imagen asociada, eliminarla de Cloudinary
+    if (deletedNews.imagePublicId) {
+      await cloudinary.uploader.destroy(deletedNews.imagePublicId);
+    }
 
     return NextResponse.json({
       message: "Noticia eliminada correctamente",

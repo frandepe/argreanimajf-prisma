@@ -220,7 +220,7 @@ const SidebarCourses = ({
             <div>
               <p className="font-semibold">Argentina Reanima</p>
               <p className="text-sm text-gray-500">
-                argentinareanima@gmail.com
+                argentinareanima.ac@gmail.com
               </p>
             </div>
           </div>

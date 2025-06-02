@@ -17,7 +17,7 @@ const NoticiasDashboardPage = () => {
 
   useEffect(() => {
     loadNews("", "", currentPage);
-  }, [currentPage]);
+  }, [loadNews, currentPage]);
 
   return (
     <SidebarContent>
@@ -30,14 +30,9 @@ const NoticiasDashboardPage = () => {
             className="w-full px-6 "
             defaultValue="3"
           >
-            {news
-              .slice(
-                (currentPage - 1) * ITEMS_PER_PAGE,
-                currentPage * ITEMS_PER_PAGE
-              )
-              .map((n) => (
-                <NewsCard n={n} key={n.id} />
-              ))}
+            {news.map((n) => (
+              <NewsCard n={n} key={n.id} />
+            ))}
           </Accordion>
 
           <SimplePagination

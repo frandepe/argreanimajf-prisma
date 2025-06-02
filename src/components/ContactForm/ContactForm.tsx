@@ -75,10 +75,10 @@ export const ContactForm = () => {
                 <li>
                   <span className="font-bold">Email: </span>
                   <a
-                    href="mailto:argentinareanima@gmail.com"
+                    href="mailto:argentinareanima.ac@gmail.com"
                     className="hover:text-gray-500"
                   >
-                    argentinareanima@gmail.com
+                    argentinareanima.ac@gmail.com
                   </a>
                 </li>
               </ul>

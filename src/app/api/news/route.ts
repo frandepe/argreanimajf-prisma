@@ -73,28 +73,35 @@ export async function POST(request: Request) {
       description,
       redirect,
       category,
-      imageBase64, // esto es la imagen en base64, ej: "data:image/png;base64,...."
+      imageBase64, // opcional
     } = await request.json();
 
-    if (!imageBase64) {
+    if (!title || !description || !redirect || !category) {
       return NextResponse.json(
-        { error: "La imagen es requerida" },
+        { error: "Faltan campos obligatorios" },
         { status: 400 }
       );
     }
 
-    // Subir la imagen a Cloudinary
-    const uploadResult = await cloudinary.uploader.upload(imageBase64, {
-      folder: "images",
-      transformation: [
-        {
-          crop: "fill",
-          quality: 60,
-          format: "auto",
-          strip_metadata: true,
-        },
-      ],
-    });
+    let imageUrl: string | undefined;
+    let imagePublicId: string | undefined;
+
+    if (imageBase64) {
+      const uploadResult = await cloudinary.uploader.upload(imageBase64, {
+        folder: "images",
+        transformation: [
+          {
+            crop: "fill",
+            quality: 60,
+            format: "auto",
+            strip_metadata: true,
+          },
+        ],
+      });
+
+      imageUrl = uploadResult.secure_url;
+      imagePublicId = uploadResult.public_id;
+    }
 
     const news = await prisma.news.create({
       data: {
@@ -102,8 +109,8 @@ export async function POST(request: Request) {
         description,
         redirect,
         category,
-        imageUrl: uploadResult.secure_url,
-        imagePublicId: uploadResult.public_id,
+        imageUrl,
+        imagePublicId,
       },
     });
 

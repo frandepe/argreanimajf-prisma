@@ -87,26 +87,24 @@ const FormCreateNews = () => {
 
   const onSubmit = async (data: ICreateNews) => {
     if (step !== 3) return;
-    if (!picture) {
-      alert("La imagen es requerida");
-      return;
-    }
 
     setIsLoading(true);
     try {
       if (selectedNews) {
         await updateNews(selectedNews.id, {
           ...data,
-          imageBase64: picture !== selectedNews.imageUrl ? picture : undefined,
+          imageBase64:
+            picture && picture !== selectedNews.imageUrl ? picture : undefined,
         });
 
         setSelectedNews(null);
       } else {
         await createNews({
           ...data,
-          imageBase64: picture,
+          ...(picture && { imageBase64: picture }),
         });
       }
+
       setIsLoading(false);
       reset();
       setStep(1);
@@ -293,7 +291,7 @@ const FormCreateNews = () => {
           {step === 3 && (
             <div className="w-full max-w-4xl mx-auto min-h-96 border border-dashed bg-background border-neutral-200 dark:border-neutral-800 rounded-lg">
               <FileUpload onChange={handlePictureUpload} />
-              {picture && (
+              {picture ? (
                 <Image
                   src={picture || "/placeholder.svg"}
                   alt="Imagen seleccionada"
@@ -301,6 +299,20 @@ const FormCreateNews = () => {
                   width={200}
                   height={200}
                 />
+              ) : (
+                <div className="text-center">
+                  <p className="text-gray-500">
+                    En caso de que no adjuntes una miniatura para la noticia,
+                    esta quedará por defecto ↓
+                  </p>
+                  <Image
+                    src={"/images/noticia-generica.jpg"}
+                    alt="Imagen seleccionada"
+                    className="mx-auto mb-4 max-h-60 object-contain rounded-md"
+                    width={200}
+                    height={200}
+                  />
+                </div>
               )}
             </div>
           )}
@@ -352,12 +364,11 @@ const FormCreateNews = () => {
             ) : (
               <motion.button
                 type="submit"
-                disabled={!picture || isLoading}
+                disabled={isLoading}
                 animate={{ flex: isExpanded ? 1 : "inherit" }}
                 className={cn(
-                  "px-4 py-3 rounded-full text-white transition-colors flex-1 cursor-pointer",
-                  !isExpanded && "w-44",
-                  picture ? "bg-primary" : "bg-gray-400 cursor-not-allowed"
+                  "px-4 py-3 rounded-full text-white transition-colors flex-1 cursor-pointer bg-primary",
+                  !isExpanded && "w-44"
                 )}
               >
                 <div className="flex items-center font-semibold justify-center gap-2 text-sm">

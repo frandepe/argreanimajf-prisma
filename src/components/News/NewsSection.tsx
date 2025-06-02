@@ -60,20 +60,30 @@ const NewsSection = () => {
                     target="_blank"
                     className="transition-opacity duration-200 fade-in hover:opacity-70"
                   >
-                    <Image
-                      src={singleNew.imageUrl}
-                      alt={singleNew.title}
-                      className="h-full w-full object-cover object-center"
-                      width={40}
-                      height={40}
-                    />
+                    {singleNew.imageUrl ? (
+                      <Image
+                        src={singleNew.imageUrl}
+                        alt={singleNew.title}
+                        className="h-full w-full object-cover object-center"
+                        width={40}
+                        height={40}
+                      />
+                    ) : (
+                      <Image
+                        src="/images/noticia-generica.jpg"
+                        alt={singleNew.title}
+                        className="h-full w-full object-cover object-center"
+                        width={40}
+                        height={40}
+                      />
+                    )}
                   </a>
                 </div>
                 <CardContent className="p-4">
                   <CardHeader>
                     <h3 className="text-lg font-semibold hover:underline md:text-xl">
                       <a
-                        href={singleNew.imageUrl}
+                        href={singleNew.redirect}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

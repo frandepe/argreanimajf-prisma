@@ -36,7 +36,11 @@ export const BoxTresHome = () => {
             className={cn(
               "cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl flex flex-col justify-between p-4 bg-cover"
             )}
-            style={{ backgroundImage: `url(${card.imageUrl})` }}
+            style={{
+              backgroundImage: `url(${
+                card.imageUrl ? card.imageUrl : "/images/noticia-generica.jpg"
+              })`,
+            }}
           >
             <div className="absolute w-full h-full top-0 left-0 bg-black/50 transition duration-300 group-hover/card:bg-black opacity-60" />
 

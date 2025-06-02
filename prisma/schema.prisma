@@ -26,8 +26,8 @@ model User {
 model News {
   id Int @id @default(autoincrement())
   title       String
-  imageUrl    String
-  imagePublicId String
+  imageUrl    String?
+  imagePublicId String?
   description String
   redirect    String
   category    String

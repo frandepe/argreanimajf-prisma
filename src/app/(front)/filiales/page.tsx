@@ -54,6 +54,56 @@ const FilialesPage = () => {
         <div className="w-full flex justify-center ">
           <FilialesMap />
         </div>
+        <div className="bg-white p-6 md:p-10 rounded-2xl shadow-md max-w-4xl mx-auto space-y-6">
+          <Titleh1 title="Nuestro compromiso con Nacer entre Palabras" />
+          <p className="text-gray-700 text-base md:text-lg">
+            Con mucho orgullo y satisfacción, desde el año{" "}
+            <span className="font-semibold">2023</span> aportamos nuestras
+            capacitaciones al proyecto{" "}
+            <span className="italic">Nacer entre Palabras</span>, dirigido por
+            la <span className="font-semibold">Dra. Sandra Marañon</span> de la
+            Facultad de Psicología de la{" "}
+            <span className="font-semibold">U.N.M.d.P.</span>
+          </p>
+
+          <div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              Nuestro compromiso consiste en:
+            </h3>
+            <ul className="list-decimal list-inside space-y-2 text-gray-700 text-base md:text-lg">
+              <li>
+                Promover acciones tendientes a la prevención de la muerte
+                súbita.
+              </li>
+              <li>
+                Promocionar y difundir las técnicas de Reanimación Cardio
+                Pulmonar (RCP) y el uso del Desfibrilador Externo Automático
+                (DEA).
+              </li>
+              <li>
+                Capacitar sobre el contenido y cumplimiento de la Ley 27159 de
+                Muerte Súbita y Sistema de Prevención Integral.
+              </li>
+              <li>
+                Mejorar la accesibilidad a la capacitación comunitaria en RCP,
+                uso de equipos DEA y leyes de aplicación.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-gray-700 text-base md:text-lg">
+              Nuestra filial{" "}
+              <span className="font-semibold">Mar del Plata</span>, liderada por
+              el Instructor{" "}
+              <span className="font-semibold">Santiago González Goller</span>,
+              es la encargada de proporcionar los medios físicos, teóricos y
+              prácticos para las capacitaciones. Estas se realizan en las
+              instalaciones de la Facultad, con aplicación en{" "}
+              <span className="italic">adultos, niños y lactantes</span>.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

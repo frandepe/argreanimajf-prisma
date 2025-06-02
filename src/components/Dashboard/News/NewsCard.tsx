@@ -33,13 +33,23 @@ const NewsCard = ({ n }: { n: News }) => {
           </div>
 
           <div className="w-full md:w-auto">
-            <Image
-              className="rounded-md border border-gray-200 object-cover max-w-xs"
-              src={n.imageUrl}
-              alt={n.title}
-              width={250}
-              height={250}
-            />
+            {n.imageUrl ? (
+              <Image
+                className="rounded-md border border-gray-200 object-cover max-w-xs"
+                src={n.imageUrl}
+                alt={n.title}
+                width={250}
+                height={250}
+              />
+            ) : (
+              <Image
+                src={"/images/noticia-generica.jpg"}
+                alt="Imagen seleccionada"
+                className="mx-auto mb-4 max-h-60 object-contain rounded-md"
+                width={200}
+                height={200}
+              />
+            )}
           </div>
         </div>
 
