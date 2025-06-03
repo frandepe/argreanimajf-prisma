@@ -2,6 +2,7 @@ import BannerHero from "@/components/BannerHero/BannerHero";
 import { Faq } from "@/components/Faqs/Faqs";
 import { Titleh1 } from "@/components/Texts/Titleh1";
 import { Separator } from "@/components/ui/separator";
+import { CalendarCheck2, Flag, MapPin, Scale } from "lucide-react";
 import React from "react";
 
 const MarcoNormativoPage = () => {
@@ -17,7 +18,7 @@ const MarcoNormativoPage = () => {
         <div className="space-y-3">
           <Titleh1
             className="md:text-start pb-3"
-            title="🏡 Marco Legal sobre RCP y Maniobra de Heimlich en Argentina"
+            title="Marco Legal sobre RCP y Maniobra de Heimlich en Argentina"
           />
           <p>
             En Argentina Reanima creemos que el conocimiento contribuye a salvar
@@ -33,8 +34,8 @@ const MarcoNormativoPage = () => {
           <div className="py-3">
             <Separator className="h-1 " />
           </div>
-          <h2 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white">
-            🌟 Legislación Nacional
+          <h2 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
+            <Scale className="text-primary" /> Legislación Nacional
           </h2>
           <h2 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
             Ley 26.835 (2012)
@@ -75,8 +76,8 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h4 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white">
-            🏞️ Legislación Provincial y Municipal
+          <h4 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
+            <Flag className="text-primary" /> Legislación Provincial y Municipal
           </h4>
           <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
             Buenos Aires
@@ -157,8 +158,8 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h3 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white">
-            📚 Otras Provincias
+          <h3 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
+            <MapPin className="text-primary" /> Otras Provincias
           </h3>
           <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
             La Rioja
@@ -230,8 +231,8 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h3 className="pb-3 text-3xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
-            📅 Actualización Permanente
+          <h3 className="pb-3 text-3xl font-semibold md:text-start text-gray-800 capitalize flex items-center gap-4 dark:text-white">
+            <CalendarCheck2 className="text-primary" /> Actualización Permanente
           </h3>
 
           <p>

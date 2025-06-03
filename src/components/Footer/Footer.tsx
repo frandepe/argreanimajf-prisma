@@ -34,7 +34,7 @@ function Footer() {
               alt={logo.alt}
             />
             <p className=" text-muted-foreground">
-              Programa nacional que enseña RCP y primeros auxilios básicos.
+              Programa nacional que enseña RCP, DEA y maniobra de Heimlich.
             </p>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>

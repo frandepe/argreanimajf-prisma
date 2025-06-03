@@ -38,7 +38,7 @@ const CapacitacionesPage = () => {
         }
         title="Capacitaciones"
         description="
-            Aprendé técnicas de reanimación cardiopulmonar y primeros auxilios con nuestros cursos diseñados para toda la comunidad."
+            Aprendé técnicas de reanimación cardiopulmonar y maniobra de Heimlich con nuestros cursos diseñados para toda la comunidad."
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">

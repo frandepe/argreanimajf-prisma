@@ -40,7 +40,7 @@ export default function Home() {
         />
         <p className="text-lg text-black dark:text-white">
           Capacitamos a la gente en reanimación cardiopulmonar (RCP), manejo de
-          desfibriladores (DEA) y primeros auxilios.
+          desfibriladores (DEA) y Maniobra de Heimlich.
         </p>
 
         <p className="text-lg  text-black dark:text-white">

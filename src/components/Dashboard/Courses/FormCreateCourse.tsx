@@ -258,8 +258,8 @@ const FormCreateCourse = () => {
                         <SelectItem value="RCP">RCP</SelectItem>
                         <SelectItem value="DEA">DEA</SelectItem>
                         <SelectItem value="RCP y DEA">RCP y DEA</SelectItem>
-                        <SelectItem value="Primeros auxilios">
-                          Primeros auxilios
+                        <SelectItem value="Maniobra de Heimlich">
+                          Maniobra de Heimlich
                         </SelectItem>
                       </SelectContent>
                     </Select>

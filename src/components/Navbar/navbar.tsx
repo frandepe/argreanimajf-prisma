@@ -134,7 +134,7 @@ const Navbar = ({
                     </span>
                   </Link>
                 </NavigationMenuItem>
-                     {/* Jornadas y actividades */}
+                {/* Jornadas y actividades */}
                 <NavigationMenuItem className="text-muted-foreground">
                   <div className="group">
                     <Link
@@ -216,8 +216,8 @@ const Navbar = ({
                                 Filiales
                               </div>
                               <p className="text-sm leading-snug text-muted-foreground">
-                                Sedes regionales que ofrecen capacitación en RCP
-                                y primeros auxilios.
+                                Sedes regionales que ofrecen capacitación en
+                                RCP, DEA y maniobra de Heimlich
                               </p>
                             </div>
                           </Link>
@@ -348,15 +348,12 @@ const Navbar = ({
                       </div>
                     </DropdownWithoutIcon>
 
-
                     <DropdownWithoutIcon href="/marco-normativo">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
                         <Scale className="mr-2" />
                         <span className="text-lg">Marco Normativo</span>
                       </div>
                     </DropdownWithoutIcon>
-
-                             
 
                     <DropdownWithoutIcon href="/actividades">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">

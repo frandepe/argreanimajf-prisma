@@ -21,8 +21,8 @@ function TextImage() {
 
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
                 Aprendé los pasos esenciales para responder ante una emergencia.
-                Con nuestras capacitaciones en primeros auxilios, podés marcar
-                la diferencia cuando cada segundo cuenta.
+                Con nuestras capacitaciones, podés marcar la diferencia en cada
+                segundo cuenta.
               </p>
             </div>
             <div className="flex flex-row gap-4 py-4">

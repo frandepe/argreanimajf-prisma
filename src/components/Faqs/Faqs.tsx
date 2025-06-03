@@ -30,7 +30,8 @@ Incluyen:
 La circulación se calcula dividiendo la afluencia total anual por los días de funcionamiento.`,
   },
   {
-    question: "¿Qué instructores están habilitados para transmitir esos conocimientos?",
+    question:
+      "¿Qué instructores están habilitados para transmitir esos conocimientos?",
     answer:
       "El Ministerio de Salud o quien este designe capacita a las personas que certifiquen espacios cardio-asistidos. Estas personas se denominan 'instructoras habilitantes'. Además, el personal debe estar capacitado en RCP básica por instructores habilitados por la Dirección Nacional de Emergencias Sanitarias. Las instituciones formadoras deben estar acreditadas oficialmente.",
   },
@@ -60,7 +61,8 @@ La circulación se calcula dividiendo la afluencia total anual por los días de 
       "Sí. Los gimnasios y lugares donde se realiza actividad física están obligados a contar con DEA, sin importar la cantidad exacta de asistentes. El criterio clave es el riesgo asociado al esfuerzo físico.",
   },
   {
-    question: "¿Qué requisitos deben tener los espacios públicos para exigir un DEA?",
+    question:
+      "¿Qué requisitos deben tener los espacios públicos para exigir un DEA?",
     answer: `Deben cumplir con la Ley N.º 27.159 y el Decreto Reglamentario N.º 402/2022. Los criterios principales son:
 
 • Ser espacios de acceso público.
@@ -73,7 +75,6 @@ También deben cumplir con los requisitos para ser considerados espacios cardioa
 export const Faq = ({
   badge = "FAQ",
   heading = "Hacemos preguntas al texto de la ley y su reglamentación",
-  description = "Encontramos las siguientes respuestas:",
   faqs = defaultFaqs,
 }: FaqProps) => {
   return (
@@ -82,14 +83,11 @@ export const Faq = ({
         <div className="text-center">
           <Badge className="text-lg font-medium">{badge}</Badge>
           <h1 className="mt-4 text-4xl font-semibold">{heading}</h1>
-          <p className="mt-6 font-medium text-muted-foreground">
-            {description}
-          </p>
         </div>
         <div className="mx-auto mt-14 max-w-screen-xl">
           {faqs.map((faq, index) => (
             <div key={index} className="mb-8 flex gap-4">
-              <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-secondary font-mono text-lg text-primary">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-primary font-mono text-lg text-white">
                 {index + 1}
               </span>
               <div>
