@@ -19,8 +19,8 @@ const QuienesSomosPage = () => {
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
-        src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
-        srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
+        src="https://res.cloudinary.com/dtbryiptz/image/upload/v1748923214/IMG_8319_a7pfch.jpg"
+        srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1748923214/IMG_8319_a7pfch.jpg"
         title="¿Quiénes somos?"
         description="Somos una Asociación Civil que lucha contra la muerte súbita. Conoce más sobre nuestra misión y visión."
       />
@@ -68,7 +68,7 @@ const QuienesSomosPage = () => {
 
         {/* NUEVA SECCIÓN: Origen y Compromiso */}
         <motion.section
-          className="relative bg-muted/30 p-6 md:p-12 rounded-2xl shadow-sm overflow-hidden"
+          className="relative bg-muted/30 md:p-6 md:p-12 rounded-2xl  overflow-hidden"
           {...fadeIn(0.3)}
         >
           <div className="absolute inset-0 opacity-10 bg-[url('https://res.cloudinary.com/dtbryiptz/image/upload/v1747673000/argentina-map-bg.svg')] bg-contain bg-no-repeat bg-center pointer-events-none" />

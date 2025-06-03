@@ -12,6 +12,7 @@ import {
   Network,
   NewspaperIcon,
   Pen,
+  Scale,
   Users,
 } from "lucide-react";
 import Link from "next/link";
@@ -132,6 +133,19 @@ const Navbar = ({
                       Noticias
                     </span>
                   </Link>
+                </NavigationMenuItem>
+                     {/* Jornadas y actividades */}
+                <NavigationMenuItem className="text-muted-foreground">
+                  <div className="group">
+                    <Link
+                      className=" inline-flex h-10 w-max items-center relative justify-center rounded-md bg-background px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-accent-foreground"
+                      href="/marco-normativo"
+                    >
+                      <span className="after:content-[''] after:absolute after:left-0 after:-bottom-2 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full relative">
+                        Marco Normativo
+                      </span>
+                    </Link>
+                  </div>
                 </NavigationMenuItem>
 
                 {/* Jornadas y actividades */}
@@ -333,6 +347,16 @@ const Navbar = ({
                         <span className="text-lg">Noticias</span>
                       </div>
                     </DropdownWithoutIcon>
+
+
+                    <DropdownWithoutIcon href="/marco-normativo">
+                      <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                        <Scale className="mr-2" />
+                        <span className="text-lg">Marco Normativo</span>
+                      </div>
+                    </DropdownWithoutIcon>
+
+                             
 
                     <DropdownWithoutIcon href="/actividades">
                       <div className="flex items-center py-3 px-4 dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">

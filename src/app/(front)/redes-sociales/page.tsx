@@ -17,10 +17,10 @@ const RedesSocialesPage = () => {
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
         src={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748923390/redes_n5ncln.jpg"
         }
         srcMobile={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747668586/1-88_ergm66.jpg"
+          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748923390/redes_n5ncln.jpg"
         }
         title="Redes Sociales"
         description="En esta sección encontrarás todo sobre nuestras redes sociales: síguenos y entérate de cursos, tips y novedades en RCP."
@@ -48,6 +48,26 @@ const RedesSocialesPage = () => {
               alt="RCP"
               className="w-[500px] h-full object-contain rounded"
             />
+          </div>
+        </div>
+
+        <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+          ¡Julian Weich también se compromete con Argentina Reanima!
+        </h2>
+
+        <div className="w-full flex justify-center gap-10 flex-wrap">
+          <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
+            <InstagramEmbed url="https://www.instagram.com/p/CSzQYtXgY2t/" />
+          </div>
+        </div>
+
+            <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+          El Compromiso continúa Ley 27.159
+        </h2>
+
+        <div className="w-full flex justify-center gap-10 flex-wrap">
+          <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
+            <InstagramEmbed url="https://www.instagram.com/p/CmEwMU2r6fF/?utm_source=ig_embed&amp;utm_campaign=loading" />
           </div>
         </div>
 

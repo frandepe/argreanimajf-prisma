@@ -103,29 +103,19 @@ const playerRef = useRef<ReactPlayer>(null);
         //   style={{ aspectRatio: "16/9" }}
         />
       ) : (
-        <video
-          ref={videoRef}
-          className="w-full"
-          onTimeUpdate={() => {
-            if (videoRef.current) {
-              const progress =
-                (videoRef.current.currentTime / videoRef.current.duration) * 100;
-              setProgress(progress);
-              setCurrentTime(videoRef.current.currentTime);
-              setDuration(videoRef.current.duration);
-            }
-          }}
-          src={src}
-          onClick={() => {
-            if (videoRef.current) {
-              if (isPlaying) {
-                videoRef.current.pause();
-              } else {
-                videoRef.current.play();
-              }
-              setIsPlaying(!isPlaying);
-            }
-          }}
+          <ReactPlayer
+          ref={playerRef}
+          url={src}
+          playing={isPlaying}
+          volume={isMuted ? 0 : volume}
+          onProgress={handleProgress}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}           
+          playbackRate={playbackSpeed}
+          width="100%"
+          // height="100%"
+          height={height}
+        //   style={{ aspectRatio: "16/9" }}
         />
       )}
 

@@ -41,7 +41,7 @@ export const seedDataActivities = {
       published: "22 Feb 2025",
       url: "https://shadcnblocks.com",
       image:
-        "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216940/1_gr00qz_tgocse.jpg",
+        "https://res.cloudinary.com/dtbryiptz/image/upload/v1748216979/1-50_rsrp9y_k4g7dd.jpg",
       tags: ["RCP", "DEA", "Muerte súbita"],
     },
   ],

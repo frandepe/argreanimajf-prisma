@@ -36,6 +36,7 @@ export default function FilialesMap() {
       zoom={4}
       scrollWheelZoom={false}
       style={{ height: "100vh", width: "50%" }}
+ 
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

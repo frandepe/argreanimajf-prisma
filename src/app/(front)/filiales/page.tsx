@@ -25,6 +25,7 @@ const FilialesPage = () => {
         }
         title="Filiales"
         description="Somos 7 filiales en el país, con equipo de instructores y recursos propios, para continuar multiplicando manos que salvan vidas"
+        
       />
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
         <div>
@@ -54,7 +55,7 @@ const FilialesPage = () => {
         <div className="w-full flex justify-center ">
           <FilialesMap />
         </div>
-        <div className="bg-white p-6 md:p-10 rounded-2xl shadow-md max-w-4xl mx-auto space-y-6">
+        <div className="bg-white  md:p-10 rounded-2xl  max-w-4xl mx-auto space-y-6 border border-none">
           <Titleh1 title="Nuestro compromiso con Nacer entre Palabras" />
           <p className="text-gray-700 text-base md:text-lg">
             Con mucho orgullo y satisfacción, desde el año{" "}

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 interface BannerHeroProps {
   title?: string;
+  secondTitle?: string;
   description?: string;
   src: string | null;
   imgClassname?: string;
@@ -15,6 +16,7 @@ interface BannerHeroProps {
 export default function BannerHero({
   imgClassname,
   title,
+  secondTitle,
   description,
   src,
   srcMobile,
@@ -52,6 +54,7 @@ export default function BannerHero({
           <h1 className="text-5xl md:text-7xl font-bold mb-4 font-oswald ">
             {title}
           </h1>
+          <h2 className="text-5xl md:text-7xl font-bold mb-4 font-oswald ">{secondTitle}</h2>
         </BlurFade>
         <BlurFade delay={0.25 * 2} inView>
           <p className="text-xl md:text-3xl italic whitespace-pre-line break-words w-full mx-auto max-w-3xl text-center">
