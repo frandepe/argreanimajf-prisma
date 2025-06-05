@@ -189,16 +189,16 @@ function Footer() {
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © 2024 Argentina Reanima . Todos los derechos reservados.
+            © 2025 Argentina Reanima. Todos los derechos reservados.
           </p>
-          <nav className="flex gap-4 text-sm">
+          {/* <nav className="flex gap-4 text-sm">
             <Link href="#" className="transition-colors hover:text-gray-600">
               Política de Privacidad
             </Link>
             <Link href="#" className="transition-colors hover:text-gray-600">
               Configuración de Cookies
             </Link>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </footer>

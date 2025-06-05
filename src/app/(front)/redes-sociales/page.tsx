@@ -2,15 +2,12 @@
 
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { Titleh1 } from "@/components/Texts/Titleh1";
-import React, { Suspense } from "react";
+import React from "react";
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
-import dynamic from "next/dynamic";
 import InstagramEmbed from "@/components/RedesSociales/InstagramEmbed";
-
-const VideoPlayer = dynamic(() => import("@/components/Video/video-player"), {
-  ssr: false,
-});
+import { TextVideoBeeGees } from "@/components/TextImage/TextVideoBeeGees";
+import { Separator } from "@/components/ui/separator";
+import { TextVideoPalmeras } from "@/components/TextImage/TextVideoPalmeras";
 
 const RedesSocialesPage = () => {
   return (
@@ -52,7 +49,7 @@ const RedesSocialesPage = () => {
         </div>
 
         <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-          ¡Julian Weich también se compromete con Argentina Reanima!
+          ¡Jualian weich tambien lucha contra la muerte subita!
         </h2>
 
         <div className="w-full flex justify-center gap-10 flex-wrap">
@@ -61,7 +58,7 @@ const RedesSocialesPage = () => {
           </div>
         </div>
 
-            <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+        <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
           El Compromiso continúa Ley 27.159
         </h2>
 
@@ -73,56 +70,9 @@ const RedesSocialesPage = () => {
 
         <Titleh1 title={"Pregunta por la vida"} />
 
-        <div className="md:px-10 w-full max-w-7xl mx-auto">
-          <p>
-            🎶 ¡Gracias, Bee Gees! Ahora, Argentina Reanima marca el ritmo. 🎶
-          </p>
-          <br />
-          <p>
-            Por años, Stayin Alive fue la canción que nos ayudó a mantener el
-            ritmo correcto para hacer RCP.
-          </p>
-          <br />
-          <p>
-            Pero hoy damos un paso más: presentamos <b>Pregunta por la Vida</b>,
-            nuestro propio himno para concientizar sobre la importancia del RCP
-            y el DEA en las escuelas.
-          </p>
-          <br />
-          <p>
-            📢 Cuando los padres dejan a sus hijos en la escuela, confían en que
-            estarán seguros. Se preocupan por los libros, los horarios y los
-            viajes, pero pocas veces se preguntan:
-          </p>
-          <p>❗ ¿Hay alguien capacitado en RCP?</p>
-          <p>❗ ¿La escuela cuenta con un DEA?</p>
-          <p>
-            ❗ ¿Está realmente preparada para responder ante una emergencia?
-          </p>
-          <p>
-            La Ley de Muerte Súbita ya está vigente, pero debe ser implementada.
-            No esperemos a que sea demasiado tarde.
-          </p>
-          <p>
-            💬 Pregunta por la vida en la escuela de tus hijos. Exijamos
-            escuelas cardioasistidas. Disponible para todos los instructores¡!
-          </p>
-          <p>
-            #GraciasBeeGees #PreguntaPorLaVida #ArgentinaReanimaAC #RCP #DEA
-            #EscuelasCardioasistidas #SoloBajamosLosBrazosParaHacerRCP
-          </p>
-        </div>
-
-        <Card className="max-w-7xl flex text-start md:w-[800px] md:mx-auto ">
-          <div className="h-full w-full transition-opacity duration-200 fade-in hover:opacity-70">
-            <Suspense fallback={<div>Cargando video...</div>}>
-              <VideoPlayer
-                src={"https://www.youtube.com/watch?v=RAJHlryxTGw"}
-                height="500px"
-              />
-            </Suspense>
-          </div>
-        </Card>
+        <TextVideoPalmeras />
+        <Separator className="bg-gray-300" />
+        <TextVideoBeeGees />
       </div>
     </div>
   );
