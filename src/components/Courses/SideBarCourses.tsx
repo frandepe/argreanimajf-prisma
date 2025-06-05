@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeftFromLine, ArrowRightFromLine, Home, Pen } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 const CollapsibleSection = ({
@@ -79,11 +79,11 @@ const SidebarCourses = ({
     visible: { x: 0 },
   };
 
-  const logo = {
-    url: "/",
-    src: "/logo/logo.png",
-    alt: "argentinareanima",
-  };
+  // const logo = {
+  //   url: "/",
+  //   src: "/logo/logo.png",
+  //   alt: "argentinareanima",
+  // };
   return (
     <div className="flex  h-[500px]  bg-gray-300">
       {/* Mobile Sidebar */}
@@ -111,7 +111,7 @@ const SidebarCourses = ({
             {/* Profile Section */}
             <div className="p-4 border-b border-gray-200 ">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
+                {/* <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center">
                   <Image
                     width={200}
                     height={200}
@@ -119,10 +119,12 @@ const SidebarCourses = ({
                     className="img-logo transform transition-transform duration-300 hover:scale-105 w-6 h-6 cursro-pointer"
                     alt={logo.alt}
                   />
-                </div>
+                </div> */}
                 <div>
-                  <p className="font-semibold">HextaUI</p>
-                  <p className="text-sm text-gray-500">hi@preetsuthar.me</p>
+                  <p className="font-semibold">Menú de cursos</p>
+                  <p className="text-sm text-gray-500">
+                    argentinareanima.ac@gmail.com
+                  </p>
                 </div>
               </div>
             </div>
@@ -180,7 +182,9 @@ const SidebarCourses = ({
                     </li>
                     <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
                       <Link
-                        href={"https://www.facebook.com/argentinareanima"}
+                        href={
+                          "https://www.facebook.com/profile.php?id=100087258240312"
+                        }
                         target="_blank"
                       >
                         Facebook
@@ -208,7 +212,7 @@ const SidebarCourses = ({
         {/* Profile Section */}
         <div className="p-4 border-b border-gray-200">
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12  rounded-full flex items-center justify-center">
+            {/* <div className="w-12 h-12  rounded-full flex items-center justify-center">
               <Image
                 width={200}
                 height={200}
@@ -216,9 +220,9 @@ const SidebarCourses = ({
                 className="img-logo transform transition-transform duration-300 hover:scale-105 w-6 h-6 cursro-pointer"
                 alt={logo.alt}
               />
-            </div>
+            </div> */}
             <div>
-              <p className="font-semibold">Argentina Reanima</p>
+              <p className="font-semibold">Menú de cursos</p>
               <p className="text-sm text-gray-500">
                 argentinareanima.ac@gmail.com
               </p>
@@ -279,7 +283,9 @@ const SidebarCourses = ({
                 </li>
                 <li className="text-base pl-2 text-gray-500 hover:text-gray-400">
                   <Link
-                    href={"https://www.facebook.com/argentinareanima"}
+                    href={
+                      "https://www.facebook.com/profile.php?id=100087258240312"
+                    }
                     target="_blank"
                   >
                     Facebook

@@ -37,25 +37,6 @@ const MarcoNormativoPage = () => {
           <h2 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
             <Scale className="text-primary" /> Legislación Nacional
           </h2>
-          <h2 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
-            Ley 26.835 (2012)
-          </h2>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
-            Promoción y enseñanza de RCP básica en escuelas
-          </h3>
-
-          <li>
-            Establece la enseñanza obligatoria de maniobras básicas de RCP en
-            escuelas de nivel medio y superior.
-          </li>
-          <li>
-            Capacita a docentes y estudiantes para actuar ante un paro
-            cardiorrespiratorio.
-          </li>
-          <div className="py-3">
-            <Separator className="h-1 " />
-          </div>
-
           <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
             Ley 27.159 (2015)
           </h3>
@@ -72,6 +53,26 @@ const MarcoNormativoPage = () => {
             Fue reglamentada por el Decreto 402/2022, que define los espacios
             cardioprotegidos y crea un registro nacional de DEA.
           </li>
+          <div className="py-3">
+            <Separator className="h-1 " />
+          </div>
+
+          <h2 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+            Ley 26.835 (2012)
+          </h2>
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+            Promoción y enseñanza de RCP básica en escuelas
+          </h3>
+
+          <li>
+            Establece la enseñanza obligatoria de maniobras básicas de RCP en
+            escuelas de nivel medio y superior.
+          </li>
+          <li>
+            Capacita a docentes y estudiantes para actuar ante un paro
+            cardiorrespiratorio.
+          </li>
+
           <div className="py-3">
             <Separator className="h-1 " />
           </div>

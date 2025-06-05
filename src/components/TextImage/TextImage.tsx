@@ -15,14 +15,16 @@ function TextImage() {
             <div></div>
             <div className="flex gap-4 flex-col items-start">
               <Titleh1
-                title="Actuar salva vidas"
+                title="Tu compromiso es necesario"
                 className="max-w-lg tracking-tighter text-start font-regular"
               />
 
               <p className="text-xl leading-relaxed tracking-tight text-muted-foreground max-w-md text-left">
-                Aprendé los pasos esenciales para responder ante una emergencia.
-                Con nuestras capacitaciones, podés marcar la diferencia en cada
-                segundo cuenta.
+                Aprendé los pasos clave para actuar ante una situación de muerte
+                súbita. Con nuestras capacitaciones, dictadas por instructores
+                certificados, podes estar preparado para intervenir de manera
+                segura y eficaz cuando más se necesita; porque cada segundo
+                cuenta.
               </p>
             </div>
             <div className="flex flex-row gap-4 py-4">

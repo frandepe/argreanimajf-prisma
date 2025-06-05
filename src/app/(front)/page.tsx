@@ -35,18 +35,22 @@ export default function Home() {
       />
       <div className="px-4 md:px-0 container mx-auto">
         <Titleh1
-          title={"Dedicamos nuestros esfuerzos a prevenir la muerte súbita."}
+          title={
+            "Dedicamos nuestros esfuerzos en luchar contra la muerte súbita."
+          }
           className="mb-4 text-black dark:text-white"
         />
         <p className="text-lg text-black dark:text-white">
-          Capacitamos a la gente en reanimación cardiopulmonar (RCP), manejo de
-          desfibriladores (DEA) y Maniobra de Heimlich.
+          Capacitamos a personas en técnicas de reanimación cardiopulmonar
+          (RCP), uso de desfibriladores externos automáticos (DEA) y Maniobra de
+          Heimlich, promoviendo además el cumplimiento de la Ley 27.159.
         </p>
 
         <p className="text-lg  text-black dark:text-white">
-          Impulsamos una comunidad más consciente, solidaria y preparada para
-          responder ante emergencias, con la misión de que cada persona pueda
-          convertirse en el primer eslabón de la cadena que sostiene la vida.
+          Fomentamos una comunidad comprometida, solidaria y preparada para
+          actuar de manera rápida y eficaz ante situaciones críticas como la
+          muerte súbita, fortaleciendo el rol de cada persona como primer
+          respondiente en la cadena de respuesta
         </p>
       </div>
 

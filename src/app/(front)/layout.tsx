@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "Argentina Reanima.",
   openGraph: {
     title: "Argentina Reanima",
-    url: "https://argentinareanima.com",
+    url: "https://argentinareanima.com.ar",
     description: "Argentina Reanima.",
     images: [{ url: "/logo/logo.png" }],
   },
@@ -24,7 +24,7 @@ export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) { 
+}) {
   return (
     <div>
       <Navbar />

@@ -8,6 +8,7 @@ import SearchBar from "@/components/SearchBarComponent/SearchBarComponent";
 import { useCourse } from "@/context/CourseContext";
 import { SimplePagination } from "@/components/SimplePagination/SimplePagination";
 import { Button } from "@/components/ui/button";
+import { TextOneImage } from "@/components/TextImage/TextOneImage";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -30,15 +31,10 @@ const CapacitacionesPage = () => {
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
-        src={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748218532/IMG_8272_vqatui_s7v0kz.jpg"
-        }
-        srcMobile={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748218532/IMG_8272_vqatui_s7v0kz.jpg"
-        }
+        src={"/images/banner-capacitaciones.jpg"}
+        srcMobile={"/images/banner-capacitaciones.jpg"}
         title="Capacitaciones"
-        description="
-            Aprendé técnicas de reanimación cardiopulmonar y maniobra de Heimlich con nuestros cursos diseñados para toda la comunidad."
+        description="Aprendé técnicas de reanimación cardiopulmonar , USO DE DEA y maniobra de Heimlich con nuestros cursos diseñados para toda la comunidad."
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
@@ -63,6 +59,9 @@ const CapacitacionesPage = () => {
             )}
           </div>
         </div>
+      </div>
+      <div>
+        <TextOneImage />
       </div>
     </div>
   );

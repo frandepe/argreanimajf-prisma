@@ -30,6 +30,30 @@ function AnimatedQuienesSomos() {
       designation: "Asociación Civil Argentina Reanima",
       src: "/images/quienes-somos/equipo2.jpg",
     },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo4.jpg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo5.jpg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo6.jpg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo7.jpg",
+    },
   ];
   return <AnimatedCarousel testimonials={testimonials} />;
 }

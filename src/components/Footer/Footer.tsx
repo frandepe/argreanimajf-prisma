@@ -34,12 +34,12 @@ function Footer() {
               alt={logo.alt}
             />
             <p className=" text-muted-foreground">
-              Programa nacional que enseña RCP, DEA y maniobra de Heimlich.
+              Asociación Civil Argentina Reanima. Matrícula N° 48014
             </p>
             <div className="absolute -right-4 top-0 h-24 w-24 rounded-full bg-primary/10 blur-2xl" />
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Menu</h3>
+            <h3 className="mb-4 text-lg font-semibold">Menú</h3>
             <nav className="space-y-2 text-sm">
               <Link
                 href="/"
@@ -120,7 +120,7 @@ function Footer() {
                     <Button
                       onClick={() =>
                         window.open(
-                          "https://www.facebook.com/argentinareanima",
+                          "https://www.facebook.com/profile.php?id=100087258240312",
                           "_blank"
                         )
                       }
@@ -144,7 +144,7 @@ function Footer() {
                     <Button
                       onClick={() =>
                         window.open(
-                          "https://www.instagram.com/argentinareanima",
+                          "https://www.instagram.com/argentinareanimaac",
                           "_blank"
                         )
                       }

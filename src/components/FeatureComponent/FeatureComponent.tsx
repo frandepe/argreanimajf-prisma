@@ -23,23 +23,24 @@ interface FeatureStepsProps {
 export const features = [
   {
     step: "Step 1",
-    title: "Aprende lo básico",
+    title: "Aprendé lo esencial",
     content:
-      "Flexible y accesible: aprendé cuándo y dónde quieras, a tu propio ritmo.",
+      "Flexible y accesible: capacitaciones que se adaptan a vos. Aprendé cuándo y dónde quieras, a tu propio ritmo.",
     image: "/images/2.jpeg",
   },
   {
     step: "Step 2",
-    title: "Aprendizaje en línea",
+    title: "Formación combinada",
     content:
-      "Argentina Reanima ofrece cursos a distancia y combinados para una formación completa y flexible.",
+      "En Argentina Reanima ofrecemos cursos con modalidades mixtas para una formación completa, práctica y flexible.",
     image:
       "https://res.cloudinary.com/dtbryiptz/image/upload/v1747443444/step2_mdfnqi.jpg",
   },
   {
     step: "Step 3",
-    title: "Aprende todo sobre rcp y desfibriladores",
-    content: "Aprende a usar desfibriladores y a realizar RCP.",
+    title: "RCP y uso de DEA al alcance de todos",
+    content:
+      "Adquirí los conocimientos necesarios para actuar ante una emergencia. Aprendé a realizar RCP y a utilizar desfibriladores externos automáticos (DEA) con seguridad y confianza. Lo anterior aplicado a adultos, niños y lactantes.",
     image: "/images/5.jpeg",
   },
 ];

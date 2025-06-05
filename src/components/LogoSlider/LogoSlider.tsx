@@ -31,9 +31,6 @@ export const LogoSlider = () => {
                         height={80}
                         className="w-18 h-18 md:w-26 md:h-26"
                       />
-                      <p className="text-base md:text-lg font-semibold opacity-80">
-                        RF.A.C
-                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>Federación Argentina de Cardiología</p>
@@ -53,9 +50,6 @@ export const LogoSlider = () => {
                         height={80}
                         className="w-18 h-18 md:w-26 md:h-26"
                       />
-                      <p className="text-base md:text-lg font-semibold opacity-80">
-                        RI.U
-                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>
@@ -77,9 +71,6 @@ export const LogoSlider = () => {
                         height={80}
                         className="w-18 h-18 md:w-26 md:h-26"
                       />
-                      <p className="text-base md:text-lg font-semibold opacity-80">
-                        R.C.P
-                      </p>
                     </TooltipTrigger>
                     <TooltipContent>
                       <p>Red Nacional Prevención Muerte Subita</p>
