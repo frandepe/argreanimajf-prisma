@@ -70,11 +70,31 @@ La circulación se calcula dividiendo la afluencia total anual por los días de 
 
 También deben cumplir con los requisitos para ser considerados espacios cardioasistidos, como personal capacitado, señalización, sistema de emergencias y protocolo adaptado.`,
   },
+    {
+    question:
+      "¿Qué pasa si la persona a la que le hago RCP se muere o le quiebro una costilla?",
+    answer: `Esta es una de las dudas más frecuentes y comprensibles al enfrentarse a una emergencia. Pero es importante entender lo siguiente:
+
+1. La persona a la que se le hace RCP está clínicamente muerta. Si no respira y no tiene pulso, su corazón ha dejado de latir. En ese momento, la única opción que tiene es que alguien intervenga. Por eso se inicia la RCP: para intentar revertir ese paro y darle una oportunidad de vivir.
+
+2. Puede pasar que se fracture una costilla durante la maniobra, sobre todo en personas mayores. Es una posibilidad conocida y aceptada dentro del contexto de la reanimación. Aun así, eso no debe frenar la maniobra. Lo que está en juego es la vida de la persona. La fractura puede tratarse después; la muerte, no.
+
+3. La capacitación periódica ayuda a minimizar riesgos. Aún así, lo más importante es actuar. El miedo a causar daño no debe paralizar: no hacer nada es la peor decisión. 
+
+4. ¿Estoy en problemas si intento ayudar y algo sale mal?
+No. La ley te protege.
+
+El Artículo 11 de la Ley Nacional de Muerte Súbita (N° 27.159) establece claramente:
+
+"Ninguna persona interviniente que haya obrado de acuerdo con las disposiciones de la presente ley, está sujeta a responsabilidad civil, penal, ni administrativa, derivadas del cumplimiento de la misma."
+Esto significa que si actuás de buena fe y siguiendo lo que aprendiste en una capacitación de RCP, no podés ser penalizado ni denunciado por ayudar.
+`,
+  },
 ];
 
 export const Faq = ({
   badge = "FAQ",
-  heading = "Hacemos preguntas al texto de la ley y su reglamentación",
+  heading = "Hacemos preguntas al texto de la ley 27159 y su reglamentación",
   faqs = defaultFaqs,
 }: FaqProps) => {
   return (

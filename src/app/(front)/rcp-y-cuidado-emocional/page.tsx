@@ -59,7 +59,7 @@ const RcpYCuidadoEmocionalPage = () => {
             rel="noopener noreferrer"
           >
             <Button>
-              <Instagram className="mr-2" /> Conectate con Alicia
+              <Instagram className="mr-2" /> @aliciagalfaso
             </Button>
           </a>
         </div>

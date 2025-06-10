@@ -25,7 +25,6 @@ const FilialesPage = () => {
         }
         title="Filiales"
         description="Somos 7 filiales en el país, con equipo de instructores y recursos propios, para continuar multiplicando manos que salvan vidas"
-        
       />
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
         <div>
@@ -55,8 +54,16 @@ const FilialesPage = () => {
         <div className="w-full flex justify-center ">
           <FilialesMap />
         </div>
+
+
+
         <div className="bg-white  md:p-10 rounded-2xl  max-w-4xl mx-auto space-y-6 border border-none">
+          <h2 className=" mb-4  text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+            Convenio con Facultad de Psicología Universidad Nacional de Mar del
+            Plata
+          </h2>
           <Titleh1 title="Nuestro compromiso con Nacer entre Palabras" />
+
           <p className="text-gray-700 text-base md:text-lg">
             Con mucho orgullo y satisfacción, desde el año{" "}
             <span className="font-semibold">2023</span> aportamos nuestras

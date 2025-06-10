@@ -106,23 +106,6 @@ const QuienesSomosPage = () => {
           </div>
         </motion.section>
 
-        <motion.div
-          className="space-y-5 max-w-prose mx-auto text-base md:text-lg text-muted-foreground leading-relaxed text-center"
-          {...fadeIn(0.2)}
-        >
-          <div className="flex gap-4">
-            <Medal className="text-yellow-500" />
-            <p>Premio Inadea</p>
-            <Medal className="text-yellow-500" />
-          </div>
-          <a
-            href="https://www.inadea.com.ar/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button variant="outline">Visitar</Button>
-          </a>
-        </motion.div>
 
         {/* LEY */}
         <motion.div className="md:text-center space-y-10" {...fadeIn(0.4)}>

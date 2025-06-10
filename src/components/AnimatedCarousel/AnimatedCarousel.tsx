@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/libs/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Button } from "../ui/button";
 
 type Testimonial = {
   quote: string;
@@ -136,6 +137,21 @@ export const AnimatedCarousel = ({
                 </motion.span>
               ))}
             </motion.p>
+
+            {active === 1 && (
+              <Button
+                className="my-6 bg-primary text-white hover:bg-[#189bd8e0] hover:text-gray-800"
+                onClick={() =>
+                  window.open(
+                    "https://www.inadea.com.ar/",
+                    "_blank"
+                  )
+                }
+                variant="outline"
+              >
+                Visitar
+              </Button>
+            )}
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
             <button

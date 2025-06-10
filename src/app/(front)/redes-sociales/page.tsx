@@ -49,7 +49,7 @@ const RedesSocialesPage = () => {
         </div>
 
         <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-          ¡Jualian weich tambien lucha contra la muerte subita!
+          ¡Julian weich tambien lucha contra la muerte subita!
         </h2>
 
         <div className="w-full flex justify-center gap-10 flex-wrap">

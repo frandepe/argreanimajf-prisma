@@ -16,7 +16,7 @@ function AnimatedQuienesSomos() {
         "En manos del Dr. Mario Fitz Maurice y con profunda emoción, nuestra querida Asociación fue reconocida por su lucha contra la muerte súbita.",
       name: "Argentina Reanima recibió el Premio INADEA por la Vida 2023",
       designation: "Asociación Civil Argentina Reanima",
-      src: "/images/quienes-somos/equipo3.jpg",
+      src: "https://res.cloudinary.com/dtbryiptz/image/upload/v1749597803/inadea_lkwcrw.jpg",
     },
     {
       quote: "",
