@@ -9,7 +9,7 @@ const VideoPlayer = dynamic(() => import("../Video/video-player"), {
 
 function TextVideoPalmeras() {
   return (
-    <div className="w-full pt-20 lg:pt-40">
+    <div className="w-full">
       <div className="mx-auto w-full px-4 max-w-7xl">
         <div className="relative overflow-hidden">
           {/* VIDEO A LA DERECHA EN DESKTOP */}

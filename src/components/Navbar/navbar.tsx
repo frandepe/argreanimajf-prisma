@@ -9,6 +9,7 @@ import {
   Images,
   Library,
   Menu,
+  Music,
   Network,
   NewspaperIcon,
   Pen,
@@ -224,6 +225,22 @@ const Navbar = ({
                         </li>
                         <li>
                           <Link
+                            href="/nuestra-musica"
+                            className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
+                          >
+                            <Music className="size-5 shrink-0" />
+                            <div>
+                              <div className="text-sm font-semibold">
+                                Nuestra música
+                              </div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                Escuchá las últimas canciones
+                              </p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
                             className="flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-muted hover:text-accent-foreground"
                             href="/galeria"
                           >
@@ -392,6 +409,13 @@ const Navbar = ({
                               <HeartPulse className="mr-2" />
 
                               <span className="text-lg">Filiales</span>
+                            </div>
+                          </DropdownWithoutIcon>
+                          <DropdownWithoutIcon href="/nuestra-musica">
+                            <div className="ml-2 flex items-center py-3  dark:hover:bg-gray-800 hover:bg-gray-100 transition-colors w-full dark:hover:text-white">
+                              <Music className="mr-2" />
+
+                              <span className="text-lg">Nuestra música</span>
                             </div>
                           </DropdownWithoutIcon>
                           <DropdownWithoutIcon href="/rcp-y-cuidado-emocional">

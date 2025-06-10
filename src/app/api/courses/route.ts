@@ -1,5 +1,6 @@
 import { Prisma } from "@/generated/prisma";
 import { prisma } from "@/libs/db";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -86,7 +87,7 @@ export async function POST(req: Request) {
         lessons: true,
       },
     });
-
+    revalidatePath("/api/courses");
     return NextResponse.json(newCourse, { status: 201 });
   } catch (error) {
     console.error("Error creando curso:", error);
@@ -133,7 +134,7 @@ export async function PUT(req: Request) {
         lessons: true,
       },
     });
-
+    revalidatePath("/api/courses");
     return NextResponse.json(updatedCourse, { status: 200 });
   } catch (error) {
     console.error("Error actualizando curso:", error);

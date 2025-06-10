@@ -1,6 +1,7 @@
 import { Prisma } from "@/generated/prisma";
 import cloudinary from "@/libs/cloudinary";
 import { prisma } from "@/libs/db";
+import { revalidatePath } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -113,7 +114,8 @@ export async function POST(request: Request) {
         imagePublicId,
       },
     });
-
+    revalidatePath("/api/news");
+    revalidatePath("/api/lastThreeNews");
     return NextResponse.json(
       { message: "Noticia creada exitosamente", news, success: true },
       { status: 201 }

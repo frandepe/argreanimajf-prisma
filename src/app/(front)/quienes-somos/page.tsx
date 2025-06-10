@@ -6,6 +6,8 @@ import BannerHero from "@/components/BannerHero/BannerHero";
 import { Titleh1 } from "@/components/Texts/Titleh1";
 import { Separator } from "@/components/ui/separator";
 import { AnimatedQuienesSomos } from "@/components/AnimatedCarousel/AnimatedQuienesSomos";
+import { Medal } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Animación reusable
 const fadeIn = (delay = 0) => ({
@@ -68,7 +70,7 @@ const QuienesSomosPage = () => {
 
         {/* NUEVA SECCIÓN: Origen y Compromiso */}
         <motion.section
-          className="relative bg-muted/30 md:p-6 md:p-12 rounded-2xl  overflow-hidden"
+          className="relative bg-muted/30 md:p-6 rounded-2xl  overflow-hidden"
           {...fadeIn(0.3)}
         >
           <div className="absolute inset-0 opacity-10 bg-[url('https://res.cloudinary.com/dtbryiptz/image/upload/v1747673000/argentina-map-bg.svg')] bg-contain bg-no-repeat bg-center pointer-events-none" />
@@ -103,6 +105,24 @@ const QuienesSomosPage = () => {
             </p>
           </div>
         </motion.section>
+
+        <motion.div
+          className="space-y-5 max-w-prose mx-auto text-base md:text-lg text-muted-foreground leading-relaxed text-center"
+          {...fadeIn(0.2)}
+        >
+          <div className="flex gap-4">
+            <Medal className="text-yellow-500" />
+            <p>Premio Inadea</p>
+            <Medal className="text-yellow-500" />
+          </div>
+          <a
+            href="https://www.inadea.com.ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline">Visitar</Button>
+          </a>
+        </motion.div>
 
         {/* LEY */}
         <motion.div className="md:text-center space-y-10" {...fadeIn(0.4)}>

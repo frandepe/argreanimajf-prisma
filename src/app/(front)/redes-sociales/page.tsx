@@ -67,12 +67,6 @@ const RedesSocialesPage = () => {
             <InstagramEmbed url="https://www.instagram.com/p/CmEwMU2r6fF/?utm_source=ig_embed&amp;utm_campaign=loading" />
           </div>
         </div>
-
-        <Titleh1 title={"Pregunta por la vida"} />
-
-        <TextVideoPalmeras />
-        <Separator className="bg-gray-300" />
-        <TextVideoBeeGees />
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
 "use client";
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { Titleh1 } from "@/components/Texts/Titleh1";
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Instagram } from "lucide-react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 import React, { Suspense } from "react";
 // En esta LP sumar este contenido https://drive.google.com/drive/u/4/folders/1zfLpbMTadsQbO0fukvItE3evFWxP4phu https://res.cloudinary.com/dtbryiptz/image/upload/v1748912110/banner-principal-Picsart-AiImageEnhancer_py0oum.jpg
@@ -13,6 +16,7 @@ const VideoPlayer = dynamic(() => import("@/components/Video/video-player"), {
 });
 
 const RcpYCuidadoEmocionalPage = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
@@ -49,6 +53,15 @@ const RcpYCuidadoEmocionalPage = () => {
             Porque tal lo expresa la Licenciada en sus riquísimos talleres:{" "}
             <b>QUE LO QUE NOS APASIONA, NO NOS ENFERME</b>
           </p>
+          <a
+            href="https://www.instagram.com/aliciagalfaso/#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button>
+              <Instagram className="mr-2" /> Conectate con Alicia
+            </Button>
+          </a>
         </div>
 
         {/* LEY */}
@@ -59,17 +72,13 @@ const RcpYCuidadoEmocionalPage = () => {
           <div className="h-full w-full transition-opacity duration-200 fade-in hover:opacity-70">
             <Suspense fallback={<div>Cargando video...</div>}>
               <VideoPlayer
-           
                 src={
                   "https://res.cloudinary.com/dtbryiptz/video/upload/v1748913167/Alicia_aephdb.mp4"
                 }
-             
               />
             </Suspense>
           </div>
         </Card>
-
-        
       </div>
     </div>
   );

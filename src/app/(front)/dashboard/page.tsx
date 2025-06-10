@@ -26,14 +26,6 @@ function DashboardPage() {
       icon: <School />,
       cta: "Ir a Cursos",
     },
-    {
-      title: "Videos",
-      href: "/dashboard/videos",
-      description:
-        "Compartí videos con tu audiencia y hacé crecer tu contenido.",
-      icon: <Video />,
-      cta: "Subir Videos",
-    },
   ];
   return (
     <SidebarContent>
