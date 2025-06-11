@@ -151,6 +151,82 @@ export const Timeline = () => {
       ),
     },
     {
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            Con el aporte mensual de los socios y el dinero que nos ingreso por
+            las actividades de capacitación que realizamos con la empresa
+            Camuzzi, pudimos comprar 25 torsos para practicas de RCP. Elementos
+            muy importantes para poder realizar nuestras actividades y enseñar a
+            Salvar Vidas. Gracias a los que mes tras mes aportan su granito de
+            arena abonando la cuota de socio. Gracias Camuzzi por confiar en
+            nosotros, en estas charlas multitudinarias y abiertas a la
+            comunidades de diferentes lugares del país, que seguiremos
+            compartiendo. Gracias también por la donación de 4 banners, que
+            fueron diseñados por nuestro socio Leonardo Hariyo. Gracias a
+            nuestros instructores por llevar adelante las actividades con tanta
+            pasión y pertenencia, utilizando sus equipos para cumplir con
+            nuestro objetivo. Gracias a las Empresa ODD, fabricantes de los
+            maniquíes, por la empatía, por facilitarnos la gestión, por los
+            beneficios para nuestros socios. Seguimos avanzando y creciendo como
+            asociación, con nuestro compromiso intacto de continuar luchando,
+            para que la implementación de la Ley de muerte Súbita en la
+            Argentina, sea una realidad que alcance a todos.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://res.cloudinary.com/dtbryiptz/image/upload/v1749614466/20232_ussdxw.jpg"
+              alt="hero template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-72 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <Image
+              src="https://res.cloudinary.com/dtbryiptz/image/upload/v1749614959/torsos_fxtbmp.jpg"
+              alt="feature template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-72 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: "2023",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+            San Manuel .Loberia. El jueves 5 de octubre en el marco de la Semana
+            del Corazón realizamos actividades donde participaron alumnos y
+            docentes de las Escuelas primarias y secundarias. Gracias a todos
+            los que asistieron. Gracias Sergio Marcos y equipo, por solo bajar
+            los brazos para enseñar RCP. Seguimos luchando contra la muerte
+            súbita.
+          </p>
+
+          <div className="grid grid-cols-2 gap-4">
+            <Image
+              src="https://res.cloudinary.com/dtbryiptz/image/upload/v1749614459/2023_jzgtrz.jpg"
+              alt="hero template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-72 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+            <Image
+              src="https://res.cloudinary.com/dtbryiptz/image/upload/v1748923390/redes_n5ncln.jpg"
+              alt="feature template"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-72 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+    {
       title: "2022",
       content: (
         <div>
