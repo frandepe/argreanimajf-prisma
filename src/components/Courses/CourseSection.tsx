@@ -22,7 +22,9 @@ const CoursesSection = () => {
             Cursos
           </h2>
           <p className="text-muted-foreground md:text-base lg:max-w-2xl lg:text-lg">
-            Formate en reanimación cardiopulmonar y aprendé a salvar vidas.
+            {/* Formate en reanimación cardiopulmonar y aprendé a salvar vidas. */}
+            Estamos trabajando para ofrecerte las mejores propuestas de
+            formación online.
           </p>
         </div>
 
@@ -78,15 +80,7 @@ const CoursesSection = () => {
                 <CardContent className="p-4">
                   <CardHeader>
                     <h3 className="text-lg font-semibold hover:underline md:text-xl">
-                      <a
-                        href={
-                          "https://res.cloudinary.com/dtbryiptz/image/upload/v1747831009/images/mgeqbvdxrext2jzutfzc.jpg"
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {n.title}
-                      </a>
+                      <Link href={`/capacitaciones/${n.id}`}>{n.title}</Link>
                     </h3>
                   </CardHeader>
                   <p className="text-muted-foreground">

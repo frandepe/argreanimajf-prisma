@@ -6,8 +6,7 @@ import BannerHero from "@/components/BannerHero/BannerHero";
 import { Titleh1 } from "@/components/Texts/Titleh1";
 import { Separator } from "@/components/ui/separator";
 import { AnimatedQuienesSomos } from "@/components/AnimatedCarousel/AnimatedQuienesSomos";
-import { Medal } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useMobile } from "@/hooks/useMedia";
 
 // Animación reusable
 const fadeIn = (delay = 0) => ({
@@ -18,6 +17,7 @@ const fadeIn = (delay = 0) => ({
 });
 
 const QuienesSomosPage = () => {
+  const isMobile = useMobile();
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
@@ -25,6 +25,9 @@ const QuienesSomosPage = () => {
         srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1748923214/IMG_8319_a7pfch.jpg"
         title="¿Quiénes somos?"
         description="Somos una Asociación Civil que lucha contra la muerte súbita. Conoce más sobre nuestra misión y visión."
+        imgClassname={
+          isMobile ? "object-cover object-[right_30%] " : "object-cover"
+        }
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16">
@@ -105,7 +108,6 @@ const QuienesSomosPage = () => {
             </p>
           </div>
         </motion.section>
-
 
         {/* LEY */}
         <motion.div className="md:text-center space-y-10" {...fadeIn(0.4)}>

@@ -156,7 +156,7 @@ const RedesSocialesPage = () => {
 
       {/* Stats Section */}
       <motion.section
-        className="relative py-16 bg-gradient-to-r from-primary via-[#189cd8] to-red-600"
+        className="relative py-16 bg-gradient-to-r from-primary via-[#189cd8] to-secondary"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -224,9 +224,9 @@ const RedesSocialesPage = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
                 <div className="flex items-center gap-3 mb-4">
-                  <Instagram className="w-6 h-6 text-pink-500" />
+                  <Instagram className="w-6 h-6 text-primary" />
                   <span className="font-semibold text-gray-800">
                     Instagram Reel
                   </span>
@@ -244,9 +244,9 @@ const RedesSocialesPage = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
                 <div className="flex items-center gap-3 mb-4">
-                  <Instagram className="w-6 h-6 text-pink-500" />
+                  <Instagram className="w-6 h-6 text-primary" />
                   <span className="font-semibold text-gray-800">
                     Instagram Post
                   </span>
@@ -267,7 +267,7 @@ const RedesSocialesPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative mx-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20 scale-105" />
             <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
               <div className="p-8">
@@ -319,7 +319,7 @@ const RedesSocialesPage = () => {
           </motion.div>
 
           <motion.div className="mt-12" variants={scaleVariants}>
-            <div className="relative max-w-xl mx-auto">
+            <div className="relative max-w-md mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl blur-2xl opacity-20 scale-105" />
               <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
                 <div className="p-6">
@@ -409,18 +409,18 @@ const RedesSocialesPage = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-primary-to-r from-[#189cd8] to-red-600 rounded-3xl blur-3xl opacity-10 scale-110" />
+            <div className="absolute inset-0 bg-primary-to-r from-[primary] to-[secondary}] rounded-3xl blur-3xl opacity-10 scale-110" />
             <div className="relative bg-gradient-to-r from-primary to-red-600 rounded-3xl p-12 text-white">
               <h3 className="text-3xl font-bold mb-4">
-                ¡Síguenos en Nuestras Redes!
+                ¡Seguinos en Nuestras Redes!
               </h3>
               <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
                 Mantente actualizado con nuestros últimos contenidos educativos
-                y únete a nuestra comunidad
+                y unite a nuestra comunidad
               </p>
               <div className="flex flex-col  md:flex-row items-center gap-5 justify-center">
                 <motion.button
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() =>
@@ -438,11 +438,11 @@ const RedesSocialesPage = () => {
                 <motion.button
                   onClick={() =>
                     window.open(
-                      "https://www.facebook.com/argentinareanima/",
+                      "https://www.facebook.com/profile.php?id=100087258240312",
                       "_blank"
                     )
                   }
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -459,7 +459,7 @@ const RedesSocialesPage = () => {
                       "_blank"
                     )
                   }
-                  className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

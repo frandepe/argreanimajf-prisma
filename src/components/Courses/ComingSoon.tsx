@@ -1,27 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface CommingSoonCardsrops {
-  id: number
-  title: string
-  category: string
-  imageUrl?: string
+  id: number;
+  title: string;
+  category: string;
+  imageUrl?: string;
 }
 
-export function CommingSoonCards({ id, title, category, imageUrl = "/images/curso-gratuito-thumb.jpg" }: CommingSoonCardsrops) {
-  const [isVisible, setIsVisible] = useState(false)
+export function CommingSoonCards({
+  id,
+  title,
+  category,
+  imageUrl = "/images/curso-gratuito-thumb.jpg",
+}: CommingSoonCardsrops) {
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 300)
+      setIsVisible(true);
+    }, 300);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <Card className="grid grid-rows-[auto_auto_1fr_auto] relative overflow-hidden">
@@ -77,13 +82,10 @@ export function CommingSoonCards({ id, title, category, imageUrl = "/images/curs
             animate={isVisible ? { opacity: 1 } : {}}
             transition={{ delay: 0.6 }}
           >
-            Estamos preparando este contenido para ti
+            Estamos preparando este contenido para vos
           </motion.p>
         </motion.div>
       </div>
     </Card>
-
-
-
-  )
+  );
 }

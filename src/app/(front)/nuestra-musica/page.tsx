@@ -17,6 +17,7 @@ const RedesSocialesPage = () => {
         srcMobile={"/images/Banner-nuestra-musica.jpg"}
         title="Nuestra música"
         description="Las canciones que nos ayudan a mantener el ritmo correcto para hacer RCP."
+        imgClassname={"object-cover"}
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
@@ -25,7 +26,7 @@ const RedesSocialesPage = () => {
         <Separator className="bg-gray-300" />
         <TextVideoBeeGees />
       </div>
-      
+
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
         <Separator className="bg-gray-300" />
         <Titleh1 title="Pregunta por la Vida: La Voz de RCP en Spotify" />

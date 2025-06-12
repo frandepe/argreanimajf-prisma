@@ -31,7 +31,7 @@ export default function Home() {
       <BannerHero
         src="/images/4.jpeg"
         srcMobile="/images/9.jpeg"
-        imgClassname={isMobile ? "object-[center_10%]" : "object-[center_30%]"}
+        imgClassname={isMobile ? "object-cover" : "scale-110 object-cover"}
       />
       <div className="px-4 md:px-0 container mx-auto">
         <Titleh1

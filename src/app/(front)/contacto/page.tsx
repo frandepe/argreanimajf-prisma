@@ -6,7 +6,8 @@ const ContactoPage = () => {
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
-        imgClassname="object-fit md:object-cover object-[right_0px] md:object-[center_0px] "
+        imgClassname={"object-cover"}
+        // imgClassname="object-fit md:object-cover object-[right_0px] md:object-[center_0px] "
         src={
           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748027840/banner-contacto_iukk0c.png"
         }

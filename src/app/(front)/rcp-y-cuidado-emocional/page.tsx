@@ -24,6 +24,7 @@ const RcpYCuidadoEmocionalPage = () => {
         srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1748912110/banner-principal-Picsart-AiImageEnhancer_py0oum.jpg"
         title={"Somos Seres"}
         secondTitle="Biopsicosociales"
+        imgClassname={"object-cover"}
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 md:pb-16">

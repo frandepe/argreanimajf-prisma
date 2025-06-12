@@ -1,18 +1,24 @@
+"use client";
+
 import React from "react";
 import BannerHero from "../../../components/BannerHero/BannerHero";
 import { seedDataActivities } from "@/components/Activities/ActivitiesCardsComponent";
 import { ActivitiesCards } from "@/components/Activities/ActivitiesCards";
 import { Timeline } from "@/components/TimeLineComponent/TimeLineComponent";
 import { Titleh1 } from "@/components/Texts/Titleh1";
+import { useMobile } from "@/hooks/useMedia";
 
 const Actividades = () => {
+  const isMobile = useMobile();
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747684788/DSC_4071_ebrq8f.jpg"
         srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1747684788/DSC_4071_ebrq8f.jpg"
         title="Actividades"
-        imgClassname="object-fit md:object-cover object-[left_0px]"
+        imgClassname={
+          isMobile ? "object-cover object-[left_30%] " : "object-cover"
+        }
         description="Capacitaciones, jornadas y encuentros en distintas ciudades del país, porque “Solo bajamos los brazos para hacer RCP”"
       />
 

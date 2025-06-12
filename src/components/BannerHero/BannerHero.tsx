@@ -37,16 +37,16 @@ export default function BannerHero({
 
   return (
     <div className="relative overflow-hidden min-h-screen flex items-center justify-center w-full">
-      <div className="absolute inset-0 w-full -z-10">
+      <div className="absolute inset-0 -z-10">
         <Image
           src={selectedSrc}
           alt="Argentina Reanima"
-          width={300}
-          height={300}
-          className={`${imgClassname} object-cover h-screen w-full `}
+          fill
+          className={`${imgClassname}`}
           quality={100}
+          priority
         />
-        <div className="absolute inset-0 bg-black/40 w-full min-h-screen h-full" />
+        <div className="absolute inset-0 bg-black/40 w-full h-full" />
       </div>
 
       <div className="absolute container text-center text-white w-full">
@@ -54,7 +54,9 @@ export default function BannerHero({
           <h1 className="text-5xl md:text-7xl font-bold mb-4 font-oswald ">
             {title}
           </h1>
-          <h2 className="text-5xl md:text-7xl font-bold mb-4 font-oswald ">{secondTitle}</h2>
+          <h2 className="text-5xl md:text-7xl font-bold mb-4 font-oswald ">
+            {secondTitle}
+          </h2>
         </BlurFade>
         <BlurFade delay={0.25 * 2} inView>
           <p className="text-xl md:text-3xl italic whitespace-pre-line break-words w-full mx-auto max-w-3xl text-center">

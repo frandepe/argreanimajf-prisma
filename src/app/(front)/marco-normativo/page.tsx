@@ -13,7 +13,7 @@ const MarcoNormativoPage = () => {
       <BannerHero
         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1748918703/ley27159_gmfwyq.jpg"
         srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1748918703/ley27159_gmfwyq.jpg"
-        imgClassname="object-fit md:object-cover md:object-[right_-210px]"
+        imgClassname="object-[center_30%]"
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 md:pb-16">
