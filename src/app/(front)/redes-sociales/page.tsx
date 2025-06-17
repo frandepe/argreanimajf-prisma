@@ -259,8 +259,64 @@ const RedesSocialesPage = () => {
           </div>
         </motion.section>
 
-        {/* Featured Image Section */}
         <motion.section
+          className="relative"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Reel
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/DK15t9tsDCP" />
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Post
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <Image
+                    src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747883997/rcp-no_gdwfiv.jpg"
+                    width={800}
+                    height={600}
+                    alt="RCP Campaign"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Featured Image Section */}
+        {/* <motion.section
           className="relative py-16"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -268,7 +324,7 @@ const RedesSocialesPage = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="relative mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20 scale-105" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20" />
             <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
               <div className="p-8">
                 <div className="text-center mb-8">
@@ -292,7 +348,7 @@ const RedesSocialesPage = () => {
               </div>
             </div>
           </div>
-        </motion.section>
+        </motion.section> */}
 
         {/* Celebrity Section */}
         <motion.section
