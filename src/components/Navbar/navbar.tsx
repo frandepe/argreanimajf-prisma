@@ -38,7 +38,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { JSX } from "react";
+import { JSX, useEffect, useState } from "react";
 import Image from "next/image";
 
 interface MenuItem {
@@ -78,6 +78,9 @@ const Navbar = ({
     alt: "argentinareanima",
   },
 }: Navbar1Props) => {
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
   function DropdownWithoutIcon(props: any) {
     return (
       <a
@@ -91,8 +94,32 @@ const Navbar = ({
     );
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        // Scrolling down
+        setShowNavbar(false);
+      } else {
+        // Scrolling up
+        setShowNavbar(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <section className="py-4 w-full bg-white px-10">
+    <section
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        showNavbar ? "translate-y-0" : "-translate-y-full"
+      } bg-white py-4 px-10`}
+    >
+      {/* <section className="py-4 w-full bg-white px-10"> */}
       <div className="w-full">
         <nav className="hidden justify-between lg:flex w-full">
           <div className="flex items-center gap-6">

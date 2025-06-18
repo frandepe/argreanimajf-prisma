@@ -4,7 +4,7 @@ import React from "react";
 
 const ContactoPage = () => {
   return (
-    <div className="flex flex-col gap-7 md:gap-16">
+    <div className="flex flex-col gap-7 md:gap-16 mt-10">
       <BannerHero
         imgClassname={"object-cover"}
         // imgClassname="object-fit md:object-cover object-[right_0px] md:object-[center_0px] "

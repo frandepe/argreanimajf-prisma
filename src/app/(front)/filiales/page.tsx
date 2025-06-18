@@ -33,6 +33,7 @@ const FilialesPage = () => {
         src="https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
         srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
         title="Filiales"
+        imgClassname="md:scale-y-[1.2]"
         description="Somos 7 filiales en el país, con equipo de instructores y recursos propios, para continuar multiplicando manos que salvan vidas"
       />
 

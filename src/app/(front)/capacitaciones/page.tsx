@@ -37,7 +37,7 @@ const CapacitacionesPage = () => {
         srcMobile={"/images/banner-capacitaciones.jpg"}
         title="Capacitaciones"
         description="Aprendé técnicas de reanimación cardiopulmonar , USO DE DEA y maniobra de Heimlich con nuestros cursos diseñados para toda la comunidad."
-        imgClassname={"object-cover"}
+        imgClassname={"object-cover md:object-[center_0px] md:object-fit"}
       />
 
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">

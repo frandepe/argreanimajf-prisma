@@ -37,7 +37,7 @@ const IMAGES_3 = [
 const GaleriaPage = () => {
   const router = useRouter();
   return (
-    <div className="relative bg-white ">
+    <div className="relative bg-white mt-24">
       <div className="text-center flex flex-col gap-3 relative top-10">
         <div>
           <h1 className="font-serif text-4xl font-extralight md:text-5xl">
