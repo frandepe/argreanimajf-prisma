@@ -54,11 +54,17 @@ const NewsSection = () => {
                 key={singleNew.id}
                 className="grid grid-rows-[auto_auto_1fr_auto]"
               >
-                <div className="aspect-[16/9] w-full">
+                <div className="aspect-[16/9] w-full relative">
+                  {singleNew.dateNew && (
+                    <div className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-1 rounded">
+                      {new Date(singleNew.dateNew).toLocaleDateString()}
+                    </div>
+                  )}
+
                   <a
                     href={singleNew.redirect}
                     target="_blank"
-                    className="transition-opacity duration-200 fade-in hover:opacity-70"
+                    className="transition-opacity duration-200 fade-in"
                   >
                     {singleNew.imageUrl ? (
                       <Image
@@ -79,6 +85,7 @@ const NewsSection = () => {
                     )}
                   </a>
                 </div>
+
                 <CardContent className="p-4">
                   <CardHeader>
                     <h3 className="text-lg font-semibold hover:underline md:text-xl">
@@ -91,6 +98,7 @@ const NewsSection = () => {
                       </a>
                     </h3>
                   </CardHeader>
+
                   <p className="text-muted-foreground">
                     {summaryText}
                     {isLong && (

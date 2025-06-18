@@ -54,6 +54,60 @@ function AnimatedQuienesSomos() {
       designation: "Asociación Civil Argentina Reanima",
       src: "/images/quienes-somos/equipo7.jpg",
     },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo8.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo9.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo10.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo11.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo12.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo13.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo14.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo15.jpeg",
+    },
+    {
+      quote: "",
+      name: "Equipo",
+      designation: "Asociación Civil Argentina Reanima",
+      src: "/images/quienes-somos/equipo16.jpeg",
+    },
   ];
   return <AnimatedCarousel testimonials={testimonials} />;
 }

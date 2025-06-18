@@ -59,7 +59,7 @@ export const AnimatedCarousel = ({
     >
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative w-full md:w-[400px] aspect-square md:aspect-[3/2]">
             <AnimatePresence>
               {rotations.length > 0 &&
                 testimonials.map((testimonial, index) => (
@@ -142,10 +142,7 @@ export const AnimatedCarousel = ({
               <Button
                 className="my-6 bg-primary text-white hover:bg-[#189bd8e0] hover:text-gray-800"
                 onClick={() =>
-                  window.open(
-                    "https://www.inadea.com.ar/",
-                    "_blank"
-                  )
+                  window.open("https://www.inadea.com.ar/", "_blank")
                 }
                 variant="outline"
               >

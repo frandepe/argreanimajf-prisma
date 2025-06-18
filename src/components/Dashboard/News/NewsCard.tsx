@@ -30,6 +30,13 @@ const NewsCard = ({ n }: { n: News }) => {
           <div className="flex-1 space-y-2">
             <h3 className="text-xl font-medium text-foreground">{n.title}</h3>
             <p className="text-sm text-muted-foreground">{n.description}</p>
+            <p className="text-sm text-muted-foreground">
+              {" "}
+              Fecha:{" "}
+              {n?.dateNew
+                ? new Date(n.dateNew).toLocaleDateString()
+                : "Sin fecha"}
+            </p>
           </div>
 
           <div className="w-full md:w-auto">

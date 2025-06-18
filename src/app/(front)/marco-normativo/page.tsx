@@ -20,7 +20,7 @@ const MarcoNormativoPage = () => {
         <div className="space-y-3">
           <Titleh1
             className="md:text-start pb-3"
-            title="Marco Legal sobre RCP y Maniobra de Heimlich en Argentina"
+            title="Marco legal sobre RCP y maniobra de Heimlich en Argentina"
           />
           <p>
             En Argentina Reanima creemos que el conocimiento contribuye a salvar
@@ -36,11 +36,11 @@ const MarcoNormativoPage = () => {
           <div className="py-3">
             <Separator className="h-1 " />
           </div>
-          <h2 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
+          <h2 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800  lg:text-4xl dark:text-white flex gap-4 items-center">
             <Scale className="text-primary" /> Legislación Nacional
           </h2>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
-            <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+            <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
               Ley 27.159 (2015)
             </h3>
             <Button
@@ -55,12 +55,12 @@ const MarcoNormativoPage = () => {
               Ver más
             </Button>
           </div>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
-            Sistema de Prevención Integral de Muerte Súbita
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
+            Sistema de prevención integral de muerte súbita
           </h3>
 
           <li>
-            Obliga a instalar Desfibriladores Externos Automáticos (DEA) en
+            Obliga a instalar desfibriladores externos automáticos (DEA) en
             espacios con gran concurrencia.
           </li>
           <li>Establece capacitación en RCP y uso de DEA</li>
@@ -72,7 +72,7 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
-            <h2 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+            <h2 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
               Ley 26.835 (2012)
             </h2>
             <Button
@@ -88,7 +88,7 @@ const MarcoNormativoPage = () => {
             </Button>
           </div>
 
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Promoción y enseñanza de RCP básica en escuelas
           </h3>
 
@@ -105,10 +105,10 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h4 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
-            <Flag className="text-primary" /> Legislación Provincial y Municipal
+          <h4 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800  lg:text-4xl dark:text-white flex gap-4 items-center">
+            <Flag className="text-primary" /> Legislación provincial y municipal
           </h4>
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Buenos Aires
           </h4>
 
@@ -152,13 +152,13 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             La Plata
           </h4>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
             <li>
-              <b>Ordenanza 12.348</b>: Adhiere a la Ley Provincial de Espacios
-              Cardioprotegidos.
+              <b>Ordenanza 12.348</b>: Adhiere a la Ley provincial de espacios
+              cardioprotegidos.
             </li>
             <Button
               onClick={() =>
@@ -174,8 +174,8 @@ const MarcoNormativoPage = () => {
           </div>
           <li>Capacita a empleados municipales en RCP.</li>
 
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
-            Mar del Plata (General Pueyrredon)
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
+            Mar Del Plata (General Pueyrredon)
           </h4>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
             <li>
@@ -199,13 +199,13 @@ const MarcoNormativoPage = () => {
             comunitarias.
           </li>
 
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Lobería
           </h4>
 
           <li>(Sin ordenanza vigente encontrada hasta la fecha)</li>
 
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Río Tercero (Córdoba)
           </h4>
 
@@ -214,13 +214,13 @@ const MarcoNormativoPage = () => {
             DEA para personal municipal.
           </li>
 
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Río Grande (Tierra del Fuego)
           </h4>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
             <li>
               <b>Ordenanza 3902/18</b>: Exige carteles explicativos sobre la
-              Maniobra de Heimlich.
+              maniobra de Heimlich.
             </li>
             <Button
               onClick={() =>
@@ -253,7 +253,7 @@ const MarcoNormativoPage = () => {
             </Button>
           </div>
 
-          <h4 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h4 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Ushuaia
           </h4>
 
@@ -263,10 +263,10 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h3 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800 capitalize lg:text-4xl dark:text-white flex gap-4 items-center">
+          <h3 className="pb-3 text-2xl md:text-3xl font-semibold md:text-start text-gray-800  lg:text-4xl dark:text-white flex gap-4 items-center">
             <MapPin className="text-primary" /> Otras Provincias
           </h3>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             La Rioja
           </h3>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
@@ -286,7 +286,7 @@ const MarcoNormativoPage = () => {
               Ver más
             </Button>
           </div>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Tucumán
           </h3>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
@@ -306,7 +306,7 @@ const MarcoNormativoPage = () => {
               Ver más
             </Button>
           </div>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Chaco
           </h3>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
@@ -326,12 +326,12 @@ const MarcoNormativoPage = () => {
               Ver más
             </Button>
           </div>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Río Negro
           </h3>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
             <li>
-              <b>Ley 5.531</b>: Carteles y difusión de Maniobra de Heimlich;
+              <b>Ley 5.531</b>: Carteles y difusión de maniobra de Heimlich;
               formación docente obligatoria.
             </li>
             <Button
@@ -347,7 +347,7 @@ const MarcoNormativoPage = () => {
             </Button>
           </div>
 
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Catamarca
           </h3>
           <div className="flex flex-col md:flex-row items-start md:items-end gap-3 md:gap-5">
@@ -368,7 +368,7 @@ const MarcoNormativoPage = () => {
               Ver más
             </Button>
           </div>
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Córdoba
           </h3>
 
@@ -379,7 +379,7 @@ const MarcoNormativoPage = () => {
             conducir.
           </li>
 
-          <h3 className="text-2xl font-semibold md:text-start text-gray-800 capitalize  dark:text-white">
+          <h3 className="text-2xl font-semibold md:text-start text-gray-800   dark:text-white">
             Misiones
           </h3>
 
@@ -393,7 +393,7 @@ const MarcoNormativoPage = () => {
             <Separator className="h-1 " />
           </div>
 
-          <h3 className="pb-3 text-3xl font-semibold md:text-start text-gray-800 capitalize flex items-center gap-4 dark:text-white">
+          <h3 className="pb-3 text-3xl font-semibold md:text-start text-gray-800  flex items-center gap-4 dark:text-white">
             <CalendarCheck2 className="text-primary" /> Actualización Permanente
           </h3>
 

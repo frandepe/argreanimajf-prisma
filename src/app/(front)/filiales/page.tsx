@@ -6,29 +6,36 @@ import React from "react";
 
 import dynamic from "next/dynamic";
 import { useMobile } from "@/hooks/useMedia";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const FilialesMap = dynamic(
   () => import("@/components/FilialesMap/FilialesMap"),
   {
-    ssr: false, // 👈 importante
+    ssr: false,
   }
 );
 
+const VideoPlayer = dynamic(() => import("@/components/Video/video-player"), {
+  ssr: false,
+});
+
 const FilialesPage = () => {
-  const isMobile = useMobile();
   return (
-    <div className="flex flex-col  gap-7 md:gap-16">
+    <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
-        src={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
-        }
-        srcMobile={
-          "https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
-        }
+        src="https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
+        srcMobile="https://res.cloudinary.com/dtbryiptz/image/upload/v1748046785/banner-filiales_ppg1af.png"
         title="Filiales"
         description="Somos 7 filiales en el país, con equipo de instructores y recursos propios, para continuar multiplicando manos que salvan vidas"
-        // imgClassname={isMobile ? "object-cover object-[left_30%] " : ""}
       />
+
       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
         <div>
           <Titleh1
@@ -42,28 +49,40 @@ const FilialesPage = () => {
               equipo de instructores y recursos propios, para continuar
               multiplicando manos que salvan vidas.
             </p>
-
             <p>
               Ushuaia, Rio Grande, Mar del Plata, Puerto Iguazú, Río Tercero,
               Lobería y La Plata. Seguinos atentos en nuestras redes, para
               enterarte de las próximas actividades que realizaremos en los
               diferentes lugares.
             </p>
-
             <p>Solo bajamos los brazos para hacer RCP</p>
           </div>
         </div>
 
-        <div className="w-full flex justify-center ">
+        <div className="w-full flex justify-center">
           <FilialesMap />
         </div>
 
-        <div className="bg-white  md:p-10 rounded-2xl  max-w-4xl mx-auto space-y-6 border border-none">
-          <h2 className=" mb-4  text-2xl md:text-3xl font-semibold md:text-center text-gray-500 capitalize lg:text-4xl dark:text-white">
-            Convenio con Facultad de Psicología Universidad Nacional de Mar del
-            Plata
-          </h2>
-          <Titleh1 title="Nuestro compromiso con Nacer entre Palabras" />
+        <div className="bg-white md:p-10 rounded-2xl mx-auto space-y-6 border border-none">
+          <Titleh1 title="Convenio con facultad de psicología Universidad Nacional de Mar del Plata" />
+
+          <div className="flex justify-between items-center flex-wrap gap-4">
+            <Titleh1 title="Nuestro compromiso con Nacer entre Palabras" />
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button>Conocé más sobre esta alianza</Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl w-full z-[9999]">
+                <DialogHeader>
+                  <DialogTitle>
+                    Convenio con la Facultad de Psicología
+                  </DialogTitle>
+                </DialogHeader>
+                <VideoPlayer src="https://www.youtube.com/live/32x3rVsXgkI" />
+              </DialogContent>
+            </Dialog>
+          </div>
 
           <p className="text-gray-700 text-base md:text-lg">
             Con mucho orgullo y satisfacción, desde el año{" "}

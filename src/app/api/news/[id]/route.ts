@@ -105,7 +105,7 @@ export async function PUT(request: NextRequest, context: any) {
   }
 
   try {
-    const { title, imageBase64, description, redirect, category } =
+    const { title, imageBase64, description, redirect, category, dateNew } =
       await request.json();
 
     const existingNews = await prisma.news.findUnique({ where: { id } });
@@ -162,6 +162,7 @@ export async function PUT(request: NextRequest, context: any) {
         description,
         redirect,
         category,
+        dateNew,
       },
     });
 

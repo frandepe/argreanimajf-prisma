@@ -30,7 +30,7 @@ const NoticiasDashboardPage = () => {
             className="w-full px-6 "
             defaultValue="3"
           >
-            {news.map((n) => (
+            {news?.map((n) => (
               <NewsCard n={n} key={n.id} />
             ))}
           </Accordion>

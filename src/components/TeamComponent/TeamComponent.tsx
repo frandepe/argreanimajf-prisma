@@ -27,11 +27,11 @@ const TeamComponent = () => {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 dark:text-white group-hover:text-white">
                 arthur melo
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 dark:text-gray-300 group-hover:text-gray-300">
                 design director
               </p>
 
@@ -92,11 +92,11 @@ const TeamComponent = () => {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 dark:text-white group-hover:text-white">
                 Amelia. Anderson
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 dark:text-gray-300 group-hover:text-gray-300">
                 Lead Developer
               </p>
 
@@ -157,11 +157,11 @@ const TeamComponent = () => {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 dark:text-white group-hover:text-white">
                 Olivia Wathan
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 dark:text-gray-300 group-hover:text-gray-300">
                 Lead designer
               </p>
 
@@ -222,11 +222,11 @@ const TeamComponent = () => {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 dark:text-white group-hover:text-white">
                 John Doe
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 dark:text-gray-300 group-hover:text-gray-300">
                 Full stack developer
               </p>
 
@@ -287,11 +287,11 @@ const TeamComponent = () => {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 dark:text-white group-hover:text-white">
                 Mia
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 dark:text-gray-300 group-hover:text-gray-300">
                 Graphic Designer
               </p>
 
@@ -352,11 +352,11 @@ const TeamComponent = () => {
                 alt=""
               />
 
-              <h1 className="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+              <h1 className="mt-4 text-2xl font-semibold text-gray-700 dark:text-white group-hover:text-white">
                 Junior REIS
               </h1>
 
-              <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">
+              <p className="mt-2 text-gray-500 dark:text-gray-300 group-hover:text-gray-300">
                 Products Managers
               </p>
 
@@ -406,7 +406,7 @@ const TeamComponent = () => {
                   </svg>
                 </a>
               </div>
-            </div>  
+            </div>
           </div>
         </div>
       </section>

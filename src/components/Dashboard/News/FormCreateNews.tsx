@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useNews } from "@/context/NewsContext";
 import { Button } from "@/components/ui/button";
+import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import "./form.css";
 const FormCreateNews = () => {
   const { createNews, selectedNews, setSelectedNews, updateNews } = useNews();
@@ -79,6 +80,7 @@ const FormCreateNews = () => {
       redirect: "",
       category: "",
       description: "",
+      dateNew: new Date(),
     });
     setPicture(null);
     setStep(1);
@@ -93,6 +95,7 @@ const FormCreateNews = () => {
       if (selectedNews) {
         await updateNews(selectedNews.id, {
           ...data,
+          dateNew: data.dateNew ?? undefined,
           imageBase64:
             picture && picture !== selectedNews.imageUrl ? picture : undefined,
         });
@@ -140,6 +143,7 @@ const FormCreateNews = () => {
         redirect: selectedNews.redirect,
         category: selectedNews.category,
         description: selectedNews.description,
+        dateNew: selectedNews.dateNew ?? undefined,
       });
       setPicture(selectedNews.imageUrl); // para que también se vea la imagen previa, si querés mostrarla
     }
@@ -285,6 +289,25 @@ const FormCreateNews = () => {
                       "La descripción no puede superar los 300 caracteres",
                   },
                 })}
+              />
+              <label
+                htmlFor="description"
+                className="block text-sm font-medium text-gray-700 mb-1 mt-6"
+              >
+                Fecha de la noticia <span className="text-secondary">*</span>
+              </label>
+              <Controller
+                name="dateNew"
+                control={control}
+                render={({ field }) => (
+                  <CalendarComponent
+                    mode="single"
+                    selected={field.value ?? undefined} // debe ser Date | undefined
+                    onSelect={field.onChange} // se llama con la nueva fecha
+                    captionLayout="dropdown"
+                    className="rounded-md border shadow-sm"
+                  />
+                )}
               />
             </div>
           )}

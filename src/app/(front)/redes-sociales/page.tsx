@@ -1,76 +1,3 @@
-// "use client";
-
-// import BannerHero from "@/components/BannerHero/BannerHero";
-// import { Titleh1 } from "@/components/Texts/Titleh1";
-// import React from "react";
-// import Image from "next/image";
-// import InstagramEmbed from "@/components/RedesSociales/InstagramEmbed";
-
-// const RedesSocialesPage = () => {
-//   return (
-//     <div className="flex flex-col gap-7 md:gap-16">
-//       <BannerHero
-//         src={
-//           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748923390/redes_n5ncln.jpg"
-//         }
-//         srcMobile={
-//           "https://res.cloudinary.com/dtbryiptz/image/upload/v1748923390/redes_n5ncln.jpg"
-//         }
-//         title="Redes Sociales"
-//         description="En esta sección encontrarás todo sobre nuestras redes sociales: síguenos y entérate de cursos, tips y novedades en RCP."
-//       />
-
-//       <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16 pb-7 md:pb-16">
-//         <Titleh1 title="Con la RCP NO." />
-
-//         <div className="w-full flex justify-center gap-10 flex-wrap">
-//           <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
-//             <InstagramEmbed url="https://www.instagram.com/reel/CoalPgtDGhL/?igsh=a2pldzZtZHpxejJv" />
-//           </div>
-
-//           <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
-//             <InstagramEmbed url="https://www.instagram.com/p/CnHaZbJumgG/?igsh=MWZvdHR5MHR5MXlxOA==" />
-//           </div>
-//         </div>
-
-//         <div className="w-full">
-//           <div className="w-full h-full flex items-center justify-center mx-auto">
-//             <Image
-//               src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747883997/rcp-no_gdwfiv.jpg"
-//               width={100}
-//               height={100}
-//               alt="RCP"
-//               className="w-[500px] h-full object-contain rounded"
-//             />
-//           </div>
-//         </div>
-
-//         <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-//           ¡Jualian weich tambien lucha contra la muerte subita!
-//         </h2>
-
-//         <div className="w-full flex justify-center gap-10 flex-wrap">
-//           <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
-//             <InstagramEmbed url="https://www.instagram.com/p/CSzQYtXgY2t/" />
-//           </div>
-//         </div>
-
-//         <h2 className="text-2xl md:text-3xl font-semibold md:text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
-//           El Compromiso continúa Ley 27.159
-//         </h2>
-
-//         <div className="w-full flex justify-center gap-10 flex-wrap">
-//           <div className="w-[500px] md:w-auto flex items-center justify-center h-full">
-//             <InstagramEmbed url="https://www.instagram.com/p/CmEwMU2r6fF/?utm_source=ig_embed&amp;utm_campaign=loading" />
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RedesSocialesPage;
-
 "use client";
 
 import BannerHero from "@/components/BannerHero/BannerHero";
@@ -216,7 +143,7 @@ const RedesSocialesPage = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             <motion.div
               className="group"
               variants={scaleVariants}
@@ -253,6 +180,25 @@ const RedesSocialesPage = () => {
                 </div>
                 <div className="aspect-square overflow-hidden rounded-xl">
                   <InstagramEmbed url="https://www.instagram.com/p/CnHaZbJumgG/?igsh=MWZvdHR5MHR5MXlxOA==" />
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Post
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/Cywu2HOMvv0/" />
                 </div>
               </div>
             </motion.div>
@@ -315,40 +261,123 @@ const RedesSocialesPage = () => {
           </div>
         </motion.section>
 
-        {/* Featured Image Section */}
-        {/* <motion.section
-          className="relative py-16"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+        <motion.section
+          className="relative"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
-          <div className="relative mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-3xl blur-3xl opacity-20" />
-            <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden">
-              <div className="p-8">
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    Campaña Educativa
-                  </h3>
-                  <p className="text-gray-600">
-                    Concientización sobre la importancia de la RCP
-                  </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Reel
+                  </span>
                 </div>
-                <div className="relative overflow-hidden rounded-2xl">
-                  <Image
-                    src="https://res.cloudinary.com/dtbryiptz/image/upload/v1747883997/rcp-no_gdwfiv.jpg"
-                    width={800}
-                    height={600}
-                    alt="RCP Campaign"
-                    className="w-full h-auto object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/CymHUYNKxVY/" />
                 </div>
               </div>
-            </div>
+            </motion.div>
+
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Post
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/CxwQYf9sE9V/?img_index=5" />
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Post
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/CxosKarMmnB/" />
+                </div>
+              </div>
+            </motion.div>
           </div>
-        </motion.section> */}
+        </motion.section>
+
+        <motion.section
+          className="relative"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Post
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/Cw3k-YLsDvW/" />
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              className="group"
+              variants={scaleVariants}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white p-6">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary" />
+                <div className="flex items-center gap-3 mb-4">
+                  <Instagram className="w-6 h-6 text-primary" />
+                  <span className="font-semibold text-gray-800">
+                    Instagram Post
+                  </span>
+                </div>
+                <div className="aspect-square overflow-hidden rounded-xl">
+                  <InstagramEmbed url="https://www.instagram.com/p/CvTAJkEPYyl/" />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.section>
 
         {/* Celebrity Section */}
         <motion.section
@@ -522,6 +551,30 @@ const RedesSocialesPage = () => {
                   <div className="flex items-center gap-3">
                     <Youtube className="w-6 h-6" />
                     Seguir en Youtube
+                  </div>
+                </motion.button>
+                <motion.button
+                  onClick={() =>
+                    window.open(
+                      "https://www.tiktok.com/@argentina.reanima",
+                      "_blank"
+                    )
+                  }
+                  className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <div className="flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 256 256"
+                      width="20"
+                      height="20"
+                      className="fill-current -mb-2"
+                    >
+                      <path d="M208.005 78.284a78.366 78.366 0 0 1-43.999-13.224v74.941a63.96 63.96 0 1 1-63.96-63.96c1.792 0 3.56.088 5.3.255v35.994a28.06 28.06 0 1 0 28.06 28.06V0h33.457a44.823 44.823 0 0 0 6.435 22.847c7.934 13.285 22.347 22.176 38.707 22.947v32.49z" />
+                    </svg>
+                    Seguir en TikTok
                   </div>
                 </motion.button>
               </div>

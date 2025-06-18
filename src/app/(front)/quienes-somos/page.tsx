@@ -30,13 +30,13 @@ const QuienesSomosPage = () => {
         }
       />
 
-      <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16">
+      <div className="px-4 container mx-auto flex flex-col gap-7 md:gap-16">
         <motion.div {...fadeIn(0.1)}>
           <Titleh1 title="En Argentina Reanima, creemos que cada vida cuenta y que cada segundo puede marcar la diferencia" />
         </motion.div>
 
         <motion.div
-          className="space-y-5 max-w-prose mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
+          className="space-y-5 mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
           {...fadeIn(0.2)}
         >
           <p>
@@ -76,8 +76,7 @@ const QuienesSomosPage = () => {
           className="relative bg-muted/30 md:p-6 rounded-2xl  overflow-hidden"
           {...fadeIn(0.3)}
         >
-          <div className="absolute inset-0 opacity-10 bg-[url('https://res.cloudinary.com/dtbryiptz/image/upload/v1747673000/argentina-map-bg.svg')] bg-contain bg-no-repeat bg-center pointer-events-none" />
-          <div className="relative z-10 space-y-6 max-w-prose mx-auto text-base md:text-lg leading-relaxed text-muted-foreground">
+          <div className="relative z-10 space-y-6 mx-auto text-base md:text-lg leading-relaxed text-muted-foreground">
             <Titleh1 title="Nuestro origen y compromiso continuo" />
             <p>
               Argentina Reanima nació en enero de 2021 con un propósito urgente:

@@ -75,6 +75,7 @@ export async function POST(request: Request) {
       redirect,
       category,
       imageBase64, // opcional
+      dateNew,
     } = await request.json();
 
     if (!title || !description || !redirect || !category) {
@@ -112,6 +113,7 @@ export async function POST(request: Request) {
         category,
         imageUrl,
         imagePublicId,
+        dateNew,
       },
     });
     revalidatePath("/api/news");

@@ -8,6 +8,7 @@ export interface ICreateNewsBase64 {
   description: string;
   redirect: string;
   category: string;
+  dateNew?: Date;
 }
 
 export type IUpdateNote = Partial<ICreateNewsBase64>;

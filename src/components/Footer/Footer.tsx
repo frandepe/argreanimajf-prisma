@@ -120,6 +120,38 @@ function Footer() {
                     <Button
                       onClick={() =>
                         window.open(
+                          "https://www.tiktok.com/@argentina.reanima",
+                          "_blank"
+                        )
+                      }
+                      variant="outline"
+                      size="icon"
+                      className="rounded-full cursor-pointer"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 256"
+                        width="20"
+                        height="20"
+                        fill="black"
+                      >
+                        <path d="M208.005 78.284a78.366 78.366 0 0 1-43.999-13.224v74.941a63.96 63.96 0 1 1-63.96-63.96c1.792 0 3.56.088 5.3.255v35.994a28.06 28.06 0 1 0 28.06 28.06V0h33.457a44.823 44.823 0 0 0 6.435 22.847c7.934 13.285 22.347 22.176 38.707 22.947v32.49z" />
+                      </svg>
+                      <span className="sr-only">TikTok</span>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>TikTok</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      onClick={() =>
+                        window.open(
                           "https://www.facebook.com/profile.php?id=100087258240312",
                           "_blank"
                         )

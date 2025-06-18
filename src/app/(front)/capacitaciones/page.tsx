@@ -9,7 +9,7 @@ import { useCourse } from "@/context/CourseContext";
 import { SimplePagination } from "@/components/SimplePagination/SimplePagination";
 import { Button } from "@/components/ui/button";
 import { TextOneImage } from "@/components/TextImage/TextOneImage";
-import { useMobile } from "@/hooks/useMedia";
+import { Charlas } from "@/components/Capacitaciones/Charlas";
 
 const ITEMS_PER_PAGE = 6;
 
@@ -29,7 +29,7 @@ const CapacitacionesPage = () => {
   useEffect(() => {
     loadCourses(category, search, currentPage);
   }, [loadCourses, search, category, currentPage]);
-  const isMobile = useMobile();
+
   return (
     <div className="flex flex-col gap-7 md:gap-16">
       <BannerHero
@@ -62,6 +62,9 @@ const CapacitacionesPage = () => {
             )}
           </div>
         </div>
+      </div>
+      <div>
+        <Charlas />
       </div>
       <div>
         <TextOneImage />
