@@ -41,7 +41,7 @@ export async function GET(request: NextRequest) {
       skip,
       take: limit,
       orderBy: {
-        createdAt: "desc",
+        dateNew: "desc",
       },
     });
 
