@@ -4,7 +4,7 @@ import { SidebarContent } from "@/components/Dashboard/SidebarContent";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/libs/utils";
-import { Newspaper, School, Video } from "lucide-react";
+import { Newspaper, School } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -29,9 +29,9 @@ function DashboardPage() {
   ];
   return (
     <SidebarContent>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  relative z-10 py-10 md:max-w-7xl mx-auto  gap-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  relative z-10 py-10 md:max-w-7xl mx-auto  gap-10">
         {features.map((feature, index) => (
-          <Card key={feature.title} className="h-[250px] ">
+          <Card key={feature.title} className="h-[250px]">
             <Feature {...feature} index={index} />
           </Card>
         ))}
