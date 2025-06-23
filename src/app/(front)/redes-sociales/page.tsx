@@ -13,6 +13,7 @@ import {
   Facebook,
   Youtube,
 } from "lucide-react";
+import { Stats } from "@/components/Stats/Stats";
 
 const RedesSocialesPage = () => {
   const containerVariants = {
@@ -50,16 +51,15 @@ const RedesSocialesPage = () => {
     },
   };
 
-  // const stats = [
-  //   { icon: Users, label: "Seguidores", value: "1500+" },
-  //   { icon: Heart, label: "Publicaciones", value: "200+" },
-  //   { icon: TrendingUp, label: "Desde", value: "2021" },
-  // ]
-
   const stats = [
-    { icon: Users, label: "Personas capacitadas", value: "+1500" },
-    { icon: Heart, label: "Charlas realizadas", value: "+5000" },
-    { icon: TrendingUp, label: "Años de experiencia", value: "+20" },
+    { icon: Users, label: "Muertes al año en el pais", value: "40000" },
+    { icon: Heart, label: "Fuera del ambito hospitalario", value: "70%" },
+    {
+      icon: TrendingUp,
+      label:
+        "Probabilidad de sobrevida. RCP + DEA dentro de los primeros 4 minutos",
+      value: "+70%",
+    },
   ];
 
   return (
@@ -82,37 +82,7 @@ const RedesSocialesPage = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-pink-50/30 pointer-events-none" />
 
       {/* Stats Section */}
-      <motion.section
-        className="relative py-16 bg-gradient-to-r from-primary via-[#189cd8] to-secondary"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                className="text-center text-white"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 bg-white/20 rounded-full backdrop-blur-sm">
-                    <stat.icon className="w-8 h-8" />
-                  </div>
-                </div>
-                <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-lg opacity-90">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+      <Stats stats={stats} />
 
       <div className="relative px-4 md:px-0 container mx-auto flex flex-col gap-16 py-16">
         {/* Main Title Section */}

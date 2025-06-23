@@ -12,6 +12,7 @@ import { BoxTresHome } from "@/components/Box3Home/BoxTresHome";
 import BannerHero from "@/components/BannerHero/BannerHero";
 import { useEffect, useState } from "react";
 import { AnimatedLogos } from "@/components/AnimatedCarousel/AnimatedLogos";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -59,7 +60,12 @@ export default function Home() {
       </div>
 
       <div className="bg-gray-100 py-5 md:py-10 px-4 md:px-0">
-        <Titleh1 title="Explora nuestras noticias" className="mb-6" />
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mb-6">
+          <Titleh1 title="Explora nuestras noticias" className="mb-6" />
+          <Button variant="outline">
+            <a href="/noticias">Ver todas</a>
+          </Button>
+        </div>
         <BoxTresHome />
       </div>
 
