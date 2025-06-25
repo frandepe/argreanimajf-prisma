@@ -90,10 +90,10 @@ export const ContactForm = () => {
           >
             <div className="flex gap-4">
               <div className="grid w-full items-center gap-1.5">
-                <Label htmlFor="firstname">Nombre</Label>
+                <Label htmlFor="name">Nombre</Label>
                 <Input
-                  id="firstname"
-                  name="firstname"
+                  id="name"
+                  name="name"
                   type="text"
                   required
                   placeholder="Ingrese su nombre"
