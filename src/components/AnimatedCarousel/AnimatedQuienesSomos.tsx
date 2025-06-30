@@ -40,12 +40,6 @@ function AnimatedQuienesSomos() {
       quote: "",
       name: "Equipo",
       designation: "Asociación Civil Argentina Reanima",
-      src: "/images/quienes-somos/equipo5.jpg",
-    },
-    {
-      quote: "",
-      name: "Equipo",
-      designation: "Asociación Civil Argentina Reanima",
       src: "/images/quienes-somos/equipo6.jpg",
     },
     {

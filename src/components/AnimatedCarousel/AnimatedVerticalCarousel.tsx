@@ -38,15 +38,15 @@ export function AnimatedVerticalCarousel({
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const controls = useAnimation();
 
-  useEffect(() => {
-    if (autoRotateInterval <= 0 || testimonials.length <= 1) return;
+  // useEffect(() => {
+  //   if (autoRotateInterval <= 0 || testimonials.length <= 1) return;
 
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % testimonials.length);
-    }, autoRotateInterval);
+  //   const interval = setInterval(() => {
+  //     setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  //   }, autoRotateInterval);
 
-    return () => clearInterval(interval);
-  }, [testimonials.length, autoRotateInterval]);
+  //   return () => clearInterval(interval);
+  // }, [testimonials.length, autoRotateInterval]);
 
   useEffect(() => {
     if (isInView) {

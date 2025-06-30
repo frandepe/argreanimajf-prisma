@@ -7,6 +7,7 @@ import { ActivitiesCards } from "@/components/Activities/ActivitiesCards";
 import { Timeline } from "@/components/TimeLineComponent/TimeLineComponent";
 import { Titleh1 } from "@/components/Texts/Titleh1";
 import { useMobile } from "@/hooks/useMedia";
+import AcordionFechas from "@/components/Activities/AcordionFechas";
 
 const Actividades = () => {
   const isMobile = useMobile();
@@ -36,7 +37,21 @@ const Actividades = () => {
         </div>
 
         <ActivitiesCards {...seedDataActivities} />
+      </div>
 
+      <div className="bg-blue-100 py-10 my-10">
+        <Titleh1
+          title="Calendario Argentina Reanima
+"
+          className="mx-auto mb-4 text-pretty text-3xl font-semibold md:text-4xl lg:max-w-3xl"
+        />
+        <h2 className="text-center text-gray-800 text-2xl">
+          Fechas que debemos tener presentes:
+        </h2>
+        {/* <div className="bg-gradient-to-r from-primary via-[#189cd8] to-gray-200"> */}
+        <AcordionFechas />
+      </div>
+      <div className="px-4 md:px-0 container mx-auto flex flex-col gap-7 md:gap-16">
         <Timeline />
       </div>
     </div>

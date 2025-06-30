@@ -7,6 +7,7 @@ import { Titleh1 } from "@/components/Texts/Titleh1";
 import { Separator } from "@/components/ui/separator";
 import { AnimatedQuienesSomos } from "@/components/AnimatedCarousel/AnimatedQuienesSomos";
 import { useMobile } from "@/hooks/useMedia";
+import InteractiveSelector from "@/components/AnimatedCarousel/CarouselImgs";
 
 // Animación reusable
 const fadeIn = (delay = 0) => ({
@@ -124,6 +125,7 @@ const QuienesSomosPage = () => {
 
         <Separator />
       </div>
+      {!isMobile && <InteractiveSelector />}
       <AnimatedQuienesSomos />
     </div>
   );

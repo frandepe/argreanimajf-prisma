@@ -13,6 +13,7 @@ import BannerHero from "@/components/BannerHero/BannerHero";
 import { useEffect, useState } from "react";
 import { AnimatedLogos } from "@/components/AnimatedCarousel/AnimatedLogos";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -59,9 +60,9 @@ export default function Home() {
         <TextImage />
       </div>
 
-      <div className="bg-gray-100 py-5 md:py-10 px-4 md:px-0">
+      <div className="bg-blue-100 py-5 md:py-10 px-4 md:px-0 my-20">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center mb-6">
-          <Titleh1 title="Explora nuestras noticias" className="mb-6" />
+          <Titleh1 title="Últimas noticias" className="mb-6 text-gray-50" />
           <Button variant="outline">
             <a href="/noticias">Ver todas</a>
           </Button>
@@ -77,6 +78,7 @@ export default function Home() {
           imageHeight="h-[500px]"
         />
       </div>
+      <Separator className="bg-gray-300 mt-20" />
 
       <AnimatedLogos />
 

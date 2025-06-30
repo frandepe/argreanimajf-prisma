@@ -111,6 +111,7 @@ const FormCreateNews = () => {
       setIsLoading(false);
       reset();
       setStep(1);
+      setPicture(null);
 
       toast.success(
         `${selectedNews ? "Noticia editada" : "Noticia creada con éxito"}`,
